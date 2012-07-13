@@ -83,6 +83,10 @@
 		D090622A15B0DE72001CAC43 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
 		D090622B15B0DE72001CAC43 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
 		D090622C15B0DE72001CAC43 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		D090623915B0E2DA001CAC43 /* ObjectiveHaskell-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Debug.xcconfig"; sourceTree = "<group>"; };
+		D090623A15B0E2DA001CAC43 /* ObjectiveHaskell-Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Profile.xcconfig"; sourceTree = "<group>"; };
+		D090623B15B0E2DA001CAC43 /* ObjectiveHaskell-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Release.xcconfig"; sourceTree = "<group>"; };
+		D090623C15B0E2DA001CAC43 /* ObjectiveHaskell.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ObjectiveHaskell.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,10 @@
 		D090621715B0DE72001CAC43 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				D090623915B0E2DA001CAC43 /* ObjectiveHaskell-Debug.xcconfig */,
+				D090623A15B0E2DA001CAC43 /* ObjectiveHaskell-Profile.xcconfig */,
+				D090623B15B0E2DA001CAC43 /* ObjectiveHaskell-Release.xcconfig */,
+				D090623C15B0E2DA001CAC43 /* ObjectiveHaskell.xcconfig */,
 				D090621815B0DE72001CAC43 /* xcconfigs */,
 			);
 			path = Configuration;
@@ -399,13 +407,20 @@
 /* Begin XCBuildConfiguration section */
 		D090620F15B0DD38001CAC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D090621C15B0DE72001CAC43 /* Debug.xcconfig */;
+			baseConfigurationReference = D090623915B0E2DA001CAC43 /* ObjectiveHaskell-Debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					"-lHSrts",
+					"-lHSghc-7.4.2",
+					"-lHSbase-4.5.1.0",
+					"-lHSghc-prim-0.2.0.0",
+					"-lHSinteger-gmp-0.4.0.0",
+				);
 				SDKROOT = macosx;
 				TEST_AFTER_BUILD = YES;
 			};
@@ -413,13 +428,20 @@
 		};
 		D090621015B0DD38001CAC43 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D090621E15B0DE72001CAC43 /* Release.xcconfig */;
+			baseConfigurationReference = D090623B15B0E2DA001CAC43 /* ObjectiveHaskell-Release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					"-lHSrts",
+					"-lHSghc-7.4.2",
+					"-lHSbase-4.5.1.0",
+					"-lHSghc-prim-0.2.0.0",
+					"-lHSinteger-gmp-0.4.0.0",
+				);
 				SDKROOT = macosx;
 				TEST_AFTER_BUILD = YES;
 			};
@@ -450,6 +472,11 @@
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
 				INFOPLIST_FILE = "ObjectiveHaskellTests/ObjectiveHaskellTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-liconv",
+					"-lffi",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -462,6 +489,11 @@
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
 				INFOPLIST_FILE = "ObjectiveHaskellTests/ObjectiveHaskellTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-liconv",
+					"-lffi",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
