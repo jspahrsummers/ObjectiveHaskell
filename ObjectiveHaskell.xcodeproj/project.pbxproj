@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D09061EF15B0DD37001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
-		D09061F915B0DD37001CAC43 /* ObjectiveHaskell.m in Sources */ = {isa = PBXBuildFile; fileRef = D09061F815B0DD37001CAC43 /* ObjectiveHaskell.m */; };
 		D090620115B0DD38001CAC43 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D090620015B0DD38001CAC43 /* SenTestingKit.framework */; };
 		D090620215B0DD38001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
 		D090620515B0DD38001CAC43 /* libObjectiveHaskell.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EB15B0DD37001CAC43 /* libObjectiveHaskell.a */; };
@@ -61,7 +60,6 @@
 		D09061F315B0DD37001CAC43 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D09061F615B0DD37001CAC43 /* ObjectiveHaskell-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjectiveHaskell-Prefix.pch"; sourceTree = "<group>"; };
 		D09061F715B0DD37001CAC43 /* ObjectiveHaskell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectiveHaskell.h; sourceTree = "<group>"; };
-		D09061F815B0DD37001CAC43 /* ObjectiveHaskell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectiveHaskell.m; sourceTree = "<group>"; };
 		D09061FF15B0DD38001CAC43 /* ObjectiveHaskellTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjectiveHaskellTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D090620015B0DD38001CAC43 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D090620815B0DD38001CAC43 /* ObjectiveHaskellTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ObjectiveHaskellTests-Info.plist"; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				D09061F715B0DD37001CAC43 /* ObjectiveHaskell.h */,
-				D09061F815B0DD37001CAC43 /* ObjectiveHaskell.m */,
 				D09061F515B0DD37001CAC43 /* Supporting Files */,
 			);
 			path = ObjectiveHaskell;
@@ -371,7 +368,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D09061F915B0DD37001CAC43 /* ObjectiveHaskell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
