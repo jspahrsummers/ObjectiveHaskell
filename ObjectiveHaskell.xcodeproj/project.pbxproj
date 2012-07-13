@@ -41,6 +41,21 @@
 		D090620A15B0DD38001CAC43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D090620C15B0DD38001CAC43 /* ObjectiveHaskellTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectiveHaskellTests.h; sourceTree = "<group>"; };
 		D090620D15B0DD38001CAC43 /* ObjectiveHaskellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectiveHaskellTests.m; sourceTree = "<group>"; };
+		D090621A15B0DE72001CAC43 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		D090621C15B0DE72001CAC43 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		D090621D15B0DE72001CAC43 /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		D090621E15B0DE72001CAC43 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D090622015B0DE72001CAC43 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		D090622115B0DE72001CAC43 /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		D090622315B0DE72001CAC43 /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		D090622415B0DE72001CAC43 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		D090622515B0DE72001CAC43 /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D090622715B0DE72001CAC43 /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		D090622815B0DE72001CAC43 /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		D090622915B0DE72001CAC43 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		D090622A15B0DE72001CAC43 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		D090622B15B0DE72001CAC43 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D090622C15B0DE72001CAC43 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +85,7 @@
 			children = (
 				D09061F415B0DD37001CAC43 /* ObjectiveHaskell */,
 				D090620615B0DD38001CAC43 /* ObjectiveHaskellTests */,
+				D090621715B0DE72001CAC43 /* Configuration */,
 				D09061ED15B0DD37001CAC43 /* Frameworks */,
 				D09061EC15B0DD37001CAC43 /* Products */,
 			);
@@ -139,6 +155,76 @@
 				D090620915B0DD38001CAC43 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D090621715B0DE72001CAC43 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D090621815B0DE72001CAC43 /* xcconfigs */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		D090621815B0DE72001CAC43 /* xcconfigs */ = {
+			isa = PBXGroup;
+			children = (
+				D090621915B0DE72001CAC43 /* Base */,
+				D090622215B0DE72001CAC43 /* iOS */,
+				D090622615B0DE72001CAC43 /* Mac OS X */,
+				D090622C15B0DE72001CAC43 /* README.md */,
+			);
+			path = xcconfigs;
+			sourceTree = "<group>";
+		};
+		D090621915B0DE72001CAC43 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D090621A15B0DE72001CAC43 /* Common.xcconfig */,
+				D090621B15B0DE72001CAC43 /* Configurations */,
+				D090621F15B0DE72001CAC43 /* Targets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D090621B15B0DE72001CAC43 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				D090621C15B0DE72001CAC43 /* Debug.xcconfig */,
+				D090621D15B0DE72001CAC43 /* Profile.xcconfig */,
+				D090621E15B0DE72001CAC43 /* Release.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		D090621F15B0DE72001CAC43 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				D090622015B0DE72001CAC43 /* Application.xcconfig */,
+				D090622115B0DE72001CAC43 /* StaticLibrary.xcconfig */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		D090622215B0DE72001CAC43 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D090622315B0DE72001CAC43 /* iOS-Application.xcconfig */,
+				D090622415B0DE72001CAC43 /* iOS-Base.xcconfig */,
+				D090622515B0DE72001CAC43 /* iOS-StaticLibrary.xcconfig */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D090622615B0DE72001CAC43 /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				D090622715B0DE72001CAC43 /* Mac-Application.xcconfig */,
+				D090622815B0DE72001CAC43 /* Mac-Base.xcconfig */,
+				D090622915B0DE72001CAC43 /* Mac-DynamicLibrary.xcconfig */,
+				D090622A15B0DE72001CAC43 /* Mac-Framework.xcconfig */,
+				D090622B15B0DE72001CAC43 /* Mac-StaticLibrary.xcconfig */,
+			);
+			path = "Mac OS X";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,57 +371,36 @@
 /* Begin XCBuildConfiguration section */
 		D090620F15B0DD38001CAC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D090621C15B0DE72001CAC43 /* Debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				TEST_AFTER_BUILD = YES;
 			};
 			name = Debug;
 		};
 		D090621015B0DD38001CAC43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D090621E15B0DE72001CAC43 /* Release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
+				TEST_AFTER_BUILD = YES;
 			};
 			name = Release;
 		};
 		D090621215B0DD38001CAC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D090622B15B0DE72001CAC43 /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -343,8 +408,8 @@
 		};
 		D090621315B0DD38001CAC43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D090622B15B0DE72001CAC43 /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -352,9 +417,9 @@
 		};
 		D090621515B0DD38001CAC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D090622715B0DE72001CAC43 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
 				INFOPLIST_FILE = "ObjectiveHaskellTests/ObjectiveHaskellTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -364,9 +429,9 @@
 		};
 		D090621615B0DD38001CAC43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D090622715B0DE72001CAC43 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
 				INFOPLIST_FILE = "ObjectiveHaskellTests/ObjectiveHaskellTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -393,6 +458,7 @@
 				D090621315B0DD38001CAC43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D090621415B0DD38001CAC43 /* Build configuration list for PBXNativeTarget "ObjectiveHaskellTests" */ = {
 			isa = XCConfigurationList;
@@ -401,6 +467,7 @@
 				D090621615B0DD38001CAC43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
