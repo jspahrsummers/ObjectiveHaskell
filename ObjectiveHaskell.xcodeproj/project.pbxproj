@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D09061EF15B0DD37001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
+		D09061F915B0DD37001CAC43 /* ObjectiveHaskell.m in Sources */ = {isa = PBXBuildFile; fileRef = D09061F815B0DD37001CAC43 /* ObjectiveHaskell.m */; };
+		D090620115B0DD38001CAC43 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D090620015B0DD38001CAC43 /* SenTestingKit.framework */; };
+		D090620215B0DD38001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
+		D090620515B0DD38001CAC43 /* libObjectiveHaskell.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EB15B0DD37001CAC43 /* libObjectiveHaskell.a */; };
+		D090620B15B0DD38001CAC43 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D090620915B0DD38001CAC43 /* InfoPlist.strings */; };
+		D090620E15B0DD38001CAC43 /* ObjectiveHaskellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D090620D15B0DD38001CAC43 /* ObjectiveHaskellTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D090620315B0DD38001CAC43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D09061E215B0DD37001CAC43 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D09061EA15B0DD37001CAC43;
+			remoteInfo = ObjectiveHaskell;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D09061EB15B0DD37001CAC43 /* libObjectiveHaskell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObjectiveHaskell.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D09061EE15B0DD37001CAC43 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D09061F115B0DD37001CAC43 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D09061F215B0DD37001CAC43 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D09061F315B0DD37001CAC43 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D09061F615B0DD37001CAC43 /* ObjectiveHaskell-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjectiveHaskell-Prefix.pch"; sourceTree = "<group>"; };
+		D09061F715B0DD37001CAC43 /* ObjectiveHaskell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectiveHaskell.h; sourceTree = "<group>"; };
+		D09061F815B0DD37001CAC43 /* ObjectiveHaskell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectiveHaskell.m; sourceTree = "<group>"; };
+		D09061FF15B0DD38001CAC43 /* ObjectiveHaskellTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjectiveHaskellTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D090620015B0DD38001CAC43 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D090620815B0DD38001CAC43 /* ObjectiveHaskellTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ObjectiveHaskellTests-Info.plist"; sourceTree = "<group>"; };
+		D090620A15B0DD38001CAC43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D090620C15B0DD38001CAC43 /* ObjectiveHaskellTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectiveHaskellTests.h; sourceTree = "<group>"; };
+		D090620D15B0DD38001CAC43 /* ObjectiveHaskellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectiveHaskellTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D09061E815B0DD37001CAC43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D09061EF15B0DD37001CAC43 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D09061FB15B0DD38001CAC43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D090620115B0DD38001CAC43 /* SenTestingKit.framework in Frameworks */,
+				D090620215B0DD38001CAC43 /* Cocoa.framework in Frameworks */,
+				D090620515B0DD38001CAC43 /* libObjectiveHaskell.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D09061E015B0DD37001CAC43 = {
+			isa = PBXGroup;
+			children = (
+				D09061F415B0DD37001CAC43 /* ObjectiveHaskell */,
+				D090620615B0DD38001CAC43 /* ObjectiveHaskellTests */,
+				D09061ED15B0DD37001CAC43 /* Frameworks */,
+				D09061EC15B0DD37001CAC43 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D09061EC15B0DD37001CAC43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D09061EB15B0DD37001CAC43 /* libObjectiveHaskell.a */,
+				D09061FF15B0DD38001CAC43 /* ObjectiveHaskellTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D09061ED15B0DD37001CAC43 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D09061EE15B0DD37001CAC43 /* Cocoa.framework */,
+				D090620015B0DD38001CAC43 /* SenTestingKit.framework */,
+				D09061F015B0DD37001CAC43 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D09061F015B0DD37001CAC43 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D09061F115B0DD37001CAC43 /* AppKit.framework */,
+				D09061F215B0DD37001CAC43 /* CoreData.framework */,
+				D09061F315B0DD37001CAC43 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D09061F415B0DD37001CAC43 /* ObjectiveHaskell */ = {
+			isa = PBXGroup;
+			children = (
+				D09061F715B0DD37001CAC43 /* ObjectiveHaskell.h */,
+				D09061F815B0DD37001CAC43 /* ObjectiveHaskell.m */,
+				D09061F515B0DD37001CAC43 /* Supporting Files */,
+			);
+			path = ObjectiveHaskell;
+			sourceTree = "<group>";
+		};
+		D09061F515B0DD37001CAC43 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D09061F615B0DD37001CAC43 /* ObjectiveHaskell-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D090620615B0DD38001CAC43 /* ObjectiveHaskellTests */ = {
+			isa = PBXGroup;
+			children = (
+				D090620C15B0DD38001CAC43 /* ObjectiveHaskellTests.h */,
+				D090620D15B0DD38001CAC43 /* ObjectiveHaskellTests.m */,
+				D090620715B0DD38001CAC43 /* Supporting Files */,
+			);
+			path = ObjectiveHaskellTests;
+			sourceTree = "<group>";
+		};
+		D090620715B0DD38001CAC43 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D090620815B0DD38001CAC43 /* ObjectiveHaskellTests-Info.plist */,
+				D090620915B0DD38001CAC43 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D09061E915B0DD37001CAC43 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D09061EA15B0DD37001CAC43 /* ObjectiveHaskell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D090621115B0DD38001CAC43 /* Build configuration list for PBXNativeTarget "ObjectiveHaskell" */;
+			buildPhases = (
+				D09061E715B0DD37001CAC43 /* Sources */,
+				D09061E815B0DD37001CAC43 /* Frameworks */,
+				D09061E915B0DD37001CAC43 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ObjectiveHaskell;
+			productName = ObjectiveHaskell;
+			productReference = D09061EB15B0DD37001CAC43 /* libObjectiveHaskell.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D09061FE15B0DD38001CAC43 /* ObjectiveHaskellTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D090621415B0DD38001CAC43 /* Build configuration list for PBXNativeTarget "ObjectiveHaskellTests" */;
+			buildPhases = (
+				D09061FA15B0DD38001CAC43 /* Sources */,
+				D09061FB15B0DD38001CAC43 /* Frameworks */,
+				D09061FC15B0DD38001CAC43 /* Resources */,
+				D09061FD15B0DD38001CAC43 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D090620415B0DD38001CAC43 /* PBXTargetDependency */,
+			);
+			name = ObjectiveHaskellTests;
+			productName = ObjectiveHaskellTests;
+			productReference = D09061FF15B0DD38001CAC43 /* ObjectiveHaskellTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D09061E215B0DD37001CAC43 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Justin Spahr-Summers";
+			};
+			buildConfigurationList = D09061E515B0DD37001CAC43 /* Build configuration list for PBXProject "ObjectiveHaskell" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D09061E015B0DD37001CAC43;
+			productRefGroup = D09061EC15B0DD37001CAC43 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D09061EA15B0DD37001CAC43 /* ObjectiveHaskell */,
+				D09061FE15B0DD38001CAC43 /* ObjectiveHaskellTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D09061FC15B0DD38001CAC43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D090620B15B0DD38001CAC43 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D09061FD15B0DD38001CAC43 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D09061E715B0DD37001CAC43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D09061F915B0DD37001CAC43 /* ObjectiveHaskell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D09061FA15B0DD38001CAC43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D090620E15B0DD38001CAC43 /* ObjectiveHaskellTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D090620415B0DD38001CAC43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D09061EA15B0DD37001CAC43 /* ObjectiveHaskell */;
+			targetProxy = D090620315B0DD38001CAC43 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D090620915B0DD38001CAC43 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D090620A15B0DD38001CAC43 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D090620F15B0DD38001CAC43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D090621015B0DD38001CAC43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D090621215B0DD38001CAC43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D090621315B0DD38001CAC43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D090621515B0DD38001CAC43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
+				INFOPLIST_FILE = "ObjectiveHaskellTests/ObjectiveHaskellTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D090621615B0DD38001CAC43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
+				INFOPLIST_FILE = "ObjectiveHaskellTests/ObjectiveHaskellTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D09061E515B0DD37001CAC43 /* Build configuration list for PBXProject "ObjectiveHaskell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D090620F15B0DD38001CAC43 /* Debug */,
+				D090621015B0DD38001CAC43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D090621115B0DD38001CAC43 /* Build configuration list for PBXNativeTarget "ObjectiveHaskell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D090621215B0DD38001CAC43 /* Debug */,
+				D090621315B0DD38001CAC43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D090621415B0DD38001CAC43 /* Build configuration list for PBXNativeTarget "ObjectiveHaskellTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D090621515B0DD38001CAC43 /* Debug */,
+				D090621615B0DD38001CAC43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D09061E215B0DD37001CAC43 /* Project object */;
+}
