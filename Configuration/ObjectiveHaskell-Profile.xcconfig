@@ -1,0 +1,2 @@
+#include "xcconfigs/Base/Configurations/Profile.xcconfig"
+#include "ObjectiveHaskell.xcconfig"

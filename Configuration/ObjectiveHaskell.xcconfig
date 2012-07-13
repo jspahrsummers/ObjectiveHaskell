@@ -1,0 +1,11 @@
+// 
+// This file defines common settings that should be enabled for any project
+// containing Haskell code.
+//
+// This can be used in conjunction with other xcconfig files (using #include) or
+// on its own with project settings.
+//
+
+// Add GHC header and library paths
+HEADER_SEARCH_PATHS = /usr/local/Cellar/ghc/7.4.2/lib/ghc-7.4.2/include/
+LIBRARY_SEARCH_PATHS = /usr/local/Cellar/ghc/7.4.2/lib/ghc-7.4.2/**
