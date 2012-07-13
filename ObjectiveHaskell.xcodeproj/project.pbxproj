@@ -435,13 +435,6 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_LDFLAGS = (
-					"-lHSrts",
-					"-lHSghc-7.4.2",
-					"-lHSbase-4.5.1.0",
-					"-lHSghc-prim-0.2.0.0",
-					"-lHSinteger-gmp-0.4.0.0",
-				);
 				SDKROOT = macosx;
 				TEST_AFTER_BUILD = YES;
 			};
@@ -456,13 +449,6 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_LDFLAGS = (
-					"-lHSrts",
-					"-lHSghc-7.4.2",
-					"-lHSbase-4.5.1.0",
-					"-lHSghc-prim-0.2.0.0",
-					"-lHSinteger-gmp-0.4.0.0",
-				);
 				SDKROOT = macosx;
 				TEST_AFTER_BUILD = YES;
 			};
@@ -473,6 +459,13 @@
 			baseConfigurationReference = D090622B15B0DE72001CAC43 /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
+				OTHER_LDFLAGS = (
+					"-lHSrts",
+					"-lHSghc-7.4.2",
+					"-lHSbase-4.5.1.0",
+					"-lHSghc-prim-0.2.0.0",
+					"-lHSinteger-gmp-0.4.0.0",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -482,6 +475,13 @@
 			baseConfigurationReference = D090622B15B0DE72001CAC43 /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
+				OTHER_LDFLAGS = (
+					"-lHSrts",
+					"-lHSghc-7.4.2",
+					"-lHSbase-4.5.1.0",
+					"-lHSghc-prim-0.2.0.0",
+					"-lHSinteger-gmp-0.4.0.0",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -493,11 +493,6 @@
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
 				INFOPLIST_FILE = "ObjectiveHaskellTests/ObjectiveHaskellTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"$(OTHER_LDFLAGS)",
-					"-liconv",
-					"-lffi",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -510,11 +505,6 @@
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
 				INFOPLIST_FILE = "ObjectiveHaskellTests/ObjectiveHaskellTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"$(OTHER_LDFLAGS)",
-					"-liconv",
-					"-lffi",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};

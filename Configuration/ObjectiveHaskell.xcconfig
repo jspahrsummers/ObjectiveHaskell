@@ -9,3 +9,7 @@
 // Add GHC header and library paths
 HEADER_SEARCH_PATHS = /usr/local/Cellar/ghc/7.4.2/lib/ghc-7.4.2/include/
 LIBRARY_SEARCH_PATHS = /usr/local/Cellar/ghc/7.4.2/lib/ghc-7.4.2/**
+
+// Loads some dynamic libraries needed by GHC, and forces loading of categories
+// in libObjectiveHaskell.a
+OTHER_LDFLAGS = -liconv -lffi -ObjC
