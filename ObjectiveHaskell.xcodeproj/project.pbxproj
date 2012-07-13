@@ -16,6 +16,33 @@
 		D090620E15B0DD38001CAC43 /* ObjectiveHaskellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D090620D15B0DD38001CAC43 /* ObjectiveHaskellTests.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		D090623115B0DF58001CAC43 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.hs";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE)_stub.h",
+				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE).o",
+			);
+			script = "/usr/local/bin/ghc -c -O \"$INPUT_FILE_PATH\"";
+		};
+		D090624B15B0E4D5001CAC43 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.hs";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE)_stub.h",
+				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE).o",
+			);
+			script = "/usr/local/bin/ghc -c -O \"$INPUT_FILE_PATH\"";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXContainerItemProxy section */
 		D090620315B0DD38001CAC43 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -249,6 +276,7 @@
 				D09061E915B0DD37001CAC43 /* Headers */,
 			);
 			buildRules = (
+				D090623115B0DF58001CAC43 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
