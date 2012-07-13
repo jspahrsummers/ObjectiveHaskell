@@ -13,6 +13,7 @@
 		D090620515B0DD38001CAC43 /* libObjectiveHaskell.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EB15B0DD37001CAC43 /* libObjectiveHaskell.a */; };
 		D090620B15B0DD38001CAC43 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D090620915B0DD38001CAC43 /* InfoPlist.strings */; };
 		D090620E15B0DD38001CAC43 /* ObjectiveHaskellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D090620D15B0DD38001CAC43 /* ObjectiveHaskellTests.m */; };
+		D090624A15B0E4C0001CAC43 /* FibTest.hs in Sources */ = {isa = PBXBuildFile; fileRef = D090624815B0E450001CAC43 /* FibTest.hs */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -85,6 +86,7 @@
 		D090623A15B0E2DA001CAC43 /* ObjectiveHaskell-Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Profile.xcconfig"; sourceTree = "<group>"; };
 		D090623B15B0E2DA001CAC43 /* ObjectiveHaskell-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Release.xcconfig"; sourceTree = "<group>"; };
 		D090623C15B0E2DA001CAC43 /* ObjectiveHaskell.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ObjectiveHaskell.xcconfig; sourceTree = "<group>"; };
+		D090624815B0E450001CAC43 /* FibTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FibTest.hs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,8 +171,8 @@
 		D090620615B0DD38001CAC43 /* ObjectiveHaskellTests */ = {
 			isa = PBXGroup;
 			children = (
-				D090620C15B0DD38001CAC43 /* ObjectiveHaskellTests.h */,
-				D090620D15B0DD38001CAC43 /* ObjectiveHaskellTests.m */,
+				D090624515B0E43C001CAC43 /* Cocoa */,
+				D090624715B0E43F001CAC43 /* Haskell */,
 				D090620715B0DD38001CAC43 /* Supporting Files */,
 			);
 			path = ObjectiveHaskellTests;
@@ -259,6 +261,23 @@
 			path = "Mac OS X";
 			sourceTree = "<group>";
 		};
+		D090624515B0E43C001CAC43 /* Cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				D090620C15B0DD38001CAC43 /* ObjectiveHaskellTests.h */,
+				D090620D15B0DD38001CAC43 /* ObjectiveHaskellTests.m */,
+			);
+			name = Cocoa;
+			sourceTree = "<group>";
+		};
+		D090624715B0E43F001CAC43 /* Haskell */ = {
+			isa = PBXGroup;
+			children = (
+				D090624815B0E450001CAC43 /* FibTest.hs */,
+			);
+			name = Haskell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -300,6 +319,7 @@
 				D09061FD15B0DD38001CAC43 /* ShellScript */,
 			);
 			buildRules = (
+				D090624B15B0E4D5001CAC43 /* PBXBuildRule */,
 			);
 			dependencies = (
 				D090620415B0DD38001CAC43 /* PBXTargetDependency */,
@@ -375,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D090624A15B0E4C0001CAC43 /* FibTest.hs in Sources */,
 				D090620E15B0DD38001CAC43 /* ObjectiveHaskellTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

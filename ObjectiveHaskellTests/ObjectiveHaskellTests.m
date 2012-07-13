@@ -7,21 +7,25 @@
 //
 
 #import "ObjectiveHaskellTests.h"
+#import "FibTest_stub.h"
 
 @implementation ObjectiveHaskellTests
 
-- (void)setUp
-{
+- (void)setUp {
     [super setUp];
-    
-    // Set-up code here.
+
+    hs_init(NULL, NULL);
 }
 
-- (void)tearDown
-{
-    // Tear-down code here.
-    
+- (void)tearDown {
+    hs_exit();
+
     [super tearDown];
+}
+
+- (void)testFibonacci {
+    STAssertEquals(3, fibonacci_hs(4), @"");
+    STAssertEquals(5, fibonacci_hs(5), @"");
 }
 
 @end

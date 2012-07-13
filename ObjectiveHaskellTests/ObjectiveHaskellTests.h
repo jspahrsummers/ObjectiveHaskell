@@ -7,6 +7,7 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "ObjectiveHaskell.h"
 
 @interface ObjectiveHaskellTests : SenTestCase
 
