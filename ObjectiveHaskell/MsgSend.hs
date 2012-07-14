@@ -12,6 +12,8 @@ import ObjectiveHaskell.ObjC
 
 -- Given a name, a return type, and a list of argument types (without self and _cmd),
 -- declares a variant of objc_msgSend with the correct type.
+--
+-- TODO: accept a selector with which the method should be associated (so it doesn't have to be provided manually each time)
 declMethod :: String -> Name -> [Name] -> DecsQ
 declMethod name ret methodArgs = do
     let args = ''Id : ''Sel : methodArgs

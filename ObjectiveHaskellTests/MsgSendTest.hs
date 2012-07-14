@@ -7,6 +7,9 @@ import ObjectiveHaskell.ObjC
 
 declMethod "stringWithString" ''Id [''Id]
 
-msgSendTest c s = stringWithString c s
+msgSendTest s = do
+    sel <- selector "stringWithString:"
+    stringWithString (getClass "NSString") sel s
+
 foreign export ccall
-    msgSendTest :: Id -> Sel -> Id -> IO Id
+    msgSendTest :: Id -> IO Id

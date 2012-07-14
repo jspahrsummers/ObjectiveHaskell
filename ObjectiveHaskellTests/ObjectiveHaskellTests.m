@@ -18,7 +18,7 @@
 }
 
 - (void)testMsgSend {
-    NSString *str = (__bridge id)msgSendTest((__bridge void *)[NSString class], @selector(stringWithString:), (__bridge void *)@"foo");
+    NSString *str = msgSendTest(@"foo");
     STAssertEqualObjects(str, @"foo", @"");
 }
 
