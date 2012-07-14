@@ -8,12 +8,18 @@
 
 #import "ObjectiveHaskellTests.h"
 #import "FibTest_stub.h"
+#import "MsgSendTest_stub.h"
 
 @implementation ObjectiveHaskellTests
 
 - (void)testFibonacci {
     STAssertEquals(3, fibonacci_hs(4), @"");
     STAssertEquals(5, fibonacci_hs(5), @"");
+}
+
+- (void)testMsgSend {
+    NSString *str = (__bridge id)msgSendTest((__bridge void *)[NSString class], @selector(stringWithString:), (__bridge void *)@"foo");
+    STAssertEqualObjects(str, @"foo", @"");
 }
 
 @end

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D03E2D2915B14C8500679DB0 /* MsgSend.hs in Sources */ = {isa = PBXBuildFile; fileRef = D0E525ED15B1122500C13802 /* MsgSend.hs */; };
+		D03E2D2C15B150CA00679DB0 /* MsgSendTest.hs in Resources */ = {isa = PBXBuildFile; fileRef = D03E2D2B15B150CA00679DB0 /* MsgSendTest.hs */; };
+		D03E2D2E15B1599A00679DB0 /* ObjC.hs in Sources */ = {isa = PBXBuildFile; fileRef = D03E2D2D15B1599200679DB0 /* ObjC.hs */; };
+		D03E2D2F15B15BB600679DB0 /* MsgSendTest.hs in Sources */ = {isa = PBXBuildFile; fileRef = D03E2D2B15B150CA00679DB0 /* MsgSendTest.hs */; };
 		D09061EF15B0DD37001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
 		D090620115B0DD38001CAC43 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D090620015B0DD38001CAC43 /* SenTestingKit.framework */; };
 		D090620215B0DD38001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
@@ -40,7 +44,7 @@
 				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE)_stub.h",
 				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE).o",
 			);
-			script = "/usr/local/bin/ghc -c -O \"$INPUT_FILE_PATH\"";
+			script = "/usr/local/bin/ghc -lobjc -c -O \"$INPUT_FILE_PATH\"";
 		};
 /* End PBXBuildRule section */
 
@@ -55,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D03E2D2B15B150CA00679DB0 /* MsgSendTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MsgSendTest.hs; sourceTree = "<group>"; };
+		D03E2D2D15B1599200679DB0 /* ObjC.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjC.hs; sourceTree = "<group>"; };
 		D09061EB15B0DD37001CAC43 /* libObjectiveHaskell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObjectiveHaskell.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09061EE15B0DD37001CAC43 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D09061F115B0DD37001CAC43 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -89,6 +95,7 @@
 		D090623C15B0E2DA001CAC43 /* ObjectiveHaskell.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ObjectiveHaskell.xcconfig; sourceTree = "<group>"; };
 		D090624815B0E450001CAC43 /* FibTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FibTest.hs; sourceTree = "<group>"; };
 		D090624E15B0E613001CAC43 /* NSObject+OHInitializationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+OHInitializationExtensions.m"; sourceTree = "<group>"; };
+		D0E525ED15B1122500C13802 /* MsgSend.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MsgSend.hs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				D09061F715B0DD37001CAC43 /* ObjectiveHaskell.h */,
+				D0E525EB15B111E500C13802 /* Haskell */,
 				D09061F515B0DD37001CAC43 /* Supporting Files */,
 			);
 			path = ObjectiveHaskell;
@@ -277,6 +285,16 @@
 			isa = PBXGroup;
 			children = (
 				D090624815B0E450001CAC43 /* FibTest.hs */,
+				D03E2D2B15B150CA00679DB0 /* MsgSendTest.hs */,
+			);
+			name = Haskell;
+			sourceTree = "<group>";
+		};
+		D0E525EB15B111E500C13802 /* Haskell */ = {
+			isa = PBXGroup;
+			children = (
+				D0E525ED15B1122500C13802 /* MsgSend.hs */,
+				D03E2D2D15B1599200679DB0 /* ObjC.hs */,
 			);
 			name = Haskell;
 			sourceTree = "<group>";
@@ -365,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D090620B15B0DD38001CAC43 /* InfoPlist.strings in Resources */,
+				D03E2D2C15B150CA00679DB0 /* MsgSendTest.hs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +411,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D090625015B0E613001CAC43 /* NSObject+OHInitializationExtensions.m in Sources */,
+				D03E2D2915B14C8500679DB0 /* MsgSend.hs in Sources */,
+				D03E2D2E15B1599A00679DB0 /* ObjC.hs in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D090624A15B0E4C0001CAC43 /* FibTest.hs in Sources */,
+				D03E2D2F15B15BB600679DB0 /* MsgSendTest.hs in Sources */,
 				D090620E15B0DD38001CAC43 /* ObjectiveHaskellTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
