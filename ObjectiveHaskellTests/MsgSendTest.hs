@@ -2,14 +2,18 @@
 
 module MsgSendTest where
 
+import Control.Applicative
 import ObjectiveHaskell.MsgSend
 import ObjectiveHaskell.ObjC
 
 declMethod "stringWithString" ''Id [''Id]
 
-msgSendTest s = do
+msgSendTest unsafeStr = do
+    str <- retainedId unsafeStr
+    cl <- getClass "NSString"
     sel <- selector "stringWithString:"
-    stringWithString (getClass "NSString") sel s
+
+    unsafeId <$> stringWithString cl sel str
 
 foreign export ccall
-    msgSendTest :: Id -> IO Id
+    msgSendTest :: UnsafeId -> IO UnsafeId
