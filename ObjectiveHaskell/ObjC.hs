@@ -2,7 +2,7 @@
 
 module ObjectiveHaskell.ObjC (
         Sel, Class, Id, UnsafeId,
-        retainedId, unretainedId, unsafeId,
+        retainedId, unretainedId, autorelease,
         p_objc_msgSend,
         selector, getClass
     ) where
@@ -11,7 +11,6 @@ import Control.Applicative
 import Foreign.C.String
 import Foreign.C.Types
 import Foreign.ForeignPtr.Safe
-import Foreign.ForeignPtr.Unsafe
 import Foreign.Ptr
 
 type Sel = Ptr ()
@@ -29,12 +28,14 @@ retainedId obj = newForeignPtr p_release obj <* retain obj
 unretainedId :: UnsafeId -> IO Id
 unretainedId obj = newForeignPtr_ obj
 
--- Converts an Id into an UnsafeId without retaining it.
---
--- This may cause -release to be called on the object (to balance out a previous -retain),
--- if no more Id references remain, and so should only be used on objects that are retained externally.
-unsafeId :: Id -> UnsafeId
-unsafeId = unsafeForeignPtrToPtr
+-- Retains then autoreleases an Id, returning an UnsafeId.
+-- The resulting UnsafeId can be used safely until the autorelease pool is drained.
+autorelease :: Id -> IO UnsafeId
+autorelease obj =
+    withForeignPtr obj $ \obj -> do
+        u <- retain obj
+        sel <- selector "autorelease"
+        autorelease_dyn (castFunPtr p_objc_msgSend) u sel
 
 -- Maps a string to a selector.
 selector :: String -> IO Sel
@@ -59,3 +60,6 @@ foreign import ccall unsafe "CoreFoundation/CoreFoundation.h CFRetain"
 
 foreign import ccall safe "CoreFoundation/CoreFoundation.h &CFRelease"
     p_release :: FunPtr (UnsafeId -> IO ())
+
+foreign import ccall unsafe "dynamic"
+    autorelease_dyn :: FunPtr (UnsafeId -> Sel -> IO UnsafeId) -> (UnsafeId -> Sel -> IO UnsafeId)

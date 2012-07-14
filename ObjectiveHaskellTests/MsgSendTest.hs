@@ -13,7 +13,7 @@ msgSendTest unsafeStr = do
     cl <- getClass "NSString"
     sel <- selector "stringWithString:"
 
-    unsafeId <$> stringWithString cl sel str
+    stringWithString cl sel str >>= autorelease
 
 foreign export ccall
     msgSendTest :: UnsafeId -> IO UnsafeId
