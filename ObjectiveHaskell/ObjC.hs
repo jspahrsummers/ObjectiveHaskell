@@ -2,7 +2,7 @@
 
 module ObjectiveHaskell.ObjC (
         Sel, Class, Id, UnsafeId,
-        retainedId, unretainedId,
+        retainedId, unretainedId, unsafeId,
         p_objc_msgSend,
         selector, getClass
     ) where
@@ -11,6 +11,7 @@ import Control.Applicative
 import Foreign.C.String
 import Foreign.C.Types
 import Foreign.ForeignPtr.Safe
+import Foreign.ForeignPtr.Unsafe
 import Foreign.Ptr
 
 type Sel = Ptr ()
@@ -20,19 +21,26 @@ type Imp = FunPtr (UnsafeId -> Sel -> IO UnsafeId)
 type Id = ForeignPtr ()
 type Class = Id
 
--- Retains an UnsafeId, and converts it into a Id, which will be released when the last reference to it disappears
+-- Retains an UnsafeId, and converts it into a Id, which will be released when the last reference to it disappears.
 retainedId :: UnsafeId -> IO Id
 retainedId obj = newForeignPtr p_release obj <* retain obj
 
--- Converts an UnsafeId into an Id, without any memory management
+-- Converts an UnsafeId into an Id, without any memory management.
 unretainedId :: UnsafeId -> IO Id
 unretainedId obj = newForeignPtr_ obj
 
--- Maps a string to a selector
+-- Converts an Id into an UnsafeId without retaining it.
+--
+-- This may cause -release to be called on the object (to balance out a previous -retain),
+-- if no more Id references remain, and so should only be used on objects that are retained externally.
+unsafeId :: Id -> UnsafeId
+unsafeId = unsafeForeignPtrToPtr
+
+-- Maps a string to a selector.
 selector :: String -> IO Sel
 selector s = withCString s sel_registerName
 
--- Returns the class by the given name
+-- Returns the class by the given name.
 getClass :: String -> IO Class
 getClass name = withCString name (unretainedId . objc_getClass)
 
