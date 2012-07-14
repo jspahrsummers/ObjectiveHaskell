@@ -24,7 +24,7 @@ You will also need to have the latest `haskell-platform` installed via [Homebrew
     - Add a build rule for files matching `*.hs` which executes the following
       script:
       
-      `/usr/local/bin/ghc -c -O "$INPUT_FILE_PATH"`.
+      `/usr/local/bin/ghc -c -O "$INPUT_FILE_PATH"`
       
       and has the output files:
 
