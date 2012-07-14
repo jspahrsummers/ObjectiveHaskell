@@ -32,7 +32,7 @@
 				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE)_stub.h",
 				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE).o",
 			);
-			script = "/usr/local/bin/ghc -framework CoreFoundation -c -O \"$INPUT_FILE_PATH\"";
+			script = Configuration/compileHaskell.sh;
 		};
 		D090624B15B0E4D5001CAC43 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
@@ -44,7 +44,7 @@
 				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE)_stub.h",
 				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE).o",
 			);
-			script = "/usr/local/bin/ghc -lobjc -framework CoreFoundation -c -O \"$INPUT_FILE_PATH\"";
+			script = Configuration/compileHaskell.sh;
 		};
 /* End PBXBuildRule section */
 

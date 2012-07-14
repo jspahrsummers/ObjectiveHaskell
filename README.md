@@ -24,9 +24,9 @@ You will also need to have the latest `haskell-platform` installed via [Homebrew
  4. For each target in your project that may have Haskell sources:
     - Set up a dependency on the ObjectiveHaskell target.
     - Add a build rule for files matching `*.hs` which executes the following
-      script:
+      script (where `ObjectiveHaskell` is the path to the repository):
       
-      `/usr/local/bin/ghc -c -O "$INPUT_FILE_PATH"`
+      `ObjectiveHaskell/Configuration/compileHaskell.sh`
       
       and has the output files:
 
