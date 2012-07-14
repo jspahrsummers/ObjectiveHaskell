@@ -14,14 +14,11 @@ import ObjectiveHaskell.ObjC
 data MethodSig = MethodSig Type [Type]
     deriving (Eq, Show)
 
-idType = ConT ''Id
-unsafeIdType = ConT ''UnsafeId
-
 -- Returns the function type equivalent to a method signature.
 funcTypeFromMethodSig :: MethodSig -> Q Type
 funcTypeFromMethodSig (MethodSig ret params) =
     let mapf :: Type -> Q Type
-        mapf t | t == idType = return unsafeIdType
+        mapf t | t == ConT ''Id = return $ ConT ''UnsafeId
                | otherwise = return t
 
         foldf :: Q Type -> Q Type -> Q Type
@@ -41,17 +38,12 @@ singleClauseFunc name params bodyExp =
     let c = clause (map varP params) (normalB bodyExp) []
     in funD name [c]
 
--- Turns a non-empty list of expressions into zero or more left-associative function applications
-applyl :: [Exp] -> Q Exp
-applyl exprs =
-    let f :: Exp -> Exp -> Q Exp
-        f l r = return $ AppE l r
-    in foldM f (head exprs) (tail exprs)
-
+-- Given a list of argument types and names, applies each argument to expr in a left-associative fashion.
+-- Any arguments of type Id will automatically be mapped to an UnsafeId.
 applyMethodArgs :: Exp -> [Type] -> [Name] -> Q Exp
 applyMethodArgs expr [] [] = return expr
 applyMethodArgs expr (t:argTypes) (arg:args)
-    | t == idType =
+    | t == ConT ''Id =
         let compoundExpr = AppE expr (VarE arg)
             lamBody = applyMethodArgs compoundExpr argTypes args
             lamPat = varP arg
@@ -62,9 +54,11 @@ applyMethodArgs expr (t:argTypes) (arg:args)
         let compoundExpr = AppE expr (VarE arg)
         in applyMethodArgs compoundExpr argTypes args
 
+-- Wraps the given expression as necessary to match the given type.
+-- This is used to map UnsafeId return values to Id.
 wrapReturnedExpr :: Q Exp -> Type -> Q Exp
 wrapReturnedExpr expr t
-    | t == idType = [| $expr >>= retainedId |]
+    | t == ConT ''Id = [| $expr >>= retainedId |]
     | otherwise = expr
 
 -- Given a name, a return type, and a list of parameter types (without self and _cmd),
@@ -77,7 +71,7 @@ declMethod :: String -> Name -> [Name] -> Q [Dec]
 declMethod name ret params = do
     -- Create a method signature from the given types
     let baseRet = ConT ret
-        paramTypes = idType : (ConT ''Sel) : (map ConT params)
+        paramTypes = ConT ''Id : (ConT ''Sel) : (map ConT params)
         methodSig = MethodSig baseRet paramTypes
 
     uniqArgNames <- argumentNames $ length params
