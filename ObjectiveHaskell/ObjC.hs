@@ -1,7 +1,8 @@
 {-# LANGUAGE ForeignFunctionInterface #-}
 
 module ObjectiveHaskell.ObjC (
-        Sel, Class, Id,
+        Sel, Class, Id, UnsafeId,
+        retainedId, unretainedId,
         p_objc_msgSend,
         selector, getClass
     ) where
@@ -45,8 +46,8 @@ foreign import ccall unsafe "objc/runtime.h sel_registerName"
 foreign import ccall unsafe "objc/runtime.h objc_getClass"
     objc_getClass :: CString -> UnsafeId
 
-foreign import ccall unsafe "OHMemoryManagement.h OHRetain"
+foreign import ccall unsafe "CoreFoundation/CoreFoundation.h CFRetain"
     retain :: UnsafeId -> IO UnsafeId
 
-foreign import ccall safe "OHMemoryManagement.h &OHRelease"
+foreign import ccall safe "CoreFoundation/CoreFoundation.h &CFRelease"
     p_release :: FunPtr (UnsafeId -> IO ())
