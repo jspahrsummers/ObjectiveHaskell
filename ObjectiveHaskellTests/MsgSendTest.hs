@@ -10,7 +10,7 @@ declMethod "stringWithString" ''Id [''Id]
 
 msgSendTest unsafeStr = do
     str <- retainedId unsafeStr
-    cl <- getClass "NSString"
+    cl <- getClass "NSMutableString"
     sel <- selector "stringWithString:"
 
     stringWithString cl sel str >>= autorelease
