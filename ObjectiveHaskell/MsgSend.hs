@@ -31,7 +31,7 @@ funcTypeFromMethodSig (MethodSig ret params) =
 argumentNames :: Int -> Q [Name]
 argumentNames n = mapM (\s -> newName s) $ take n $ repeat "a"
 
--- Given a function name, a list of parameter names, and a body expression,
+-- Given a function name, parameter names, and a body expression,
 -- returns a function declaration with a single clause.
 singleClauseFunc :: Name -> [Name] -> Q Exp -> Q Dec
 singleClauseFunc name params bodyExp =
@@ -61,17 +61,21 @@ wrapReturnedExpr expr t
     | t == ConT ''Id = [| $expr >>= retainedId |]
     | otherwise = expr
 
--- Given a name, a return type, and a list of parameter types (without self and _cmd),
+-- Creates an expression that returns a IO Sel of the given name.
+selectorExpr :: String -> Q Exp
+selectorExpr str = [| selector $(litE $ StringL str) |]
+
+-- Given a name (as a string), selector, a return type, and a list of parameter types (without self and _cmd),
 -- declares a variant of objc_msgSend with the correct type.
 --
 -- Any arguments or return values of type Id (and not a synonym thereof) will be automatically memory-managed.
 --
 -- TODO: accept a selector with which the method should be associated (so it doesn't have to be provided manually each time)
-declMethod :: String -> Name -> [Name] -> Q [Dec]
-declMethod name ret params = do
+declMethod :: String -> String -> Name -> [Name] -> Q [Dec]
+declMethod name selName ret params = do
     -- Create a method signature from the given types
     let baseRet = ConT ret
-        paramTypes = ConT ''Id : (ConT ''Sel) : (map ConT params)
+        paramTypes = (ConT ''Id) : (ConT ''Sel) : (map ConT params)
         methodSig = MethodSig baseRet paramTypes
 
     uniqArgNames <- argumentNames $ length params
@@ -86,9 +90,21 @@ declMethod name ret params = do
     let funcType = funcTypeFromMethodSig methodSig
         dynDecl = forImpD CCall Safe "dynamic" dynName [t| FunPtr $funcType -> $funcType |]
 
-        -- Apply the given arguments to the function returned by the trampoline
-        argNames = (mkName "self") : (mkName "_cmd") : uniqArgNames
+        -- The arguments that will be processed by applyMethodArgs
+        -- _cmd here is effectively a "hidden" argument which will be from a 'do' expression
+        cmdName = (mkName "_cmd")
+        argNames = (mkName "self") : cmdName : uniqArgNames
+
+        -- The function we'll expose doesn't need a _cmd parameter
+        paramNames = (head argNames) : (drop 2 argNames)
+
+        -- Apply the given arguments, including _cmd, to the function returned by the trampoline
         funcBody = applyMethodArgs (ParensE funcptrCastExp) paramTypes argNames
-        funcDecl = singleClauseFunc (mkName name) argNames $ wrapReturnedExpr funcBody baseRet
+
+        -- "do _cmd <- selector fn_name; body >>= retainedId"
+        doBody = doE [bindS (varP cmdName) (selectorExpr selName),
+                      noBindS $ wrapReturnedExpr funcBody baseRet]
+
+        funcDecl = singleClauseFunc (mkName name) paramNames doBody
 
     sequence [dynDecl, funcDecl]
