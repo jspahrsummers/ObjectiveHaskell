@@ -8,12 +8,37 @@
 
 #import "ObjectiveHaskellTests.h"
 #import "FibTest_stub.h"
+#import "MsgSendTest_stub.h"
 
 @implementation ObjectiveHaskellTests
 
 - (void)testFibonacci {
     STAssertEquals(3, fibonacci_hs(4), @"");
     STAssertEquals(5, fibonacci_hs(5), @"");
+}
+
+- (void)testMsgSend {
+    // used to test the memory management of the string returned from Haskell
+    __weak id weakStr = nil;
+
+    @autoreleasepool {
+        {
+            __attribute__((objc_precise_lifetime)) NSMutableString *str = msgSendTest([@"foo" mutableCopy]);
+
+            // not necessary for normal code -- just for memory management testing
+            hs_perform_gc();
+
+            weakStr = str;
+            STAssertNotNil(weakStr, @"");
+
+            STAssertEqualObjects(str, @"foo", @"");
+        }
+
+        // the string shouldn't be released until the autorelease pool is popped
+        STAssertNotNil(weakStr, @"");
+    }
+
+    STAssertNil(weakStr, @"");
 }
 
 @end

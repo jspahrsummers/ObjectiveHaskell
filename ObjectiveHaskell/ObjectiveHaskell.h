@@ -7,3 +7,7 @@
 //
 
 #import "HsFFI.h"
+
+// This makes Haskell functions compatible with ARC, but will effectively
+// prevent ever passing "primitive" C pointers to or from Haskell
+#define HsPtr id
