@@ -6,7 +6,7 @@ import Control.Applicative
 import ObjectiveHaskell.MsgSend
 import ObjectiveHaskell.ObjC
 
-declMethod "stringWithString" "stringWithString:" ''Id [''Id]
+declMessage "stringWithString" "stringWithString:" ''Id [''Id]
 
 msgSendTest unsafeStr = do
     str <- retainedId unsafeStr

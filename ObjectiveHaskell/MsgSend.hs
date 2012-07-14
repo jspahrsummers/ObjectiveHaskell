@@ -1,7 +1,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 
 module ObjectiveHaskell.MsgSend
-    (declMethod)
+    (declMessage)
     where
 
 import Control.Monad
@@ -71,8 +71,8 @@ selectorExpr str = [| selector $(litE $ StringL str) |]
 -- Any arguments or return values of type Id (and not a synonym thereof) will be automatically memory-managed.
 --
 -- TODO: accept a selector with which the method should be associated (so it doesn't have to be provided manually each time)
-declMethod :: String -> String -> Name -> [Name] -> Q [Dec]
-declMethod name selName ret params = do
+declMessage :: String -> String -> Name -> [Name] -> Q [Dec]
+declMessage name selName ret params = do
     -- Create a method signature from the given types
     let baseRet = ConT ret
         paramTypes = (ConT ''Id) : (ConT ''Sel) : (map ConT params)
