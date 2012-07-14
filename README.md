@@ -24,12 +24,12 @@ You will also need to have the latest `haskell-platform` installed via [Homebrew
     - Add a build rule for files matching `*.hs` which executes the following
       script:
       
-          /usr/local/bin/ghc -c -O "$INPUT_FILE_PATH".
+      `/usr/local/bin/ghc -c -O "$INPUT_FILE_PATH"`.
       
       and has the output files:
 
-        * $(INPUT_FILE_DIR)/$(INPUT_FILE_BASE)_stub.h
-        * $(INPUT_FILE_DIR)/$(INPUT_FILE_BASE).o
+        * `$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE)_stub.h`
+        * `$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE).o`
  5. `#import "ObjectiveHaskell.h"` in your project's prefix header.
  6. In files where you want to use Haskell functions, `#import "MODULE_stub.h"`, where `MODULE` is the name of your Haskell file.
 
