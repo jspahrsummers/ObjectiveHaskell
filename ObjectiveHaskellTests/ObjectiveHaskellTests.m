@@ -18,12 +18,20 @@
 }
 
 - (void)testMsgSend {
+    NSString *str = @"foo";
+    NSMutableString *mutableStr = msgSendTest(str);
+
+    STAssertEqualObjects(str, mutableStr, @"");
+    STAssertFalse(str == mutableStr, @"");
+}
+
+- (void)testMsgSendMemoryManagement {
     // used to test the memory management of the string returned from Haskell
     __weak id weakStr = nil;
 
     @autoreleasepool {
         {
-            __attribute__((objc_precise_lifetime)) NSMutableString *str = msgSendTest([@"foo" mutableCopy]);
+            __attribute__((objc_precise_lifetime)) NSMutableString *str = msgSendTest(@"foo");
 
             // not necessary for normal code -- just for memory management testing
             hs_perform_gc();
