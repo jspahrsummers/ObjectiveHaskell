@@ -1,8 +1,9 @@
 {-# LANGUAGE ForeignFunctionInterface #-}
 
 module ObjectiveHaskell.ObjC (
-        Sel, Id, nil,
+        Sel, Class, Id, Imp, nil,
         p_objc_msgSend,
+        retain, release,
         selector, getClass
     ) where
 
@@ -16,18 +17,25 @@ nil = nullPtr
 
 type Sel = Ptr ()
 type Class = Ptr ()
+type Imp = FunPtr (Id -> Sel -> IO Id)
 
 -- TODO: this should really be a ForeignPtr with retain/release
 type Id = Ptr ()
 
 foreign import ccall safe "objc/runtime.h &objc_msgSend"
-    p_objc_msgSend :: FunPtr (Id -> Sel -> IO Id)
+    p_objc_msgSend :: Imp
 
 foreign import ccall unsafe "objc/runtime.h sel_registerName"
     sel_registerName :: CString -> IO Sel
 
 foreign import ccall unsafe "objc/runtime.h objc_getClass"
     objc_getClass :: CString -> Class
+
+foreign import ccall unsafe "OHMemoryManagement.h OHRetain"
+    retain :: Id -> IO Id
+
+foreign import ccall safe "OHMemoryManagement.h OHRelease"
+    release :: Id -> IO ()
 
 -- Maps a string to a selector
 selector :: String -> IO Sel

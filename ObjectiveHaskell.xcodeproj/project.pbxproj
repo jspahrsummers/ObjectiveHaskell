@@ -11,6 +11,8 @@
 		D03E2D2C15B150CA00679DB0 /* MsgSendTest.hs in Resources */ = {isa = PBXBuildFile; fileRef = D03E2D2B15B150CA00679DB0 /* MsgSendTest.hs */; };
 		D03E2D2E15B1599A00679DB0 /* ObjC.hs in Sources */ = {isa = PBXBuildFile; fileRef = D03E2D2D15B1599200679DB0 /* ObjC.hs */; };
 		D03E2D2F15B15BB600679DB0 /* MsgSendTest.hs in Sources */ = {isa = PBXBuildFile; fileRef = D03E2D2B15B150CA00679DB0 /* MsgSendTest.hs */; };
+		D03E2D3515B1709A00679DB0 /* OHMemoryManagement.h in Headers */ = {isa = PBXBuildFile; fileRef = D03E2D3315B1709A00679DB0 /* OHMemoryManagement.h */; };
+		D03E2D3615B1709A00679DB0 /* OHMemoryManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = D03E2D3415B1709A00679DB0 /* OHMemoryManagement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D09061EF15B0DD37001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
 		D090620115B0DD38001CAC43 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D090620015B0DD38001CAC43 /* SenTestingKit.framework */; };
 		D090620215B0DD38001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
@@ -61,6 +63,8 @@
 /* Begin PBXFileReference section */
 		D03E2D2B15B150CA00679DB0 /* MsgSendTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MsgSendTest.hs; sourceTree = "<group>"; };
 		D03E2D2D15B1599200679DB0 /* ObjC.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjC.hs; sourceTree = "<group>"; };
+		D03E2D3315B1709A00679DB0 /* OHMemoryManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHMemoryManagement.h; sourceTree = "<group>"; };
+		D03E2D3415B1709A00679DB0 /* OHMemoryManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHMemoryManagement.m; sourceTree = "<group>"; };
 		D09061EB15B0DD37001CAC43 /* libObjectiveHaskell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObjectiveHaskell.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09061EE15B0DD37001CAC43 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D09061F115B0DD37001CAC43 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -120,6 +124,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D03E2D3015B1706600679DB0 /* Cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				D03E2D3315B1709A00679DB0 /* OHMemoryManagement.h */,
+				D03E2D3415B1709A00679DB0 /* OHMemoryManagement.m */,
+			);
+			name = Cocoa;
+			sourceTree = "<group>";
+		};
 		D09061E015B0DD37001CAC43 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				D09061F715B0DD37001CAC43 /* ObjectiveHaskell.h */,
+				D03E2D3015B1706600679DB0 /* Cocoa */,
 				D0E525EB15B111E500C13802 /* Haskell */,
 				D09061F515B0DD37001CAC43 /* Supporting Files */,
 			);
@@ -306,6 +320,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03E2D3515B1709A00679DB0 /* OHMemoryManagement.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +428,7 @@
 				D090625015B0E613001CAC43 /* NSObject+OHInitializationExtensions.m in Sources */,
 				D03E2D2915B14C8500679DB0 /* MsgSend.hs in Sources */,
 				D03E2D2E15B1599A00679DB0 /* ObjC.hs in Sources */,
+				D03E2D3615B1709A00679DB0 /* OHMemoryManagement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
