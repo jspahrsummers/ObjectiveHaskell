@@ -2,7 +2,7 @@
 
 module CollectionsTest where
 
-import Data.HashTable as HashTable
+import Data.Map as Map
 import Data.Sequence as Seq
 import ObjectiveHaskell.NSArray
 import ObjectiveHaskell.NSDictionary
@@ -43,7 +43,6 @@ setFooToBar unsafeObj =
             foo <- toNSString "foo"
             bar <- toNSString "bar"
 
-            HashTable.update tbl foo bar
-            toNSDictionary tbl
+            toNSDictionary $ insert foo bar tbl
 
     in (setFooToBar' =<< unretainedId unsafeObj) >>= autorelease
