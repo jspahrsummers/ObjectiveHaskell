@@ -1,7 +1,5 @@
 Tools for making it easier to integrate Haskell and Objective-C.
 
-Right now, the goal is to make it easy to invoke Haskell from Objective-C. Eventually, invoking Objective-C from Haskell will receive attention too.
-
 **Only Mac OS X is supported at the moment. iOS may be supported in the future.**
 
 # Getting Started
