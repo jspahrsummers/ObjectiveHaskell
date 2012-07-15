@@ -10,10 +10,4 @@ declMessage "stringWithString" "stringWithString:" ''Id [''Id]
 mutableStringWithString :: Id -> IO Id
 mutableStringWithString str = getClass "NSMutableString" >>= stringWithString str
 
-foreign export ccall
-    msgSendTest :: UnsafeId -> IO UnsafeId
-
--- Bridging points where Objective-C might pass in objects require a bit more work,
--- to map UnsafeId to Id and back.
-msgSendTest unsafeStr =
-    (mutableStringWithString =<< retainedId unsafeStr) >>= autorelease
+exportFunc "msgSendTest" [t| UnsafeId -> IO UnsafeId |] 'mutableStringWithString

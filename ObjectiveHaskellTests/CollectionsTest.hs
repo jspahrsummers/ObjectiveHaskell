@@ -7,40 +7,26 @@ import ObjectiveHaskell.NSDictionary
 import ObjectiveHaskell.NSString
 import ObjectiveHaskell.ObjC
 
-foreign export ccall
-    addFoobarToArray :: UnsafeId -> IO UnsafeId
+appendFoobar' :: Id -> IO Id
+appendFoobar' nsstr = do
+    str <- fromNSString nsstr
+    toNSString $ str ++ "foobar"
 
-foreign export ccall
-    setFooToBar :: UnsafeId -> IO UnsafeId
+addFoobarToArray' :: Id -> IO Id
+addFoobarToArray' nsarr = do
+    s <- fromNSArray nsarr
+    foobar <- toNSString "foobar"
 
-foreign export ccall
-    appendFoobar :: UnsafeId -> IO UnsafeId
+    toNSArray $ s |> foobar
 
-appendFoobar unsafeObj =
-    let appendFoobar' :: Id -> IO Id
-        appendFoobar' nsstr = do
-            str <- fromNSString nsstr
-            toNSString $ str ++ "foobar"
+setFooToBar' :: Id -> IO Id
+setFooToBar' nsdict = do
+    tbl <- fromNSDictionary nsdict
+    foo <- toNSString "foo"
+    bar <- toNSString "bar"
 
-    in (appendFoobar' =<< unretainedId unsafeObj) >>= autorelease
+    toNSDictionary $ insert foo bar tbl
 
-addFoobarToArray unsafeObj =
-    let addFoobarToArray' :: Id -> IO Id
-        addFoobarToArray' nsarr = do
-            s <- fromNSArray nsarr
-            foobar <- toNSString "foobar"
-
-            toNSArray $ s |> foobar
-
-    in (addFoobarToArray' =<< unretainedId unsafeObj) >>= autorelease
-
-setFooToBar unsafeObj =
-    let setFooToBar' :: Id -> IO Id
-        setFooToBar' nsdict = do
-            tbl <- fromNSDictionary nsdict
-            foo <- toNSString "foo"
-            bar <- toNSString "bar"
-
-            toNSDictionary $ insert foo bar tbl
-
-    in (setFooToBar' =<< unretainedId unsafeObj) >>= autorelease
+exportFunc "appendFoobar" [t| UnsafeId -> IO UnsafeId |] 'appendFoobar'
+exportFunc "addFoobarToArray" [t| UnsafeId -> IO UnsafeId |] 'addFoobarToArray'
+exportFunc "setFooToBar" [t| UnsafeId -> IO UnsafeId |] 'setFooToBar'

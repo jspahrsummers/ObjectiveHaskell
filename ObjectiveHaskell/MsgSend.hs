@@ -7,6 +7,7 @@ import Data.List
 import Foreign.Ptr
 import Language.Haskell.TH
 import ObjectiveHaskell.ObjC
+import ObjectiveHaskell.THUtils
 
 data MethodSig = MethodSig Type [Type]
     deriving (Eq, Show)
@@ -41,17 +42,6 @@ funcTypeFromMethodSig (MethodSig ret params) =
 
         ioRet = appT (conT ''IO) (mapf ret)
     in foldr foldf ioRet $ map mapf params
-
--- Generates N unique argument names.
-argumentNames :: Int -> Q [Name]
-argumentNames n = mapM (\s -> newName s) $ take n $ repeat "a"
-
--- Given a function name, parameter names, and a body expression,
--- returns a function declaration with a single clause.
-singleClauseFunc :: Name -> [Name] -> Q Exp -> Q Dec
-singleClauseFunc name params bodyExp =
-    let c = clause (map varP params) (normalB bodyExp) []
-    in funD name [c]
 
 -- Given a list of argument types and names, applies each argument to expr in a left-associative fashion.
 -- Any arguments of type Id will automatically be mapped to an UnsafeId.
