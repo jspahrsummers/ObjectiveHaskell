@@ -23,8 +23,8 @@ declMessage "setObjectForKey" "setObject:forKey:" ''() [''Id, ''Id]
 -- Converts an NSDictionary into a Map.
 fromNSDictionary :: Id -> IO (Map Id Id)
 fromNSDictionary dict = do
-    keys <- Foldable.toList <$> (allKeys dict >>= fromNSArray)
-    vals <- mapM (objectForKey dict) keys
+    keys <- Foldable.toList <$> (dict @. allKeys >>= fromNSArray)
+    vals <- mapM (\k -> dict @. objectForKey k) keys
 
     return $ Map.fromList $ zip keys vals
 
@@ -32,7 +32,7 @@ fromNSDictionary dict = do
 toNSDictionary :: Map Id Id -> IO Id
 toNSDictionary tbl = do
     dict <- getClass "NSMutableDictionary" >>= dictionary
-    mapM (\(k, v) -> setObjectForKey dict v k) $ Map.toList tbl
+    mapM (\(k, v) -> dict @. setObjectForKey v k) $ Map.toList tbl
 
     objc_copy dict
 

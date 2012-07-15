@@ -24,7 +24,7 @@ fromNSArray arr = do
     let fromNSArray' :: CSize -> IO (Seq Id) -> IO (Seq Id)
         fromNSArray' i s =
             -- TODO: This should use something like fast enumeration instead (blocked on issue #1)
-            let s' = liftM2 (|>) s $ arr `objectAtIndex` i
+            let s' = liftM2 (|>) s $ arr @. objectAtIndex i
             in if i + 1 < c
                 then fromNSArray' (i + 1) s'
                 else s'
@@ -35,7 +35,7 @@ fromNSArray arr = do
 toNSArray :: Seq Id -> IO Id
 toNSArray s = do
     arr <- getClass "NSMutableArray" >>= array
-    mapM (addObject arr) $ toList s
+    mapM (\obj -> arr @. addObject obj) $ toList s
 
     objc_copy arr
 
