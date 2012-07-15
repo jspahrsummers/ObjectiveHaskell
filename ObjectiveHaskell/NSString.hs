@@ -7,7 +7,6 @@ module ObjectiveHaskell.NSString (
 import Data.Word
 import Foreign.C.String
 import Foreign.C.Types
-import Foreign.ForeignPtr
 import Foreign.Marshal.Alloc
 import Foreign.Ptr
 import ObjectiveHaskell.ObjC
@@ -35,7 +34,7 @@ kCFStringEncodingUTF8 = 0x08000100
 -- Converts an NSString into a String.
 fromNSString :: Id -> IO String
 fromNSString obj =
-    withForeignPtr obj $ \obj -> do
+    withUnsafeId obj $ \obj -> do
         len <- getLength obj
         ptr <- getCStringPtr obj kCFStringEncodingUTF8
 
