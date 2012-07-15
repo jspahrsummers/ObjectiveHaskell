@@ -1,6 +1,6 @@
-module ObjectiveHaskell.MsgSend
-    (declMessage)
-    where
+module ObjectiveHaskell.MsgSend (
+        declMessage, (@.)
+    ) where
 
 import Control.Monad
 import Data.List
@@ -10,6 +10,24 @@ import ObjectiveHaskell.ObjC
 
 data MethodSig = MethodSig Type [Type]
     deriving (Eq, Show)
+
+{-
+
+Operator to simplify and clarify messaging syntax:
+
+    somethingWithTwoArguments :: Id -> Id -> Id -> IO Id
+    somethingWithTwoArguments a b str = …
+
+    f :: Id -> Id -> Id -> IO Id
+    f str a b = somethingWithTwoArguments a b str
+
+becomes:
+
+    f str a b = str @. somethingWithTwoArguments a b
+
+-}
+(@.) :: Id -> (Id -> b) -> b
+(@.) = flip ($)
 
 -- Returns the function type equivalent to a method signature.
 funcTypeFromMethodSig :: MethodSig -> Q Type
@@ -62,12 +80,11 @@ wrapReturnedExpr expr t
 selectorExpr :: String -> Q Exp
 selectorExpr str = [| selector $(litE $ StringL str) |]
 
--- Given a name (as a string), selector, a return type, and a list of parameter types (without self and _cmd),
--- declares a variant of objc_msgSend with the correct type.
+-- Given a string name, selector, a return type, and a list of parameter types (without self and _cmd),
+-- declares a variant of objc_msgSend which accepts the parameter types and a final self parameter.
+-- _cmd is automatically filled in.
 --
 -- Any arguments or return values of type Id (and not a synonym thereof) will be automatically memory-managed.
---
--- TODO: accept a selector with which the method should be associated (so it doesn't have to be provided manually each time)
 declMessage :: String -> String -> Name -> [Name] -> Q [Dec]
 declMessage name selName ret params = do
     -- Create a method signature from the given types
@@ -89,11 +106,12 @@ declMessage name selName ret params = do
 
         -- The arguments that will be processed by applyMethodArgs
         -- _cmd here is effectively a "hidden" argument which will be from a 'do' expression
-        cmdName = (mkName "_cmd")
-        argNames = (mkName "self") : cmdName : uniqArgNames
+        cmdName = mkName "_cmd"
+        selfName = mkName "self"
+        argNames = selfName : cmdName : uniqArgNames
 
         -- The function we'll expose doesn't need a _cmd parameter
-        paramNames = (head argNames) : (drop 2 argNames)
+        paramNames = uniqArgNames ++ [selfName]
 
         -- Apply the given arguments, including _cmd, to the function returned by the trampoline
         funcBody = applyMethodArgs (ParensE funcptrCastExp) paramTypes argNames

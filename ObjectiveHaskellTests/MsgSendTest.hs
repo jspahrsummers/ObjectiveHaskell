@@ -8,9 +8,7 @@ declMessage "stringWithString" "stringWithString:" ''Id [''Id]
 
 -- This is what a Haskell function that invokes Objective-C code might look like.
 mutableStringWithString :: Id -> IO Id
-mutableStringWithString str = do
-    cl <- getClass "NSMutableString"
-    cl `stringWithString` str
+mutableStringWithString str = getClass "NSMutableString" >>= stringWithString str
 
 foreign export ccall
     msgSendTest :: UnsafeId -> IO UnsafeId
