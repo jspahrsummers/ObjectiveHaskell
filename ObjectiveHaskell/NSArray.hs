@@ -12,9 +12,9 @@ import ObjectiveHaskell.NSObject
 import ObjectiveHaskell.ObjC
 
 -- NSArray methods
-declMessage "array" "array" ''Id []
-declMessage "addObject" "addObject:" ''() [''Id]
-declMessage "objectAtIndex" "objectAtIndex:" ''Id [''CSize]
+declMessage "array" [t| Id -> IO Id |] "array"
+declMessage "addObject" [t| Id -> Id -> IO () |] "addObject:"
+declMessage "objectAtIndex" [t| CSize -> Id -> IO Id |] "objectAtIndex:"
 
 -- Converts an NSArray into a Seq.
 fromNSArray :: Id -> IO (Seq Id)
