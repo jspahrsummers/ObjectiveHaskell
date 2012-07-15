@@ -40,6 +40,7 @@ fromNSString obj =
         ptr <- getCStringPtr obj kCFStringEncodingUTF8
 
         if ptr /= nullPtr
+            -- TODO: This may read in a string with an incorrect encoding (see toNSString).
             then peekCStringLen (ptr, fromIntegral len)
             else copyNSString obj $ fromIntegral len
 
@@ -51,12 +52,13 @@ copyNSString obj len = do
     -- In practice, this should never fail.
     getCString obj buf (fromIntegral len + 1) kCFStringEncodingUTF8
     
+    -- TODO: This may read in a string with an incorrect encoding (see toNSString).
     str <- peekCStringLen (buf, len)
     free buf
 
     return str
 
--- Converts a String into an NSString.
+-- Converts a String into an immutable NSString.
 toNSString :: String -> IO Id
 toNSString str =
     let len = fromIntegral (length str) :: CFIndex
