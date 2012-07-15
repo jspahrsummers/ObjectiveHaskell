@@ -15,6 +15,9 @@ import ObjectiveHaskell.NSArray
 import ObjectiveHaskell.NSObject
 import ObjectiveHaskell.ObjC
 
+-- TODO: Rewrite dictionaries to bridge to Maps instead, which support more idiomatic Haskell usage.
+-- (This will require changing Id into a newtype instead of just a synonym, to implement Ord.)
+
 -- NSDictionary methods
 declMessage "allKeys" "allKeys" ''Id []
 declMessage "dictionary" "dictionary" ''Id []
