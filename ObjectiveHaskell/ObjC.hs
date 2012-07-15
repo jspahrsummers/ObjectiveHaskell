@@ -3,7 +3,8 @@ module ObjectiveHaskell.ObjC (
         Bridged, toObjC, fromObjC,
         selector, getClass,
         retainedId, unretainedId, autorelease, withUnsafeId,
-        p_objc_msgSend, objc_hash
+        p_objc_msgSend, objc_hash,
+        exportFunc
     ) where
 
 import Control.Applicative
@@ -14,6 +15,8 @@ import Foreign.ForeignPtr.Safe
 import Foreign.ForeignPtr.Unsafe
 import Foreign.Marshal.Unsafe
 import Foreign.Ptr
+import Language.Haskell.TH
+import ObjectiveHaskell.THUtils
 
 type ObjCBool = CSChar
 type NSUInteger = CSize
@@ -88,6 +91,46 @@ objc_hash (Id obj) =
     let unsafeObj = unsafeForeignPtrToPtr obj
         ioHash = hash_dyn (castFunPtr p_objc_msgSend) unsafeObj =<< selector "hash"
     in unsafeLocalState ioHash 
+
+-- Within a do expression, applies the given variable to retainedId if necessary,
+-- binding it to the same name. The resulting statement is added to the given list.
+bindUnsafeIds :: (Type, Name) -> [Stmt] -> [Stmt]
+bindUnsafeIds (t, v) stmts
+    | t == ConT ''UnsafeId =
+        let retainExp = AppE (VarE 'retainedId) (VarE v)
+        in BindS (VarP v) retainExp : stmts
+
+    | otherwise = NoBindS (VarE v) : stmts
+
+-- Given a string name to export to Objective-C, an exported type signature, and the name of the function which should be invoked,
+-- defines a trampoline which will automatically wrap UnstableId values for Haskell, and unwrap any Id return value for Objective-C.
+exportFunc :: String -> Q Type -> Name -> Q [Dec]
+exportFunc tramp qt funcName = do
+    t <- qt
+
+    let types = decomposeFunctionType t
+        paramTypes = init types
+        retType = last types
+
+    argNames <- argumentNames $ length paramTypes
+    resultName <- newName "result"
+
+    let applyExpr = foldl AppE (VarE funcName) $ map VarE argNames
+
+        -- If we're returning an IO UnsafeId, we should autorelease the result of the function
+        bodyStmts = if retType == (AppT (ConT ''IO) (ConT ''UnsafeId))
+                    then let binding = BindS (VarP resultName) applyExpr
+                             autoreleaseExp = AppE (VarE 'autorelease) (VarE resultName)
+                         in [binding, NoBindS autoreleaseExp]
+                    else [NoBindS applyExpr]
+
+        -- Map all UnsafeId arguments to Ids and bind them to the same names
+        bodyExpr = DoE $ foldr bindUnsafeIds bodyStmts $ zip paramTypes argNames
+        funcDef = singleClauseFunc (mkName tramp) argNames $ return bodyExpr
+
+        foreignDecl = ForeignD $ ExportF CCall tramp (mkName tramp) t
+
+    sequence $ (return foreignDecl) : [funcDef]
 
 -- Objective-C runtime functions
 foreign import ccall safe "objc/runtime.h &objc_msgSend"
