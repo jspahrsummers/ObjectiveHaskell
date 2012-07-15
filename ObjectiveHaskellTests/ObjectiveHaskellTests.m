@@ -7,10 +7,28 @@
 //
 
 #import "ObjectiveHaskellTests.h"
+#import "CollectionsTest_stub.h"
 #import "FibTest_stub.h"
 #import "MsgSendTest_stub.h"
 
 @implementation ObjectiveHaskellTests
+
+- (void)testNSStringBridging {
+    NSString *str = appendFoobar(@"fuzzbuzz");
+    STAssertEqualObjects(str, @"fuzzbuzzfoobar", @"");
+}
+
+- (void)testNSArrayBridging {
+    NSArray *array = addFoobarToArray(@[ @5, @{} ]);
+    NSArray *expectedArray = @[ @5, @{}, @"foobar" ];
+    STAssertEqualObjects(array, expectedArray, @"");
+}
+
+- (void)testNSDictionaryBridging {
+    NSDictionary *dict = setFooToBar(@{ @"fuzz": @5, @"foo": @"buzz" });
+    NSDictionary *expectedDict = @{ @"fuzz": @5, @"foo": @"bar" };
+    STAssertEqualObjects(dict, expectedDict, @"");
+}
 
 - (void)testFibonacci {
     STAssertEquals(3, fibonacci_hs(4), @"");

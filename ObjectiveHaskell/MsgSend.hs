@@ -6,7 +6,6 @@ module ObjectiveHaskell.MsgSend
 
 import Control.Monad
 import Data.List
-import Foreign.ForeignPtr
 import Foreign.Ptr
 import Language.Haskell.TH
 import ObjectiveHaskell.ObjC
@@ -48,7 +47,7 @@ applyMethodArgs expr (t:argTypes) (arg:args)
             lamBody = applyMethodArgs compoundExpr argTypes args
             lamPat = varP arg
             lamExpr = lamE [lamPat] lamBody
-        in [| withForeignPtr $(varE arg) $lamExpr |]
+        in [| withUnsafeId $(varE arg) $lamExpr |]
 
     | otherwise =
         let compoundExpr = AppE expr (VarE arg)
