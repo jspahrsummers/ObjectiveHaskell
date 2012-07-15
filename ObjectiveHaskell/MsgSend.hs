@@ -34,14 +34,13 @@ becomes:
 funcTypeFromMethodSig :: MethodSig -> Q Type
 funcTypeFromMethodSig (MethodSig ret params) =
     let mapf :: Type -> Q Type
-        mapf t | t == ConT ''Id = return $ ConT ''UnsafeId
+        mapf t | t == ConT ''Id = conT ''UnsafeId
+               | t == (AppT (ConT ''IO) (ConT ''Id)) = appT (conT ''IO) (conT ''UnsafeId)
                | otherwise = return t
 
         foldf :: Q Type -> Q Type -> Q Type
         foldf l r = [t| $l -> $r |]
-
-        ioRet = appT (conT ''IO) (mapf ret)
-    in foldr foldf ioRet $ map mapf params
+    in foldr foldf (mapf ret) $ map mapf params
 
 -- Given a list of argument types and names, applies each argument to expr in a left-associative fashion.
 -- Any arguments of type Id will automatically be mapped to an UnsafeId.
@@ -63,26 +62,28 @@ applyMethodArgs expr (t:argTypes) (arg:args)
 -- This is used to map UnsafeId return values to Id.
 wrapReturnedExpr :: Q Exp -> Type -> Q Exp
 wrapReturnedExpr expr t
-    | t == ConT ''Id = [| $expr >>= retainedId |]
+    | t == (AppT (ConT ''IO) (ConT ''Id)) = [| $expr >>= retainedId |]
     | otherwise = expr
 
 -- Creates an expression that returns a IO Sel of the given name.
 selectorExpr :: String -> Q Exp
 selectorExpr str = [| selector $(litE $ StringL str) |]
 
--- Given a string name, selector, a return type, and a list of parameter types (without self and _cmd),
--- declares a variant of objc_msgSend which accepts the parameter types and a final self parameter.
--- _cmd is automatically filled in.
---
--- Any arguments or return values of type Id (and not a synonym thereof) will be automatically memory-managed.
-declMessage :: String -> String -> Name -> [Name] -> Q [Dec]
-declMessage name selName ret params = do
-    -- Create a method signature from the given types
-    let baseRet = ConT ret
-        paramTypes = (ConT ''Id) : (ConT ''Sel) : (map ConT params)
-        methodSig = MethodSig baseRet paramTypes
+-- Given a string name, a function type (without _cmd), and a selector,
+-- declares a variant of objc_msgSend which matches the given signature, automatically fills in _cmd,
+-- unwraps Ids for Objective-C, and wraps any UnstableId return value for Haskell.
+declMessage :: String -> Q Type -> String -> Q [Dec]
+declMessage name qt selName = do
+    t <- qt
 
-    uniqArgNames <- argumentNames $ length params
+    -- Create a method signature from the given types
+    let types = decomposeFunctionType t
+        retType = last types
+        paramTypes = (ConT ''Id) : (ConT ''Sel) : (init $ init types)
+        methodSig = MethodSig retType paramTypes
+
+    -- Don't include the return type or 'self'
+    uniqArgNames <- argumentNames $ (length types) - 2
 
     -- A unique generated name for our dynamic foreign import
     -- (which is just a trampoline from a FunPtr to a callable function)
@@ -108,7 +109,7 @@ declMessage name selName ret params = do
 
         -- "do _cmd <- selector fn_name; body >>= retainedId"
         doBody = doE [bindS (varP cmdName) (selectorExpr selName),
-                      noBindS $ wrapReturnedExpr funcBody baseRet]
+                      noBindS $ wrapReturnedExpr funcBody retType]
 
         funcDecl = singleClauseFunc (mkName name) paramNames doBody
 

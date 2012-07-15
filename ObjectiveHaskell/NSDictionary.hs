@@ -15,10 +15,10 @@ import ObjectiveHaskell.NSObject
 import ObjectiveHaskell.ObjC
 
 -- NSDictionary methods
-declMessage "allKeys" "allKeys" ''Id []
-declMessage "dictionary" "dictionary" ''Id []
-declMessage "objectForKey" "objectForKey:" ''Id [''Id]
-declMessage "setObjectForKey" "setObject:forKey:" ''() [''Id, ''Id]
+declMessage "allKeys" [t| Id -> IO Id |] "allKeys"
+declMessage "dictionary" [t| Id -> IO Id |] "dictionary"
+declMessage "objectForKey" [t| Id -> Id -> IO Id |] "objectForKey:"
+declMessage "setObjectForKey" [t| Id -> Id -> Id -> IO () |] "setObject:forKey:"
 
 -- Converts an NSDictionary into a Map.
 fromNSDictionary :: Id -> IO (Map Id Id)
