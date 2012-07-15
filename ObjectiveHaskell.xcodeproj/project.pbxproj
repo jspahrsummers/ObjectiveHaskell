@@ -575,6 +575,7 @@
 					"-lHSghc-prim-0.2.0.0",
 					"-lHSinteger-gmp-0.4.0.0",
 					"-lHScontainers-0.4.2.1",
+					"-lHStemplate-haskell-2.7.0.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -592,6 +593,7 @@
 					"-lHSghc-prim-0.2.0.0",
 					"-lHSinteger-gmp-0.4.0.0",
 					"-lHScontainers-0.4.2.1",
+					"-lHStemplate-haskell-2.7.0.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
