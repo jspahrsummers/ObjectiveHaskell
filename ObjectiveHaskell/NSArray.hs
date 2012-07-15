@@ -1,3 +1,4 @@
+{-# LANGUAGE FlexibleInstances #-}
 module ObjectiveHaskell.NSArray (
         fromNSArray, toNSArray
     ) where
@@ -37,3 +38,7 @@ toNSArray s = do
     mapM (addObject arr) $ toList s
 
     objc_copy arr
+
+instance Bridged (Seq Id) where
+    toObjC = toNSArray
+    fromObjC = fromNSArray

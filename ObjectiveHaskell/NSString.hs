@@ -1,3 +1,4 @@
+{-# LANGUAGE FlexibleInstances #-}
 module ObjectiveHaskell.NSString (
         fromNSString, toNSString
     ) where
@@ -66,3 +67,7 @@ toNSString str =
         -- We can get the system encoding using CFStringGetSystemEncoding(), but even that may change on a per-application basis.
         obj <- newCFString nullPtr (castPtr ptr) len kCFStringEncodingUTF8 0
         retainedId obj
+
+instance Bridged [Char] where
+    toObjC = toNSString
+    fromObjC = fromNSString

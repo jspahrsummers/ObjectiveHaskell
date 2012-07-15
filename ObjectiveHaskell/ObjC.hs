@@ -1,5 +1,6 @@
 module ObjectiveHaskell.ObjC (
         Sel, Class, Id, UnsafeId,
+        Bridged, toObjC, fromObjC,
         selector, getClass,
         retainedId, unretainedId, autorelease, withUnsafeId,
         p_objc_msgSend, objc_hash
@@ -41,6 +42,15 @@ instance Ord Id where
     compare a b = compare (objc_hash a) (objc_hash b)
 
 type Class = Id
+
+-- Represents any value that can be bridged with Objective-C.
+class Bridged a where
+    fromObjC :: Id -> IO a
+    toObjC :: a -> IO Id
+
+instance Bridged Id where
+    fromObjC = return
+    toObjC = return
 
 -- Retains an UnsafeId, and converts it into a Id, which will be released when the last reference to it disappears.
 retainedId :: UnsafeId -> IO Id

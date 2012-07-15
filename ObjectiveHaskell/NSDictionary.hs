@@ -1,3 +1,4 @@
+{-# LANGUAGE FlexibleInstances #-}
 module ObjectiveHaskell.NSDictionary (
         fromNSDictionary, toNSDictionary
     ) where
@@ -34,3 +35,7 @@ toNSDictionary tbl = do
     mapM (\(k, v) -> setObjectForKey dict v k) $ Map.toList tbl
 
     objc_copy dict
+
+instance Bridged (Map Id Id) where
+    toObjC = toNSDictionary
+    fromObjC = fromNSDictionary
