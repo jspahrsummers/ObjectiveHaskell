@@ -23,6 +23,7 @@
 		D090620E15B0DD38001CAC43 /* ObjectiveHaskellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D090620D15B0DD38001CAC43 /* ObjectiveHaskellTests.m */; };
 		D090624A15B0E4C0001CAC43 /* FibTest.hs in Sources */ = {isa = PBXBuildFile; fileRef = D090624815B0E450001CAC43 /* FibTest.hs */; };
 		D090625015B0E613001CAC43 /* NSObject+OHInitializationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D090624E15B0E613001CAC43 /* NSObject+OHInitializationExtensions.m */; };
+		D0B232EE15B295380045568B /* libffi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B232EA15B2952B0045568B /* libffi.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -59,6 +60,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = D09061EA15B0DD37001CAC43;
 			remoteInfo = ObjectiveHaskell;
+		};
+		D0B232E715B2952B0045568B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0B232DF15B2952B0045568B /* libffi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6F980BA147386130008F121;
+			remoteInfo = "libffi iOS";
+		};
+		D0B232E915B2952B0045568B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0B232DF15B2952B0045568B /* libffi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6C43CB3D1534E9D100162364;
+			remoteInfo = "libffi OS X";
+		};
+		D0B232EC15B295330045568B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0B232DF15B2952B0045568B /* libffi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C43CB3C1534E9D100162364;
+			remoteInfo = "libffi OS X";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -104,6 +126,7 @@
 		D090623C15B0E2DA001CAC43 /* ObjectiveHaskell.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ObjectiveHaskell.xcconfig; sourceTree = "<group>"; };
 		D090624815B0E450001CAC43 /* FibTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FibTest.hs; sourceTree = "<group>"; };
 		D090624E15B0E613001CAC43 /* NSObject+OHInitializationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+OHInitializationExtensions.m"; sourceTree = "<group>"; };
+		D0B232DF15B2952B0045568B /* libffi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libffi.xcodeproj; path = libffi/libffi.xcodeproj; sourceTree = "<group>"; };
 		D0E525ED15B1122500C13802 /* MsgSend.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MsgSend.hs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B232EE15B295380045568B /* libffi.a in Frameworks */,
 				D09061EF15B0DD37001CAC43 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,6 +176,7 @@
 		D09061ED15B0DD37001CAC43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0B232DF15B2952B0045568B /* libffi.xcodeproj */,
 				D09061EE15B0DD37001CAC43 /* Cocoa.framework */,
 				D090620015B0DD38001CAC43 /* SenTestingKit.framework */,
 				D09061F015B0DD37001CAC43 /* Other Frameworks */,
@@ -300,6 +325,15 @@
 			name = Haskell;
 			sourceTree = "<group>";
 		};
+		D0B232E015B2952B0045568B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0B232E815B2952B0045568B /* libffi.a */,
+				D0B232EA15B2952B0045568B /* libffi.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D0E525EB15B111E500C13802 /* Haskell */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +372,7 @@
 				D090623115B0DF58001CAC43 /* PBXBuildRule */,
 			);
 			dependencies = (
+				D0B232ED15B295330045568B /* PBXTargetDependency */,
 			);
 			name = ObjectiveHaskell;
 			productName = ObjectiveHaskell;
@@ -383,6 +418,12 @@
 			mainGroup = D09061E015B0DD37001CAC43;
 			productRefGroup = D09061EC15B0DD37001CAC43 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D0B232E015B2952B0045568B /* Products */;
+					ProjectRef = D0B232DF15B2952B0045568B /* libffi.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D09061EA15B0DD37001CAC43 /* ObjectiveHaskell */,
@@ -390,6 +431,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D0B232E815B2952B0045568B /* libffi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libffi.a;
+			remoteRef = D0B232E715B2952B0045568B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D0B232EA15B2952B0045568B /* libffi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libffi.a;
+			remoteRef = D0B232E915B2952B0045568B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D09061FC15B0DD38001CAC43 /* Resources */ = {
@@ -451,6 +509,11 @@
 			isa = PBXTargetDependency;
 			target = D09061EA15B0DD37001CAC43 /* ObjectiveHaskell */;
 			targetProxy = D090620315B0DD38001CAC43 /* PBXContainerItemProxy */;
+		};
+		D0B232ED15B295330045568B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libffi OS X";
+			targetProxy = D0B232EC15B295330045568B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
