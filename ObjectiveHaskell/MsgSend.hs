@@ -1,6 +1,6 @@
-module ObjectiveHaskell.MsgSend
-    (declMessage)
-    where
+module ObjectiveHaskell.MsgSend (
+        declMessage, (@.)
+    ) where
 
 import Control.Monad
 import Data.List
@@ -10,6 +10,24 @@ import ObjectiveHaskell.ObjC
 
 data MethodSig = MethodSig Type [Type]
     deriving (Eq, Show)
+
+{-
+
+Operator to simplify and clarify messaging syntax:
+
+    somethingWithTwoArguments :: Id -> Id -> Id -> IO Id
+    somethingWithTwoArguments a b str = …
+
+    f :: Id -> Id -> Id -> IO Id
+    f str a b = somethingWithTwoArguments a b str
+
+becomes:
+
+    f str a b = str @. somethingWithTwoArguments a b
+
+-}
+(@.) :: Id -> (Id -> b) -> b
+(@.) = flip ($)
 
 -- Returns the function type equivalent to a method signature.
 funcTypeFromMethodSig :: MethodSig -> Q Type
