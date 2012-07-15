@@ -11,6 +11,7 @@
 		D03E2D2C15B150CA00679DB0 /* MsgSendTest.hs in Resources */ = {isa = PBXBuildFile; fileRef = D03E2D2B15B150CA00679DB0 /* MsgSendTest.hs */; };
 		D03E2D2E15B1599A00679DB0 /* ObjC.hs in Sources */ = {isa = PBXBuildFile; fileRef = D03E2D2D15B1599200679DB0 /* ObjC.hs */; };
 		D03E2D2F15B15BB600679DB0 /* MsgSendTest.hs in Sources */ = {isa = PBXBuildFile; fileRef = D03E2D2B15B150CA00679DB0 /* MsgSendTest.hs */; };
+		D045A10115B26DAB00DE48BF /* Collections.hs in Sources */ = {isa = PBXBuildFile; fileRef = D045A0FF15B2642A00DE48BF /* Collections.hs */; };
 		D09061EF15B0DD37001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
 		D090620115B0DD38001CAC43 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D090620015B0DD38001CAC43 /* SenTestingKit.framework */; };
 		D090620215B0DD38001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		D03E2D2B15B150CA00679DB0 /* MsgSendTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MsgSendTest.hs; sourceTree = "<group>"; };
 		D03E2D2D15B1599200679DB0 /* ObjC.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjC.hs; sourceTree = "<group>"; };
+		D045A0FF15B2642A00DE48BF /* Collections.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Collections.hs; sourceTree = "<group>"; };
 		D09061EB15B0DD37001CAC43 /* libObjectiveHaskell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObjectiveHaskell.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09061EE15B0DD37001CAC43 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D09061F115B0DD37001CAC43 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -293,6 +295,7 @@
 		D0E525EB15B111E500C13802 /* Haskell */ = {
 			isa = PBXGroup;
 			children = (
+				D045A0FF15B2642A00DE48BF /* Collections.hs */,
 				D0E525ED15B1122500C13802 /* MsgSend.hs */,
 				D03E2D2D15B1599200679DB0 /* ObjC.hs */,
 			);
@@ -411,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D090625015B0E613001CAC43 /* NSObject+OHInitializationExtensions.m in Sources */,
+				D045A10115B26DAB00DE48BF /* Collections.hs in Sources */,
 				D03E2D2915B14C8500679DB0 /* MsgSend.hs in Sources */,
 				D03E2D2E15B1599A00679DB0 /* ObjC.hs in Sources */,
 			);
