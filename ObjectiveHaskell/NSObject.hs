@@ -9,4 +9,4 @@ import ObjectiveHaskell.ObjC
 -- Some common messages for Objective-C objects,
 -- including those that are not necessarily at the NSObject level.
 declMessage "objc_copy" [t| Id -> IO Id |] "copy"
-declMessage "objc_count" [t| Id -> IO CSize |] "count"
+declMessage "objc_count" [t| Id -> IO NSUInteger |] "count"

@@ -14,14 +14,14 @@ import ObjectiveHaskell.ObjC
 -- NSArray methods
 declMessage "array" [t| Id -> IO Id |] "array"
 declMessage "addObject" [t| Id -> Id -> IO () |] "addObject:"
-declMessage "objectAtIndex" [t| CSize -> Id -> IO Id |] "objectAtIndex:"
+declMessage "objectAtIndex" [t| NSUInteger -> Id -> IO Id |] "objectAtIndex:"
 
 -- Converts an NSArray into a Seq.
 fromNSArray :: Id -> IO (Seq Id)
 fromNSArray arr = do
     c <- objc_count arr
 
-    let fromNSArray' :: CSize -> IO (Seq Id) -> IO (Seq Id)
+    let fromNSArray' :: NSUInteger -> IO (Seq Id) -> IO (Seq Id)
         fromNSArray' i s =
             -- TODO: This should use something like fast enumeration instead (blocked on issue #1)
             let s' = liftM2 (|>) s $ arr @. objectAtIndex i

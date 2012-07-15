@@ -1,5 +1,6 @@
 module ObjectiveHaskell.ObjC (
         Sel, Class, Id, UnsafeId,
+        ObjCBool, NSUInteger,
         Bridged, toObjC, fromObjC,
         selector, getClass,
         retainedId, unretainedId, autorelease, withUnsafeId,
