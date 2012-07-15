@@ -1,5 +1,3 @@
-{-# LANGUAGE ForeignFunctionInterface #-}
- 
 module FibTest where
  
 import Foreign.C.Types

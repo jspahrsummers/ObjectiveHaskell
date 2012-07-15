@@ -1,5 +1,3 @@
-{-# LANGUAGE TemplateHaskell #-}
-
 module ObjectiveHaskell.NSArray (
         fromNSArray, toNSArray
     ) where

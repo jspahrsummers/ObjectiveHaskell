@@ -1,5 +1,3 @@
-{-# LANGUAGE ForeignFunctionInterface #-}
-
 module ObjectiveHaskell.ObjC (
         Sel, Class, Id, UnsafeId,
         selector, getClass,

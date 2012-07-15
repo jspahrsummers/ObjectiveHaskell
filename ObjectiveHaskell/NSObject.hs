@@ -1,5 +1,3 @@
-{-# LANGUAGE TemplateHaskell #-}
-
 module ObjectiveHaskell.NSObject (
         objc_copy, objc_count
     ) where

@@ -1,5 +1,3 @@
-{-# LANGUAGE TemplateHaskell #-}
-
 module ObjectiveHaskell.NSString (
         fromNSString, toNSString
     ) where

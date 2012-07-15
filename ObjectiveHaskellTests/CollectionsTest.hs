@@ -1,5 +1,3 @@
-{-# LANGUAGE TemplateHaskell #-}
-
 module CollectionsTest where
 
 import Data.Map as Map
