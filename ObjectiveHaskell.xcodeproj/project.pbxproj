@@ -16,6 +16,7 @@
 		D045A11015B2807A00DE48BF /* NSString.hs in Sources */ = {isa = PBXBuildFile; fileRef = D045A10F15B27B4900DE48BF /* NSString.hs */; };
 		D045A11515B2843000DE48BF /* CollectionsTest.hs in Sources */ = {isa = PBXBuildFile; fileRef = D045A11415B2843000DE48BF /* CollectionsTest.hs */; };
 		D04FC25A15B2B26F00C58F14 /* THUtils.hs in Sources */ = {isa = PBXBuildFile; fileRef = D04FC25915B2B26000C58F14 /* THUtils.hs */; };
+		D062D78E15B38B90003871F7 /* NSData.hs in Sources */ = {isa = PBXBuildFile; fileRef = D062D78D15B38B80003871F7 /* NSData.hs */; };
 		D09061EF15B0DD37001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
 		D090620115B0DD38001CAC43 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D090620015B0DD38001CAC43 /* SenTestingKit.framework */; };
 		D090620215B0DD38001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
@@ -95,6 +96,7 @@
 		D045A11415B2843000DE48BF /* CollectionsTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CollectionsTest.hs; sourceTree = "<group>"; };
 		D04FC23D15B2AAC300C58F14 /* compileHaskell.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = compileHaskell.sh; sourceTree = "<group>"; };
 		D04FC25915B2B26000C58F14 /* THUtils.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = THUtils.hs; sourceTree = "<group>"; };
+		D062D78D15B38B80003871F7 /* NSData.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSData.hs; sourceTree = "<group>"; };
 		D09061EB15B0DD37001CAC43 /* libObjectiveHaskell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObjectiveHaskell.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09061EE15B0DD37001CAC43 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D09061F115B0DD37001CAC43 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -343,6 +345,7 @@
 			children = (
 				D0E525ED15B1122500C13802 /* MsgSend.hs */,
 				D045A10A15B2793D00DE48BF /* NSArray.hs */,
+				D062D78D15B38B80003871F7 /* NSData.hs */,
 				D045A10B15B2794400DE48BF /* NSDictionary.hs */,
 				D045A10815B2793300DE48BF /* NSObject.hs */,
 				D045A10F15B27B4900DE48BF /* NSString.hs */,
@@ -493,6 +496,7 @@
 				D045A10E15B27AD900DE48BF /* NSObject.hs in Sources */,
 				D045A10C15B27AD600DE48BF /* NSArray.hs in Sources */,
 				D045A11015B2807A00DE48BF /* NSString.hs in Sources */,
+				D062D78E15B38B90003871F7 /* NSData.hs in Sources */,
 				D04FC25A15B2B26F00C58F14 /* THUtils.hs in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,6 +580,7 @@
 					"-lHSinteger-gmp-0.4.0.0",
 					"-lHScontainers-0.4.2.1",
 					"-lHStemplate-haskell-2.7.0.0",
+					"-lHSbytestring-0.9.2.1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -594,6 +599,7 @@
 					"-lHSinteger-gmp-0.4.0.0",
 					"-lHScontainers-0.4.2.1",
 					"-lHStemplate-haskell-2.7.0.0",
+					"-lHSbytestring-0.9.2.1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
