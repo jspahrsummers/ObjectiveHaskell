@@ -24,6 +24,15 @@
     STAssertEqualObjects(array, expectedArray, @"");
 }
 
+- (void)testNSDataBridging {
+    unsigned char bytes[] = { 1, 2, 3 };
+    NSData *data = appendByte([NSData dataWithBytes:bytes length:sizeof(bytes)], 5);
+    
+    unsigned char expectedBytes[] = { 1, 2, 3, 5 };
+    STAssertEquals([data length], sizeof(expectedBytes), @"");
+    STAssertTrue(memcmp([data bytes], expectedBytes, sizeof(expectedBytes)) == 0, @"");
+}
+
 - (void)testNSDictionaryBridging {
     NSDictionary *dict = setFooToBar(@{ @"fuzz": @5, @"foo": @"buzz" });
     NSDictionary *expectedDict = @{ @"fuzz": @5, @"foo": @"bar" };
