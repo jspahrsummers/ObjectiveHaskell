@@ -39,6 +39,15 @@
     STAssertEqualObjects(dict, expectedDict, @"");
 }
 
+- (void)testNSValueBridging {
+	NSValue *value = nullNSValue();
+	STAssertNotNil(value, @"");
+	STAssertNil(value.pointerValue, @"");
+
+	uintptr_t addr = ptrAddress(value);
+	STAssertEquals(addr, (uintptr_t)0, @"");
+}
+
 - (void)testFibonacci {
     STAssertEquals(3, fibonacci_hs(4), @"");
     STAssertEquals(5, fibonacci_hs(5), @"");
