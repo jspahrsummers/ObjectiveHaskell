@@ -1,3 +1,4 @@
+-- | Bridging to and from @NSData@
 module ObjectiveHaskell.NSData (
         fromNSData, toNSData
     ) where
@@ -16,7 +17,8 @@ declMessage "dataWithBytes" [t| Ptr () -> NSUInteger -> Class -> IO Id |] "dataW
 declMessage "objc_length" [t| Id -> IO NSUInteger |] "length"
 declMessage "bytes" [t| Id -> IO (Ptr ()) |] "bytes"
 
--- Converts an NSData into a ByteString.
+-- | Converts an @NSData@ object into a 'ByteString'.
+-- | Note that this /does not/ reuse the internal storage of the @NSData@ object, and so may not be suitable for large blobs.
 fromNSData :: Id -> IO ByteString
 fromNSData dat = do
     sz <- objc_length dat
@@ -24,7 +26,8 @@ fromNSData dat = do
 
     pack <$> peekArray (fromIntegral sz) (castPtr ptr)
 
--- Converts a ByteString into an immutable NSData.
+-- | Converts a 'ByteString' into an immutable @NSData@ object.
+-- | Note that this /does not/ reuse the internal storage of the 'ByteString', and so may not be suitable for large blobs.
 toNSData :: ByteString -> IO Id
 toNSData str =
     withArray (unpack str) $ \ptr ->

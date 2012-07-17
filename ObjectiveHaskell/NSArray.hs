@@ -1,4 +1,6 @@
 {-# LANGUAGE FlexibleInstances #-}
+
+-- | Bridging to and from @NSArray@
 module ObjectiveHaskell.NSArray (
         fromNSArray, toNSArray
     ) where
@@ -16,7 +18,7 @@ declMessage "array" [t| Class -> IO Id |] "array"
 declMessage "addObject" [t| Id -> Id -> IO () |] "addObject:"
 declMessage "objectAtIndex" [t| NSUInteger -> Id -> IO Id |] "objectAtIndex:"
 
--- Converts an NSArray into a Seq.
+-- | Converts an @NSArray@ into a 'Seq'.
 fromNSArray :: Id -> IO (Seq Id)
 fromNSArray arr = do
     c <- objc_count arr
@@ -31,7 +33,7 @@ fromNSArray arr = do
     
     fromNSArray' 0 (return empty)
 
--- Converts a Seq into an immutable NSArray.
+-- | Converts a 'Seq' into an immutable @NSArray@.
 toNSArray :: Seq Id -> IO Id
 toNSArray s = do
     arr <- getClass "NSMutableArray" >>= array

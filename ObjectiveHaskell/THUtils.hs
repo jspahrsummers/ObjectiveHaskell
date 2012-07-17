@@ -1,3 +1,4 @@
+-- | Convenience functions and utilities for Template Haskell
 module ObjectiveHaskell.THUtils (
         decomposeFunctionType,
         argumentNames, singleClauseFunc
@@ -5,20 +6,29 @@ module ObjectiveHaskell.THUtils (
 
 import Language.Haskell.TH
 
--- Given a type which represents a function signature,
--- returns a list of the applied types, in order.
-decomposeFunctionType :: Type -> [Type]
+-- | Returns a list of the applied types in a function signature.
+decomposeFunctionType
+    :: Type     -- ^ A type representing a function signature.
+    -> [Type]   -- ^ A list of the argument and return types for the function, in order.
+
 decomposeFunctionType (AppT (AppT ArrowT l) r) = l : decomposeFunctionType r
 decomposeFunctionType (ForallT _ _ t) = decomposeFunctionType t
 decomposeFunctionType t = [t]
 
--- Generates N unique argument names.
-argumentNames :: Int -> Q [Name]
+-- | Generates unique argument names.
+argumentNames
+    :: Int      -- ^ The number of argument names to generate.
+    -> Q [Name]
+
 argumentNames n = mapM (\s -> newName s) $ take n $ repeat "a"
 
--- Given a function name, parameter names, and a body expression,
--- returns a function declaration with a single clause.
-singleClauseFunc :: Name -> [Name] -> Q Exp -> Q Dec
+-- | Declares a function with a single clause.
+singleClauseFunc
+    :: Name     -- ^ The name to use for the function.
+    -> [Name]   -- ^ The names of the function's parameters, if any.
+    -> Q Exp    -- ^ An expression to use as the body of the function.
+    -> Q Dec
+
 singleClauseFunc name params bodyExp =
     let c = clause (map varP params) (normalB bodyExp) []
     in funD name [c]
