@@ -16,7 +16,7 @@ import ObjectiveHaskell.ObjC
 
 -- NSDictionary methods
 declMessage "allKeys" [t| Id -> IO Id |] "allKeys"
-declMessage "dictionary" [t| Id -> IO Id |] "dictionary"
+declMessage "dictionary" [t| Class -> IO Id |] "dictionary"
 declMessage "objectForKey" [t| Id -> Id -> IO Id |] "objectForKey:"
 declMessage "setObjectForKey" [t| Id -> Id -> Id -> IO () |] "setObject:forKey:"
 

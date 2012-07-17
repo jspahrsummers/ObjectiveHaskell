@@ -12,7 +12,7 @@ import ObjectiveHaskell.MsgSend
 import ObjectiveHaskell.ObjC
 
 -- NSData methods
-declMessage "dataWithBytes" [t| Ptr () -> NSUInteger -> Id -> IO Id |] "dataWithBytes:length:"
+declMessage "dataWithBytes" [t| Ptr () -> NSUInteger -> Class -> IO Id |] "dataWithBytes:length:"
 declMessage "objc_length" [t| Id -> IO NSUInteger |] "length"
 declMessage "bytes" [t| Id -> IO (Ptr ()) |] "bytes"
 

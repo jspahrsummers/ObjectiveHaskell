@@ -12,7 +12,7 @@ import ObjectiveHaskell.NSObject
 import ObjectiveHaskell.ObjC
 
 -- NSArray methods
-declMessage "array" [t| Id -> IO Id |] "array"
+declMessage "array" [t| Class -> IO Id |] "array"
 declMessage "addObject" [t| Id -> Id -> IO () |] "addObject:"
 declMessage "objectAtIndex" [t| NSUInteger -> Id -> IO Id |] "objectAtIndex:"
 
