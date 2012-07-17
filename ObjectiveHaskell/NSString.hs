@@ -1,4 +1,6 @@
 {-# LANGUAGE FlexibleInstances #-}
+
+-- | Bridging to and from @NSString@
 module ObjectiveHaskell.NSString (
         fromNSString, toNSString
     ) where
@@ -10,9 +12,13 @@ import Foreign.Marshal.Alloc
 import Foreign.Ptr
 import ObjectiveHaskell.ObjC
 
--- CFString functions and constants
+-- | A Core Foundation @Boolean@.
 type Boolean = CUChar
+
+-- | A Core Foundation @CFIndex@.
 type CFIndex = CLong
+
+-- | A Core Foundation @CFStringEncoding@.
 type CFStringEncoding = CInt
 
 foreign import ccall unsafe "CoreFoundation/CoreFoundation.h CFStringCreateWithBytes"
@@ -30,7 +36,7 @@ foreign import ccall unsafe "CoreFoundation/CoreFoundation.h CFStringGetLength"
 kCFStringEncodingUTF8 :: CFStringEncoding
 kCFStringEncodingUTF8 = 0x08000100
 
--- Converts an NSString into a String.
+-- | Converts an @NSString@ into a 'String'.
 fromNSString :: Id -> IO String
 fromNSString obj =
     withUnsafeId obj $ \obj -> do
@@ -42,8 +48,12 @@ fromNSString obj =
             then peekCStringLen (ptr, fromIntegral len)
             else copyNSString obj $ fromIntegral len
 
--- Converts an NSString into a String using a temporary buffer.
-copyNSString :: UnsafeId -> Int -> IO String
+-- | Converts an unwrapped @NSString@ into a 'String' using a temporary buffer.
+copyNSString
+    :: UnsafeId     -- ^ The @NSString@ to convert.
+    -> Int          -- ^ The length of the string.
+    -> IO String
+
 copyNSString obj len = do
     buf <- mallocBytes (len + 1)
 
@@ -56,7 +66,7 @@ copyNSString obj len = do
 
     return str
 
--- Converts a String into an immutable NSString.
+-- | Converts a String into an immutable @NSString@.
 toNSString :: String -> IO Id
 toNSString str =
     let len = fromIntegral (length str) :: CFIndex
