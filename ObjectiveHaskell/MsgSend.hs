@@ -1,3 +1,4 @@
+-- | Typed message sending, using Template Haskell
 module ObjectiveHaskell.MsgSend (
         declMessage, (@.)
     ) where
@@ -9,28 +10,34 @@ import Language.Haskell.TH
 import ObjectiveHaskell.ObjC
 import ObjectiveHaskell.THUtils
 
+-- | Represents an Objective-C method signature, with a return type and any number of parameter types.
 data MethodSig = MethodSig Type [Type]
     deriving (Eq, Show)
 
-{-
+{-|
 
-Operator to simplify and clarify messaging syntax:
+Operator to simplify and clarify messaging syntax. This code:
 
+@
     somethingWithTwoArguments :: Id -> Id -> Id -> IO Id
     somethingWithTwoArguments a b str = …
 
     f :: Id -> Id -> Id -> IO Id
     f str a b = somethingWithTwoArguments a b str
+@
 
 becomes:
 
+@
     f str a b = str @. somethingWithTwoArguments a b
+@
 
 -}
 (@.) :: Id -> (Id -> b) -> b
 (@.) = flip ($)
 
--- Returns the function type equivalent to a method signature.
+-- | Returns the Haskell function type that is equivalent to a method signature.
+-- | This will change any 'Id' types into 'UnsafeId' types for bridging purposes.
 funcTypeFromMethodSig :: MethodSig -> Q Type
 funcTypeFromMethodSig (MethodSig ret params) =
     let mapf :: Type -> Q Type
@@ -42,9 +49,14 @@ funcTypeFromMethodSig (MethodSig ret params) =
         foldf l r = [t| $l -> $r |]
     in foldr foldf (mapf ret) $ map mapf params
 
--- Given a list of argument types and names, applies each argument to expr in a left-associative fashion.
--- Any arguments of type Id will automatically be mapped to an UnsafeId.
-applyMethodArgs :: Exp -> [Type] -> [Name] -> Q Exp
+-- | Applies method arguments to an expression in a left-associated fashion,
+-- | mapping any arguments of type 'Id' to 'UnsafeId'.
+applyMethodArgs
+    :: Exp      -- ^ The expression that the method arguments should be applied to.
+    -> [Type]   -- ^ The types of the arguments being applied.
+    -> [Name]   -- ^ The variable or binding names being applied.
+    -> Q Exp
+
 applyMethodArgs expr [] [] = return expr
 applyMethodArgs expr (t:argTypes) (arg:args)
     | t == ConT ''Id =
@@ -58,21 +70,30 @@ applyMethodArgs expr (t:argTypes) (arg:args)
         let compoundExpr = AppE expr (VarE arg)
         in applyMethodArgs compoundExpr argTypes args
 
--- Wraps the given expression as necessary to match the given type.
--- This is used to map UnsafeId return values to Id.
-wrapReturnedExpr :: Q Exp -> Type -> Q Exp
+-- | Wraps the return value of an expression to match a desired return type.
+-- | This is used to map 'UnsafeId' return values to 'Id'.
+wrapReturnedExpr
+    :: Q Exp    -- ^ An expression which might needs its return value wrapped.
+    -> Type     -- ^ The type of value which should result.
+    -> Q Exp
+
 wrapReturnedExpr expr t
     | t == (AppT (ConT ''IO) (ConT ''Id)) = [| $expr >>= retainedId |]
     | otherwise = expr
 
--- Creates an expression that returns a IO Sel of the given name.
+-- | Generates an expression that returns a @IO 'Sel'@ of the given name.
 selectorExpr :: String -> Q Exp
 selectorExpr str = [| selector $(litE $ StringL str) |]
 
--- Given a string name, a function type (without _cmd), and a selector,
--- declares a variant of objc_msgSend which matches the given signature, automatically fills in _cmd,
--- unwraps Ids for Objective-C, and wraps any UnstableId return value for Haskell.
-declMessage :: String -> Q Type -> String -> Q [Dec]
+-- | Declares a variant of objc_msgSend which can be invoked like a Haskell function,
+-- | and which will automatically unwrap 'Id' values as 'UnsafeId' for Objective-C,
+-- | and wrap any @IO 'UnsafeId'@ return value as @IO 'Id'@ for Haskell.
+declMessage
+    :: String   -- ^ The name of the Haskell function to define.
+    -> Q Type   -- ^ The type signature for the Haskell function. This should not include any @_cmd@ parameter, and the parameter corresponding to @self@ should appear at the end.
+    -> String   -- ^ The selector to use for the message send.
+    -> Q [Dec]  -- ^ Top-level declarations to generate the function which will invoke @objc_msgSend@.
+
 declMessage name qt selName = do
     t <- qt
 
