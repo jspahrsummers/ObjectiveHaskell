@@ -26,6 +26,7 @@
 		D090624A15B0E4C0001CAC43 /* FibTest.hs in Sources */ = {isa = PBXBuildFile; fileRef = D090624815B0E450001CAC43 /* FibTest.hs */; };
 		D090625015B0E613001CAC43 /* NSObject+OHInitializationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D090624E15B0E613001CAC43 /* NSObject+OHInitializationExtensions.m */; };
 		D0B232EE15B295380045568B /* libffi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B232EA15B2952B0045568B /* libffi.a */; };
+		D0E61A7C15B4FFF300667D8A /* NSValue.hs in Sources */ = {isa = PBXBuildFile; fileRef = D0E61A6915B4FEDE00667D8A /* NSValue.hs */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -499,6 +500,7 @@
 				D045A10C15B27AD600DE48BF /* NSArray.hs in Sources */,
 				D045A11015B2807A00DE48BF /* NSString.hs in Sources */,
 				D062D78E15B38B90003871F7 /* NSData.hs in Sources */,
+				D0E61A7C15B4FFF300667D8A /* NSValue.hs in Sources */,
 				D04FC25A15B2B26F00C58F14 /* THUtils.hs in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
