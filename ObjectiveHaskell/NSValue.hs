@@ -1,4 +1,6 @@
 {-# LANGUAGE FlexibleInstances #-}
+
+-- | Bridging to and from @NSValue@
 module ObjectiveHaskell.NSValue (
         fromNSValue, toNSValue
     ) where
@@ -11,11 +13,11 @@ import ObjectiveHaskell.ObjC
 declMessage "valueWithPointer" [t| Ptr () -> Id -> IO Id |] "valueWithPointer:"
 declMessage "pointerValue" [t| Id -> IO (Ptr ()) |] "pointerValue"
 
--- Converts a pointer NSValue into a raw Ptr ()
+-- | Returns the @-pointerValue@ of an @NSValue@.
 fromNSValue :: Id -> IO (Ptr ())
 fromNSValue val = val @. pointerValue
 
--- Converts a Ptr () into an NSValue
+-- | Returns an @NSValue@ wrapping a pointer.
 toNSValue :: Ptr () -> IO Id
 toNSValue ptr = getClass "NSValue" >>= valueWithPointer ptr
 
