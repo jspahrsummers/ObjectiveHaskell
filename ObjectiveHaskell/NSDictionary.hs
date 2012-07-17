@@ -1,4 +1,6 @@
 {-# LANGUAGE FlexibleInstances #-}
+
+-- | Bridging to and from @NSDictionary@
 module ObjectiveHaskell.NSDictionary (
         fromNSDictionary, toNSDictionary
     ) where
@@ -20,7 +22,7 @@ declMessage "dictionary" [t| Class -> IO Id |] "dictionary"
 declMessage "objectForKey" [t| Id -> Id -> IO Id |] "objectForKey:"
 declMessage "setObjectForKey" [t| Id -> Id -> Id -> IO () |] "setObject:forKey:"
 
--- Converts an NSDictionary into a Map.
+-- | Converts an @NSDictionary@ into a 'Map'.
 fromNSDictionary :: Id -> IO (Map Id Id)
 fromNSDictionary dict = do
     keys <- Foldable.toList <$> (dict @. allKeys >>= fromNSArray)
@@ -28,7 +30,7 @@ fromNSDictionary dict = do
 
     return $ Map.fromList $ zip keys vals
 
--- Converts a Map into an immutable NSDictionary.
+-- | Converts a 'Map' into an immutable @NSDictionary@.
 toNSDictionary :: Map Id Id -> IO Id
 toNSDictionary tbl = do
     dict <- getClass "NSMutableDictionary" >>= dictionary
