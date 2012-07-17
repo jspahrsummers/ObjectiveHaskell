@@ -1,13 +1,16 @@
 module CollectionsTest where
 
+import Control.Applicative
 import Data.ByteString as ByteString
 import Data.Map as Map
 import Data.Sequence as Seq
 import Foreign.C.Types
+import Foreign.Ptr
 import ObjectiveHaskell.NSArray
 import ObjectiveHaskell.NSData
 import ObjectiveHaskell.NSDictionary
 import ObjectiveHaskell.NSString
+import ObjectiveHaskell.NSValue
 import ObjectiveHaskell.ObjC
 
 appendFoobar' :: Id -> IO Id
@@ -35,7 +38,15 @@ appendByte' nsdata b = do
     str <- fromNSData nsdata
     toNSData $ snoc str (fromIntegral b)
 
+nullNSValue' :: IO Id
+nullNSValue' = toNSValue nullPtr
+
+ptrAddress' :: Id -> IO CUIntPtr
+ptrAddress' obj = (fromIntegral . ptrToWordPtr) <$> fromNSValue obj
+
 exportFunc "appendFoobar" [t| UnsafeId -> IO UnsafeId |] 'appendFoobar'
 exportFunc "addFoobarToArray" [t| UnsafeId -> IO UnsafeId |] 'addFoobarToArray'
 exportFunc "setFooToBar" [t| UnsafeId -> IO UnsafeId |] 'setFooToBar'
 exportFunc "appendByte" [t| UnsafeId -> CUChar -> IO UnsafeId |] 'appendByte'
+exportFunc "nullNSValue" [t| IO UnsafeId |] 'nullNSValue'
+exportFunc "ptrAddress" [t| UnsafeId -> IO CUIntPtr |] 'ptrAddress'
