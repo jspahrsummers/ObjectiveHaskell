@@ -37,6 +37,7 @@ kCFStringEncodingUTF8 :: CFStringEncoding
 kCFStringEncodingUTF8 = 0x08000100
 
 -- | Converts an @NSString@ into a 'String'.
+-- | Note that this /does not/ reuse the internal storage of the @NSString@, and so may not be suitable for large strings.
 fromNSString :: Id -> IO String
 fromNSString obj =
     withUnsafeId obj $ \obj -> do
@@ -49,6 +50,7 @@ fromNSString obj =
             else copyNSString obj $ fromIntegral len
 
 -- | Converts an unwrapped @NSString@ into a 'String' using a temporary buffer.
+-- | Note that this /does not/ reuse the internal storage of the 'String', and so may not be suitable for large strings.
 copyNSString
     :: UnsafeId     -- ^ The @NSString@ to convert.
     -> Int          -- ^ The length of the string.
