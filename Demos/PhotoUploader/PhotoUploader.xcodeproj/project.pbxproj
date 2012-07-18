@@ -17,6 +17,7 @@
 		D053F01315B641A0005CBF00 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D053EFF315B641A0005CBF00 /* Cocoa.framework */; };
 		D053F01B15B641A0005CBF00 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D053F01915B641A0005CBF00 /* InfoPlist.strings */; };
 		D053F01E15B641A0005CBF00 /* PhotoUploaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D053F01D15B641A0005CBF00 /* PhotoUploaderTests.m */; };
+		D053F06515B64200005CBF00 /* libObjectiveHaskell Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D053F03415B641C1005CBF00 /* libObjectiveHaskell Mac.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +27,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = D053EFEE15B641A0005CBF00;
 			remoteInfo = PhotoUploader;
+		};
+		D053F03315B641C1005CBF00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D09061EB15B0DD37001CAC43;
+			remoteInfo = "ObjectiveHaskell Mac";
+		};
+		D053F03515B641C1005CBF00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D09061FF15B0DD38001CAC43;
+			remoteInfo = "ObjectiveHaskellTests Mac";
+		};
+		D053F06315B641FB005CBF00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D09061EA15B0DD37001CAC43;
+			remoteInfo = "ObjectiveHaskell Mac";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -49,6 +71,27 @@
 		D053F01A15B641A0005CBF00 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D053F01C15B641A0005CBF00 /* PhotoUploaderTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoUploaderTests.h; sourceTree = "<group>"; };
 		D053F01D15B641A0005CBF00 /* PhotoUploaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoUploaderTests.m; sourceTree = "<group>"; };
+		D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveHaskell.xcodeproj; path = ../../ObjectiveHaskell.xcodeproj; sourceTree = "<group>"; };
+		D053F04915B641E5005CBF00 /* compileHaskell.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = compileHaskell.sh; sourceTree = "<group>"; };
+		D053F04A15B641E5005CBF00 /* ObjectiveHaskell-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Debug.xcconfig"; sourceTree = "<group>"; };
+		D053F04B15B641E5005CBF00 /* ObjectiveHaskell-Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Profile.xcconfig"; sourceTree = "<group>"; };
+		D053F04C15B641E5005CBF00 /* ObjectiveHaskell-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Release.xcconfig"; sourceTree = "<group>"; };
+		D053F04D15B641E5005CBF00 /* ObjectiveHaskell.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ObjectiveHaskell.xcconfig; sourceTree = "<group>"; };
+		D053F05015B641E5005CBF00 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		D053F05215B641E5005CBF00 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		D053F05315B641E5005CBF00 /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		D053F05415B641E5005CBF00 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D053F05615B641E5005CBF00 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		D053F05715B641E5005CBF00 /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		D053F05915B641E5005CBF00 /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		D053F05A15B641E5005CBF00 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		D053F05B15B641E5005CBF00 /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		D053F05E15B641E5005CBF00 /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		D053F05F15B641E5005CBF00 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		D053F06015B641E5005CBF00 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		D053F06115B641E5005CBF00 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D053F06215B641E5005CBF00 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D053F06515B64200005CBF00 /* libObjectiveHaskell Mac.a in Frameworks */,
 				D053EFF415B641A0005CBF00 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +121,7 @@
 			children = (
 				D053EFF915B641A0005CBF00 /* PhotoUploader */,
 				D053F01615B641A0005CBF00 /* PhotoUploaderTests */,
+				D053F04815B641E5005CBF00 /* Configuration */,
 				D053EFF215B641A0005CBF00 /* Frameworks */,
 				D053EFF015B641A0005CBF00 /* Products */,
 			);
@@ -94,6 +139,7 @@
 		D053EFF215B641A0005CBF00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */,
 				D053EFF315B641A0005CBF00 /* Cocoa.framework */,
 				D053F01115B641A0005CBF00 /* SenTestingKit.framework */,
 				D053EFF515B641A0005CBF00 /* Other Frameworks */,
@@ -153,6 +199,91 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D053F02815B641C1005CBF00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D053F03415B641C1005CBF00 /* libObjectiveHaskell Mac.a */,
+				D053F03615B641C1005CBF00 /* ObjectiveHaskellTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D053F04815B641E5005CBF00 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D053F04915B641E5005CBF00 /* compileHaskell.sh */,
+				D053F04A15B641E5005CBF00 /* ObjectiveHaskell-Debug.xcconfig */,
+				D053F04B15B641E5005CBF00 /* ObjectiveHaskell-Profile.xcconfig */,
+				D053F04C15B641E5005CBF00 /* ObjectiveHaskell-Release.xcconfig */,
+				D053F04D15B641E5005CBF00 /* ObjectiveHaskell.xcconfig */,
+				D053F04E15B641E5005CBF00 /* xcconfigs */,
+			);
+			name = Configuration;
+			path = ../../Configuration;
+			sourceTree = "<group>";
+		};
+		D053F04E15B641E5005CBF00 /* xcconfigs */ = {
+			isa = PBXGroup;
+			children = (
+				D053F04F15B641E5005CBF00 /* Base */,
+				D053F05815B641E5005CBF00 /* iOS */,
+				D053F05C15B641E5005CBF00 /* Mac OS X */,
+				D053F06215B641E5005CBF00 /* README.md */,
+			);
+			path = xcconfigs;
+			sourceTree = "<group>";
+		};
+		D053F04F15B641E5005CBF00 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D053F05015B641E5005CBF00 /* Common.xcconfig */,
+				D053F05115B641E5005CBF00 /* Configurations */,
+				D053F05515B641E5005CBF00 /* Targets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D053F05115B641E5005CBF00 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				D053F05215B641E5005CBF00 /* Debug.xcconfig */,
+				D053F05315B641E5005CBF00 /* Profile.xcconfig */,
+				D053F05415B641E5005CBF00 /* Release.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		D053F05515B641E5005CBF00 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				D053F05615B641E5005CBF00 /* Application.xcconfig */,
+				D053F05715B641E5005CBF00 /* StaticLibrary.xcconfig */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		D053F05815B641E5005CBF00 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D053F05915B641E5005CBF00 /* iOS-Application.xcconfig */,
+				D053F05A15B641E5005CBF00 /* iOS-Base.xcconfig */,
+				D053F05B15B641E5005CBF00 /* iOS-StaticLibrary.xcconfig */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D053F05C15B641E5005CBF00 /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */,
+				D053F05E15B641E5005CBF00 /* Mac-Base.xcconfig */,
+				D053F05F15B641E5005CBF00 /* Mac-DynamicLibrary.xcconfig */,
+				D053F06015B641E5005CBF00 /* Mac-Framework.xcconfig */,
+				D053F06115B641E5005CBF00 /* Mac-StaticLibrary.xcconfig */,
+			);
+			path = "Mac OS X";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,6 +298,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D053F06415B641FB005CBF00 /* PBXTargetDependency */,
 			);
 			name = PhotoUploader;
 			productName = PhotoUploader;
@@ -211,6 +343,12 @@
 			mainGroup = D053EFE415B641A0005CBF00;
 			productRefGroup = D053EFF015B641A0005CBF00 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D053F02815B641C1005CBF00 /* Products */;
+					ProjectRef = D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D053EFEE15B641A0005CBF00 /* PhotoUploader */,
@@ -218,6 +356,24 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D053F03415B641C1005CBF00 /* libObjectiveHaskell Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libObjectiveHaskell Mac.a";
+			remoteRef = D053F03315B641C1005CBF00 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D053F03615B641C1005CBF00 /* ObjectiveHaskellTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			name = ObjectiveHaskellTests.octest;
+			path = "ObjectiveHaskellTests Mac.octest";
+			remoteRef = D053F03515B641C1005CBF00 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D053EFED15B641A0005CBF00 /* Resources */ = {
@@ -282,6 +438,11 @@
 			target = D053EFEE15B641A0005CBF00 /* PhotoUploader */;
 			targetProxy = D053F01415B641A0005CBF00 /* PBXContainerItemProxy */;
 		};
+		D053F06415B641FB005CBF00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectiveHaskell Mac";
+			targetProxy = D053F06315B641FB005CBF00 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -322,50 +483,27 @@
 /* Begin XCBuildConfiguration section */
 		D053F01F15B641A0005CBF00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D053F04A15B641E5005CBF00 /* ObjectiveHaskell-Debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		D053F02015B641A0005CBF00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D053F04C15B641E5005CBF00 /* ObjectiveHaskell-Release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
 			};
@@ -373,8 +511,8 @@
 		};
 		D053F02215B641A0005CBF00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoUploader/PhotoUploader-Prefix.pch";
 				INFOPLIST_FILE = "PhotoUploader/PhotoUploader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -384,8 +522,8 @@
 		};
 		D053F02315B641A0005CBF00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoUploader/PhotoUploader-Prefix.pch";
 				INFOPLIST_FILE = "PhotoUploader/PhotoUploader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -395,6 +533,7 @@
 		};
 		D053F02515B641A0005CBF00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoUploader.app/Contents/MacOS/PhotoUploader";
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
@@ -409,6 +548,7 @@
 		};
 		D053F02615B641A0005CBF00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoUploader.app/Contents/MacOS/PhotoUploader";
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
@@ -440,6 +580,7 @@
 				D053F02315B641A0005CBF00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D053F02415B641A0005CBF00 /* Build configuration list for PBXNativeTarget "PhotoUploaderTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +589,7 @@
 				D053F02615B641A0005CBF00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
