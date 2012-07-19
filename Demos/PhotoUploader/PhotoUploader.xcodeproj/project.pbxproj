@@ -18,6 +18,9 @@
 		D053F01B15B641A0005CBF00 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D053F01915B641A0005CBF00 /* InfoPlist.strings */; };
 		D053F01E15B641A0005CBF00 /* PhotoUploaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D053F01D15B641A0005CBF00 /* PhotoUploaderTests.m */; };
 		D053F06515B64200005CBF00 /* libObjectiveHaskell Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D053F03415B641C1005CBF00 /* libObjectiveHaskell Mac.a */; };
+		D0F86B3015B8CCC200D36357 /* LoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */; };
+		D0F86B3115B8CCC200D36357 /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */; };
+		D0F86B3315B8CFB900D36357 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F86B3215B8CFB900D36357 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +95,10 @@
 		D053F06015B641E5005CBF00 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
 		D053F06115B641E5005CBF00 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
 		D053F06215B641E5005CBF00 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		D0F86B2D15B8CCC200D36357 /* LoginWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWindowController.h; sourceTree = "<group>"; };
+		D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWindowController.m; sourceTree = "<group>"; };
+		D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
+		D0F86B3215B8CFB900D36357 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F86B3315B8CFB900D36357 /* WebKit.framework in Frameworks */,
 				D053F06515B64200005CBF00 /* libObjectiveHaskell Mac.a in Frameworks */,
 				D053EFF415B641A0005CBF00 /* Cocoa.framework in Frameworks */,
 			);
@@ -140,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */,
+				D0F86B3215B8CFB900D36357 /* WebKit.framework */,
 				D053EFF315B641A0005CBF00 /* Cocoa.framework */,
 				D053F01115B641A0005CBF00 /* SenTestingKit.framework */,
 				D053EFF515B641A0005CBF00 /* Other Frameworks */,
@@ -160,9 +169,8 @@
 		D053EFF915B641A0005CBF00 /* PhotoUploader */ = {
 			isa = PBXGroup;
 			children = (
-				D053F00515B641A0005CBF00 /* AppDelegate.h */,
-				D053F00615B641A0005CBF00 /* AppDelegate.m */,
-				D053F00815B641A0005CBF00 /* MainMenu.xib */,
+				D0F86B3415B8D1CC00D36357 /* Cocoa */,
+				D0F86B3515B8D1F000D36357 /* Haskell */,
 				D053EFFA15B641A0005CBF00 /* Supporting Files */,
 			);
 			path = PhotoUploader;
@@ -171,6 +179,7 @@
 		D053EFFA15B641A0005CBF00 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D053F00815B641A0005CBF00 /* MainMenu.xib */,
 				D053EFFB15B641A0005CBF00 /* PhotoUploader-Info.plist */,
 				D053EFFC15B641A0005CBF00 /* InfoPlist.strings */,
 				D053EFFF15B641A0005CBF00 /* main.m */,
@@ -284,6 +293,25 @@
 			path = "Mac OS X";
 			sourceTree = "<group>";
 		};
+		D0F86B3415B8D1CC00D36357 /* Cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				D053F00515B641A0005CBF00 /* AppDelegate.h */,
+				D053F00615B641A0005CBF00 /* AppDelegate.m */,
+				D0F86B2D15B8CCC200D36357 /* LoginWindowController.h */,
+				D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */,
+				D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */,
+			);
+			name = Cocoa;
+			sourceTree = "<group>";
+		};
+		D0F86B3515B8D1F000D36357 /* Haskell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Haskell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -383,6 +411,7 @@
 				D053EFFE15B641A0005CBF00 /* InfoPlist.strings in Resources */,
 				D053F00415B641A0005CBF00 /* Credits.rtf in Resources */,
 				D053F00A15B641A0005CBF00 /* MainMenu.xib in Resources */,
+				D0F86B3115B8CCC200D36357 /* LoginWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +448,7 @@
 			files = (
 				D053F00015B641A0005CBF00 /* main.m in Sources */,
 				D053F00715B641A0005CBF00 /* AppDelegate.m in Sources */,
+				D0F86B3015B8CCC200D36357 /* LoginWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
