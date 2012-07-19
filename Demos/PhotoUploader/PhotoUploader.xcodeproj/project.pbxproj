@@ -21,7 +21,23 @@
 		D0F86B3015B8CCC200D36357 /* LoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */; };
 		D0F86B3115B8CCC200D36357 /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */; };
 		D0F86B3315B8CFB900D36357 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F86B3215B8CFB900D36357 /* WebKit.framework */; };
+		D0F86B3815B8D24D00D36357 /* Users.hs in Sources */ = {isa = PBXBuildFile; fileRef = D0F86B3615B8D23F00D36357 /* Users.hs */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		D0F86B3915B8D25F00D36357 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.hs";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE)_stub.h",
+				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE).o",
+			);
+			script = ../../Configuration/compileHaskell.sh;
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		D053F01415B641A0005CBF00 /* PBXContainerItemProxy */ = {
@@ -99,6 +115,7 @@
 		D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWindowController.m; sourceTree = "<group>"; };
 		D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
 		D0F86B3215B8CFB900D36357 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D0F86B3615B8D23F00D36357 /* Users.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Users.hs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +325,7 @@
 		D0F86B3515B8D1F000D36357 /* Haskell */ = {
 			isa = PBXGroup;
 			children = (
+				D0F86B3615B8D23F00D36357 /* Users.hs */,
 			);
 			name = Haskell;
 			sourceTree = "<group>";
@@ -324,6 +342,7 @@
 				D053EFED15B641A0005CBF00 /* Resources */,
 			);
 			buildRules = (
+				D0F86B3915B8D25F00D36357 /* PBXBuildRule */,
 			);
 			dependencies = (
 				D053F06415B641FB005CBF00 /* PBXTargetDependency */,
@@ -448,6 +467,7 @@
 			files = (
 				D053F00015B641A0005CBF00 /* main.m in Sources */,
 				D053F00715B641A0005CBF00 /* AppDelegate.m in Sources */,
+				D0F86B3815B8D24D00D36357 /* Users.hs in Sources */,
 				D0F86B3015B8CCC200D36357 /* LoginWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +540,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				HEADER_SEARCH_PATHS = (
+					../../ObjectiveHaskell,
+					$HEADER_SEARCH_PATHS,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
 			};
@@ -534,6 +558,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				HEADER_SEARCH_PATHS = (
+					../../ObjectiveHaskell,
+					$HEADER_SEARCH_PATHS,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
 			};
