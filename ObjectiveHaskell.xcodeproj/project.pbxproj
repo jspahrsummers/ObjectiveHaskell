@@ -105,7 +105,7 @@
 		D09061F315B0DD37001CAC43 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D09061F615B0DD37001CAC43 /* ObjectiveHaskell-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjectiveHaskell-Prefix.pch"; sourceTree = "<group>"; };
 		D09061F715B0DD37001CAC43 /* ObjectiveHaskell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectiveHaskell.h; sourceTree = "<group>"; };
-		D09061FF15B0DD38001CAC43 /* ObjectiveHaskellTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ObjectiveHaskellTests.octest; path = "ObjectiveHaskellTests Mac.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D09061FF15B0DD38001CAC43 /* ObjectiveHaskellTests Mac.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ObjectiveHaskellTests Mac.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D090620015B0DD38001CAC43 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D090620815B0DD38001CAC43 /* ObjectiveHaskellTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ObjectiveHaskellTests-Info.plist"; sourceTree = "<group>"; };
 		D090620A15B0DD38001CAC43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				D09061EB15B0DD37001CAC43 /* libObjectiveHaskell Mac.a */,
-				D09061FF15B0DD38001CAC43 /* ObjectiveHaskellTests.octest */,
+				D09061FF15B0DD38001CAC43 /* ObjectiveHaskellTests Mac.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -407,7 +407,7 @@
 			);
 			name = "ObjectiveHaskellTests Mac";
 			productName = ObjectiveHaskellTests;
-			productReference = D09061FF15B0DD38001CAC43 /* ObjectiveHaskellTests.octest */;
+			productReference = D09061FF15B0DD38001CAC43 /* ObjectiveHaskellTests Mac.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -585,6 +585,7 @@
 					"-lHScontainers-0.4.2.1",
 					"-lHStemplate-haskell-2.7.0.0",
 					"-lHSbytestring-0.9.2.1",
+					"-lHStext-0.11.2.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -604,6 +605,7 @@
 					"-lHScontainers-0.4.2.1",
 					"-lHStemplate-haskell-2.7.0.0",
 					"-lHSbytestring-0.9.2.1",
+					"-lHStext-0.11.2.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
