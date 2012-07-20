@@ -57,7 +57,6 @@ applyMethodArgs
     -> [Name]   -- ^ The variable or binding names being applied.
     -> Q Exp
 
-applyMethodArgs expr [] [] = return expr
 applyMethodArgs expr (t:argTypes) (arg:args)
     | t == ConT ''Id =
         let compoundExpr = AppE expr (VarE arg)
@@ -69,6 +68,8 @@ applyMethodArgs expr (t:argTypes) (arg:args)
     | otherwise =
         let compoundExpr = AppE expr (VarE arg)
         in applyMethodArgs compoundExpr argTypes args
+
+applyMethodArgs expr _ _ = return expr
 
 -- | Wraps the return value of an expression to match a desired return type.
 -- | This is used to map 'UnsafeId' return values to 'Id'.
