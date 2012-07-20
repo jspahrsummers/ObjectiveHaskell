@@ -16,4 +16,9 @@ do
     IMPORTS="$IMPORTS -i$DIR"
 done
 
-/usr/local/bin/ghc -XForeignFunctionInterface -XTemplateHaskell -framework Foundation -c -O $IMPORTS --make "$INPUT_FILE_PATH"
+/usr/local/bin/ghc \
+    -XForeignFunctionInterface -XTemplateHaskell \
+    -W -Werror -fno-warn-unused-imports -fwarn-hi-shadowing -fwarn-identities -fwarn-missing-signatures -fwarn-missing-local-sigs -fwarn-monomorphism-restriction \
+    -framework Foundation $IMPORTS \
+    -c -O -threaded --make \
+    "$INPUT_FILE_PATH"
