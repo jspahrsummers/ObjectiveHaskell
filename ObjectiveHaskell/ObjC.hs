@@ -75,7 +75,9 @@ nil = unretainedId nullPtr
 
 -- | Retains an 'UnsafeId' and converts it into an 'Id', which will be released when the last reference to it disappears.
 retainedId :: UnsafeId -> IO Id
-retainedId obj = Id <$> newForeignPtr p_release obj <* retain obj
+retainedId obj
+    | obj == nullPtr = nil
+    | otherwise = Id <$> newForeignPtr p_release obj <* retain obj
 
 -- | Converts an 'UnsafeId' into an 'Id', without any memory management.
 -- | This should only be used for objects that do not need to be retained (like 'Class' objects).
@@ -86,10 +88,13 @@ unretainedId obj = Id <$> newForeignPtr_ obj
 -- | The resulting 'UnsafeId' can be used safely (by Haskell or Objective-C code) until the autorelease pool is drained.
 autorelease :: Id -> IO UnsafeId
 autorelease obj =
-    withUnsafeId obj $ \obj -> do
-        u <- retain obj
-        sel <- selector "autorelease"
-        autorelease_dyn (castFunPtr p_objc_msgSend) u sel
+    withUnsafeId obj $ \obj ->
+        if obj == nullPtr
+        then return $ obj
+        else do
+            u <- retain obj
+            sel <- selector "autorelease"
+            autorelease_dyn (castFunPtr p_objc_msgSend) u sel
 
 -- | Applies a function to the 'UnsafeId' corresponding to an 'Id'.
 -- | This can be used to temporarily manipulate an 'UnsafeId' without sacrificing safety.
