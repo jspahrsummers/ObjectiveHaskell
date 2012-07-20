@@ -8,7 +8,7 @@
 
 // Add GHC header and library paths
 HEADER_SEARCH_PATHS = /usr/local/Cellar/ghc/7.4.2/lib/ghc-7.4.2/include/
-LIBRARY_SEARCH_PATHS = /usr/local/Cellar/ghc/7.4.2/lib/ghc-7.4.2/**
+LIBRARY_SEARCH_PATHS = /usr/local/Cellar/ghc/7.4.2/lib/ghc-7.4.2/** /usr/local/Cellar/haskell-platform/2012.2.0.0/lib/ghc/** ~/.cabal/lib/**
 
 // libiconv is needed by GHC, and we want to force loading of categories in
 // libObjectiveHaskell.a
