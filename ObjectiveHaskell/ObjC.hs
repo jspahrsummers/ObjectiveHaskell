@@ -4,7 +4,7 @@ module ObjectiveHaskell.ObjC (
         ObjCBool, NSUInteger,
         Bridged, toObjC, fromObjC,
         selector, getClass,
-        retainedId, unretainedId, autorelease, withUnsafeId,
+        retainedId, unretainedId, nil, autorelease, withUnsafeId,
         p_objc_msgSend, objc_hash,
         exportFunc
     ) where
@@ -68,6 +68,10 @@ class Bridged a where
 instance Bridged Id where
     fromObjC = return
     toObjC = return
+
+-- | An 'Id' value representing Objective-C @nil@.
+nil :: IO Id
+nil = unretainedId nullPtr
 
 -- | Retains an 'UnsafeId' and converts it into an 'Id', which will be released when the last reference to it disappears.
 retainedId :: UnsafeId -> IO Id
