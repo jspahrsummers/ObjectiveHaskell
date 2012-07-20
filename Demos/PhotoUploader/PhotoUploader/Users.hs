@@ -1,7 +1,13 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Users where
 
-import Data.Aeson
+import Control.Applicative
+import Control.Monad
+import Data.Aeson as Aeson
+import Data.ByteString.Lazy as ByteString
 import Foreign.Ptr
+import Foreign.StablePtr
 import ObjectiveHaskell.MsgSend
 import ObjectiveHaskell.NSData
 import ObjectiveHaskell.NSString
@@ -11,8 +17,35 @@ declMessage "urlWithString" [t| Id -> Class -> IO Id |] "URLWithString:"
 declMessage "requestWithURL" [t| Id -> Class -> IO Id |] "requestWithURL:"
 declMessage "sendSynchronousRequest" [t| Id -> Ptr UnsafeId -> Ptr UnsafeId -> Class -> IO Id |] "sendSynchronousRequest:returningResponse:error:"
 
-getCurrentUserInfo_hs :: Id -> IO Id
-getCurrentUserInfo_hs tokenObj = do
+type MaybePtr a = StablePtr (Maybe a)
+
+data User = User {
+    userId :: Integer,
+    username :: String,
+    fullName :: String,
+    bio :: String
+} deriving (Eq, Ord, Show)
+
+instance Aeson.FromJSON User where
+    parseJSON (Object d) = do
+        u <- d .: "data"
+
+        userId <- read <$> u .: "id"
+        username <- u .: "username"
+        fullName <- u .: "full_name"
+        bio <- u .: "bio"
+
+        return $ User { userId = userId, username = username, fullName = fullName, bio = bio }
+
+    parseJSON j = do
+        mzero
+
+getFullName :: MaybePtr User -> IO Id
+getFullName ptr =
+    deRefStablePtr ptr >>= maybe nil (toNSString . fullName)
+
+fetchCurrentUser :: Id -> IO (MaybePtr User)
+fetchCurrentUser tokenObj = do
     token <- fromNSString tokenObj
     urlStr <- toNSString $ "https://api.instagram.com/v1/users/self?access_token=" ++ token
 
@@ -20,6 +53,11 @@ getCurrentUserInfo_hs tokenObj = do
     req <- getClass "NSURLRequest" >>= requestWithURL url
 
     resp <- getClass "NSURLConnection" >>= sendSynchronousRequest req nullPtr nullPtr >>= fromNSData
-    toNSString $ show resp
 
-exportFunc "getCurrentUserInfo" [t| UnsafeId -> IO UnsafeId |] 'getCurrentUserInfo_hs
+    let mu = Aeson.decode (fromChunks [resp]) :: Maybe User
+    case mu of
+        (Just u) -> newStablePtr $ Just u
+        _ -> newStablePtr Nothing
+
+exportFunc "user_fetchCurrent" [t| UnsafeId -> IO (MaybePtr User) |] 'fetchCurrentUser
+exportFunc "user_fullName" [t| MaybePtr User -> IO UnsafeId |] 'getFullName

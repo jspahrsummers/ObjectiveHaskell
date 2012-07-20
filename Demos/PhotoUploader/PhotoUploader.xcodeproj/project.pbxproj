@@ -415,7 +415,6 @@
 		D053F03615B641C1005CBF00 /* ObjectiveHaskellTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			name = ObjectiveHaskellTests.octest;
 			path = "ObjectiveHaskellTests Mac.octest";
 			remoteRef = D053F03515B641C1005CBF00 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
