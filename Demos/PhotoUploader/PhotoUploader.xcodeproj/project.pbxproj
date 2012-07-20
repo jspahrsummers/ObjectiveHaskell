@@ -545,6 +545,15 @@
 					$HEADER_SEARCH_PATHS,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					$OTHER_LDFLAGS,
+					"-lHSaeson-0.6.0.2",
+					"-lHSattoparsec-0.10.2.0",
+					"-lHSblaze-builder-0.3.1.0",
+					"-lHShashable-1.1.2.3",
+					"-lHSunordered-containers-0.2.1.0",
+					"-lHSvector-0.9.1",
+				);
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -563,6 +572,15 @@
 					$HEADER_SEARCH_PATHS,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					$OTHER_LDFLAGS,
+					"-lHSaeson-0.6.0.2",
+					"-lHSattoparsec-0.10.2.0",
+					"-lHSblaze-builder-0.3.1.0",
+					"-lHShashable-1.1.2.3",
+					"-lHSunordered-containers-0.2.1.0",
+					"-lHSvector-0.9.1",
+				);
 				SDKROOT = macosx;
 			};
 			name = Release;
