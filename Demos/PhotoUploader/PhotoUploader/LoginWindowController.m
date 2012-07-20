@@ -7,6 +7,7 @@
 //
 
 #import "LoginWindowController.h"
+#import "Users_stub.h"
 #import <WebKit/WebKit.h>
 
 @interface LoginWindowController ()
@@ -33,10 +34,10 @@
 		return request;
 	
 	// skip 'access_token='
-	NSString *accessToken = [request.URL.fragment substringFromIndex:12];
+	NSString *accessToken = [request.URL.fragment substringFromIndex:13];
+	NSLog(@"access token: %@", accessToken);
 
-	// TODO: do things with the accessToken
-
+	NSLog(@"%@", getCurrentUserInfo(accessToken));
 	return request;
 }
 
