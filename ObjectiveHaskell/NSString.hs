@@ -41,6 +41,7 @@ kCFStringEncodingUTF8 = 0x08000100
 fromNSString :: Id -> IO String
 fromNSString obj =
     withUnsafeId obj $ \obj -> do
+        -- TODO: This should actually get the number of bytes required for UTF-8, not the number of characters in the string.
         len <- getLength obj
         ptr <- getCStringPtr obj kCFStringEncodingUTF8
 
@@ -58,13 +59,13 @@ copyNSString
 
 copyNSString obj len =
     allocaBytes (len + 1) $ \buf -> do
-        -- TODO: In practice, this should never fail, but we should still handle such a case.
-        getCString obj buf (fromIntegral len + 1) kCFStringEncodingUTF8
-        
-        -- TODO: This may read in a string with an incorrect encoding (see toNSString).
-        str <- peekCStringLen (buf, len)
+        b <- getCString obj buf (fromIntegral len + 1) kCFStringEncodingUTF8
 
-        return str
+        if b /= 0
+        -- TODO: This may read in a string with an incorrect encoding (see toNSString).
+        then peekCStringLen (buf, len)
+        -- In practice, this should never fail with UTF-8 and a big enough buffer, so just error out if it does.
+        else error $ "Could not get a UTF-8 string from NSString " ++ show obj
 
 -- | Converts a String into an immutable @NSString@.
 toNSString :: String -> IO Id
