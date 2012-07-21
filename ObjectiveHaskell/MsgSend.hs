@@ -132,7 +132,10 @@ declMessage name qt selName = do
         -- "do _cmd <- selector fn_name; body >>= retainedId"
         doBody = doE [bindS (varP cmdName) (selectorExpr selName),
                       noBindS $ wrapReturnedExpr funcBody retType]
+        
+        -- Defines the Haskell function and a type signature for it
+        funcName = mkName name
+        funcSig = sigD funcName qt
+        funcDecl = singleClauseFunc funcName paramNames doBody
 
-        funcDecl = singleClauseFunc (mkName name) paramNames doBody
-
-    sequence [dynDecl, funcDecl]
+    sequence [dynDecl, funcSig, funcDecl]
