@@ -21,16 +21,16 @@ type CFIndex = CLong
 -- | A Core Foundation @CFStringEncoding@.
 type CFStringEncoding = CInt
 
-foreign import ccall unsafe "CoreFoundation/CoreFoundation.h CFStringCreateWithBytes"
+foreign import ccall safe "CoreFoundation/CoreFoundation.h CFStringCreateWithBytes"
     newCFString :: Ptr () -> Ptr Word8 -> CFIndex -> CFStringEncoding -> Boolean -> IO UnsafeId
 
-foreign import ccall unsafe "CoreFoundation/CoreFoundation.h CFStringGetCStringPtr"
+foreign import ccall safe "CoreFoundation/CoreFoundation.h CFStringGetCStringPtr"
     getCStringPtr :: UnsafeId -> CFStringEncoding -> IO CString
 
-foreign import ccall unsafe "CoreFoundation/CoreFoundation.h CFStringGetCString"
+foreign import ccall safe "CoreFoundation/CoreFoundation.h CFStringGetCString"
     getCString :: UnsafeId -> CString -> CFIndex -> CFStringEncoding -> IO Boolean
 
-foreign import ccall unsafe "CoreFoundation/CoreFoundation.h CFStringGetLength"
+foreign import ccall safe "CoreFoundation/CoreFoundation.h CFStringGetLength"
     getLength :: UnsafeId -> IO CFIndex
 
 kCFStringEncodingUTF8 :: CFStringEncoding
