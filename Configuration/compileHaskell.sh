@@ -21,4 +21,5 @@ done
     -W -Werror -fno-warn-unused-imports -fwarn-hi-shadowing -fwarn-identities -fwarn-missing-signatures -fwarn-missing-local-sigs -fwarn-monomorphism-restriction \
     -framework Foundation $IMPORTS \
     -c -O -threaded --make \
+    "$@" \
     "$INPUT_FILE_PATH"
