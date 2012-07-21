@@ -56,17 +56,15 @@ copyNSString
     -> Int          -- ^ The length of the string.
     -> IO String
 
-copyNSString obj len = do
-    buf <- mallocBytes (len + 1)
+copyNSString obj len =
+    allocaBytes (len + 1) $ \buf -> do
+        -- TODO: In practice, this should never fail, but we should still handle such a case.
+        getCString obj buf (fromIntegral len + 1) kCFStringEncodingUTF8
+        
+        -- TODO: This may read in a string with an incorrect encoding (see toNSString).
+        str <- peekCStringLen (buf, len)
 
-    -- In practice, this should never fail.
-    getCString obj buf (fromIntegral len + 1) kCFStringEncodingUTF8
-    
-    -- TODO: This may read in a string with an incorrect encoding (see toNSString).
-    str <- peekCStringLen (buf, len)
-    free buf
-
-    return str
+        return str
 
 -- | Converts a String into an immutable @NSString@.
 toNSString :: String -> IO Id
