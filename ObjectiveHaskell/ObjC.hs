@@ -180,26 +180,26 @@ exportFunc tramp qt funcName = do
 foreign import ccall safe "objc/runtime.h &objc_msgSend"
     p_objc_msgSend :: Imp
 
-foreign import ccall unsafe "objc/runtime.h sel_registerName"
+foreign import ccall safe "objc/runtime.h sel_registerName"
     sel_registerName :: CString -> IO Sel
 
-foreign import ccall unsafe "objc/runtime.h objc_getClass"
+foreign import ccall safe "objc/runtime.h objc_getClass"
     objc_getClass :: CString -> UnsafeId
 
-foreign import ccall unsafe "CoreFoundation/CoreFoundation.h CFRetain"
+foreign import ccall safe "CoreFoundation/CoreFoundation.h CFRetain"
     retain :: UnsafeId -> IO UnsafeId
 
 foreign import ccall safe "CoreFoundation/CoreFoundation.h &CFRelease"
     p_release :: FunPtr (UnsafeId -> IO ())
 
 -- | Creates a trampoline function from a function pointer that matches the type of @-autorelease@.
-foreign import ccall unsafe "dynamic"
+foreign import ccall safe "dynamic"
     autorelease_dyn :: FunPtr (UnsafeId -> Sel -> IO UnsafeId) -> (UnsafeId -> Sel -> IO UnsafeId)
 
 -- | Creates a trampoline function from a function pointer that matches the type of @-isEqual:@.
-foreign import ccall unsafe "dynamic"
+foreign import ccall safe "dynamic"
     isEqual_dyn :: FunPtr (UnsafeId -> Sel -> UnsafeId -> IO ObjCBool) -> (UnsafeId -> Sel -> UnsafeId -> IO ObjCBool)
 
 -- | Creates a trampoline function from a function pointer that matches the type of @-hash@.
-foreign import ccall unsafe "dynamic"
+foreign import ccall safe "dynamic"
     hash_dyn :: FunPtr (UnsafeId -> Sel -> IO NSUInteger) -> (UnsafeId -> Sel -> IO NSUInteger)

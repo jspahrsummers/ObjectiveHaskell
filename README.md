@@ -30,6 +30,8 @@ You will also need to have the latest `haskell-platform` installed via [Homebrew
 
         * `$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE)_stub.h`
         * `$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE).o`
+     
+      If you want to pass any additional flags to GHC, you may pass them to `compileHaskell.sh` within the build rule.
  5. `#import "ObjectiveHaskell.h"` in your project's prefix header.
  6. In files where you want to use Haskell functions, `#import "MODULE_stub.h"`, where `MODULE` is the name of your Haskell file.
 
