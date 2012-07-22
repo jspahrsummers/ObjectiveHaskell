@@ -11,18 +11,19 @@ import Data.Foldable
 import Data.Sequence as Seq
 import Foreign.C.Types
 import ObjectiveHaskell.MsgSend
-import ObjectiveHaskell.NSObject
 import ObjectiveHaskell.ObjC
 
 -- NSArray methods
 declMessage "array" [t| Class -> IO Id |] "array"
 declMessage "addObject" [t| Id -> Id -> IO () |] "addObject:"
+declMessage "copy" [t| Id -> IO Id |] "copy"
+declMessage "count" [t| Id -> IO NSUInteger |] "count"
 declMessage "objectAtIndex" [t| NSUInteger -> Id -> IO Id |] "objectAtIndex:"
 
 -- | Converts an @NSArray@ into a 'Seq'.
 fromNSArray :: Id -> IO (Seq Id)
 fromNSArray arr = do
-    c <- objc_count arr
+    c <- count arr
 
     let fromNSArray' :: NSUInteger -> IO (Seq Id) -> IO (Seq Id)
         fromNSArray' i s =
@@ -40,7 +41,7 @@ toNSArray s = do
     arr <- getClass "NSMutableArray" >>= array
     mapM (\obj -> arr @. addObject obj) $ toList s
 
-    objc_copy arr
+    copy arr
 
 instance Bridged (Seq Id) where
     toObjC = toNSArray

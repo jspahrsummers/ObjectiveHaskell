@@ -14,11 +14,11 @@ import Data.Map as Map
 import Foreign.C.Types
 import ObjectiveHaskell.MsgSend
 import ObjectiveHaskell.NSArray
-import ObjectiveHaskell.NSObject
 import ObjectiveHaskell.ObjC
 
 -- NSDictionary methods
 declMessage "allKeys" [t| Id -> IO Id |] "allKeys"
+declMessage "copy" [t| Id -> IO Id |] "copy"
 declMessage "dictionary" [t| Class -> IO Id |] "dictionary"
 declMessage "objectForKey" [t| Id -> Id -> IO Id |] "objectForKey:"
 declMessage "setObjectForKey" [t| Id -> Id -> Id -> IO () |] "setObject:forKey:"
@@ -37,7 +37,7 @@ toNSDictionary tbl = do
     dict <- getClass "NSMutableDictionary" >>= dictionary
     mapM (\(k, v) -> dict @. setObjectForKey v k) $ Map.toList tbl
 
-    objc_copy dict
+    copy dict
 
 instance Bridged (Map Id Id) where
     toObjC = toNSDictionary
