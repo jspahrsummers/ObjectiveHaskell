@@ -53,7 +53,7 @@
 				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE)_stub.h",
 				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE).o",
 			);
-			script = Configuration/compileHaskell.sh;
+			script = "Configuration/compileHaskell.sh -Wwarn";
 		};
 /* End PBXBuildRule section */
 
