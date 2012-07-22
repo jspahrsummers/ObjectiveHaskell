@@ -1,3 +1,5 @@
+{-# LANGUAGE Unsafe #-}
+
 -- | Convenience functions and utilities for Template Haskell
 module ObjectiveHaskell.THUtils (
         decomposeFunctionType,

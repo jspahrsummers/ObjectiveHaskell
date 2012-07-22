@@ -1,3 +1,5 @@
+{-# LANGUAGE Trustworthy #-}
+
 -- TODO: this module can probably be eliminated
 module ObjectiveHaskell.NSObject (
         objc_copy, objc_count

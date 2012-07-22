@@ -1,3 +1,5 @@
+{-# LANGUAGE Trustworthy #-}
+
 -- | Bridging to and from @NSData@
 module ObjectiveHaskell.NSData (
         fromNSData, toNSData

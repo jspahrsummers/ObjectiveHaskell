@@ -1,3 +1,5 @@
+{-# LANGUAGE Trustworthy #-}
+
 -- | Objective-C bridging primitives
 module ObjectiveHaskell.ObjC (
         Sel, Class, Id, UnsafeId,

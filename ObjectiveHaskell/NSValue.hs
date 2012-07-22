@@ -1,4 +1,5 @@
 {-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE Trustworthy #-}
 
 -- | Bridging to and from @NSValue@
 module ObjectiveHaskell.NSValue (
