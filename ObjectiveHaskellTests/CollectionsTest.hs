@@ -3,7 +3,7 @@
 module CollectionsTest where
 
 import Control.Applicative
-import Data.ByteString as ByteString
+import Data.ByteString.Lazy as ByteString
 import Data.Map as Map
 import Data.Sequence as Seq
 import Data.Text.Lazy as Text

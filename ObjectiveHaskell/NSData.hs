@@ -6,7 +6,7 @@ module ObjectiveHaskell.NSData (
     ) where
 
 import Control.Applicative
-import Data.ByteString as ByteString
+import Data.ByteString.Lazy as ByteString
 import Data.Word
 import Foreign.C.Types
 import Foreign.Marshal.Array
@@ -19,7 +19,7 @@ declMessage "dataWithBytes" [t| Ptr () -> NSUInteger -> Class -> IO Id |] "dataW
 declMessage "objc_length" [t| Id -> IO NSUInteger |] "length"
 declMessage "bytes" [t| Id -> IO (Ptr ()) |] "bytes"
 
--- | Converts an @NSData@ object into a 'ByteString'.
+-- | Converts an @NSData@ object into a lazy 'ByteString'.
 -- | Note that this /does not/ reuse the internal storage of the @NSData@ object, and so may not be suitable for large blobs.
 fromNSData :: Id -> IO ByteString
 fromNSData dat = do
@@ -28,7 +28,7 @@ fromNSData dat = do
 
     pack <$> peekArray (fromIntegral sz) (castPtr ptr)
 
--- | Converts a 'ByteString' into an immutable @NSData@ object.
+-- | Converts a lazy 'ByteString' into an immutable @NSData@ object.
 -- | Note that this /does not/ reuse the internal storage of the 'ByteString', and so may not be suitable for large blobs.
 toNSData :: ByteString -> IO Id
 toNSData str =
