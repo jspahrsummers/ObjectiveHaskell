@@ -1,3 +1,5 @@
+{-# LANGUAGE Trustworthy #-}
+
 -- | Typed message sending, using Template Haskell
 module ObjectiveHaskell.MsgSend (
         declMessage, (@.)

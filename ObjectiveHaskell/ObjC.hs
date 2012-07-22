@@ -1,3 +1,5 @@
+{-# LANGUAGE Trustworthy #-}
+
 -- | Objective-C bridging primitives
 module ObjectiveHaskell.ObjC (
         Sel, Class, Id, UnsafeId,
@@ -114,7 +116,9 @@ selector s = withCString s sel_registerName
 
 -- | Returns the Objective-C class by a given name.
 getClass :: String -> IO Class
-getClass name = withCString name (unretainedId . objc_getClass)
+getClass name =
+    withCString name $ \name ->
+        objc_getClass name >>= unretainedId
 
 -- | Returns the @-hash@ of an object.
 -- | This function assumes that the object's hash will remain the same across calls.
@@ -184,7 +188,7 @@ foreign import ccall safe "objc/runtime.h sel_registerName"
     sel_registerName :: CString -> IO Sel
 
 foreign import ccall safe "objc/runtime.h objc_getClass"
-    objc_getClass :: CString -> UnsafeId
+    objc_getClass :: CString -> IO UnsafeId
 
 foreign import ccall safe "CoreFoundation/CoreFoundation.h CFRetain"
     retain :: UnsafeId -> IO UnsafeId
