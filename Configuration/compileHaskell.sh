@@ -18,7 +18,7 @@ done
 
 /usr/local/bin/ghc \
     -XForeignFunctionInterface -XTemplateHaskell \
-    -W -Werror -fno-warn-unused-imports -fwarn-hi-shadowing -fwarn-identities -fwarn-missing-signatures -fwarn-missing-local-sigs -fwarn-monomorphism-restriction \
+    -Werror -fwarn-incomplete-patterns -fwarn-dodgy-imports -fwarn-dodgy-exports -fwarn-unused-binds -fwarn-hi-shadowing -fwarn-identities -fwarn-monomorphism-restriction \
     -framework Foundation $IMPORTS \
     -c -O -threaded --make \
     "$@" \
