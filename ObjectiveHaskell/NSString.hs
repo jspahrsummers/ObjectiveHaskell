@@ -6,80 +6,41 @@ module ObjectiveHaskell.NSString (
         fromNSString, toNSString
     ) where
 
+import Data.ByteString.Lazy as ByteString
+import Data.Text.Lazy as Text
+import Data.Text.Lazy.Encoding
 import Data.Word
-import Foreign.C.String
 import Foreign.C.Types
-import Foreign.Marshal.Alloc
+import Foreign.Marshal.Array
 import Foreign.Ptr
+import ObjectiveHaskell.MsgSend
 import ObjectiveHaskell.ObjC
 
--- | A Core Foundation @Boolean@.
-type Boolean = CUChar
+declMessage "utf8String" [t| Id -> IO (Ptr CChar) |] "UTF8String"
+declMessage "stringWithUtf8String" [t| Ptr CChar -> Class -> IO Id |] "stringWithUTF8String:"
 
--- | A Core Foundation @CFIndex@.
-type CFIndex = CLong
-
--- | A Core Foundation @CFStringEncoding@.
-type CFStringEncoding = CInt
-
-foreign import ccall safe "CoreFoundation/CoreFoundation.h CFStringCreateWithBytes"
-    newCFString :: Ptr () -> Ptr Word8 -> CFIndex -> CFStringEncoding -> Boolean -> IO UnsafeId
-
-foreign import ccall safe "CoreFoundation/CoreFoundation.h CFStringGetCStringPtr"
-    getCStringPtr :: UnsafeId -> CFStringEncoding -> IO CString
-
-foreign import ccall safe "CoreFoundation/CoreFoundation.h CFStringGetCString"
-    getCString :: UnsafeId -> CString -> CFIndex -> CFStringEncoding -> IO Boolean
-
-foreign import ccall safe "CoreFoundation/CoreFoundation.h CFStringGetLength"
-    getLength :: UnsafeId -> IO CFIndex
-
-kCFStringEncodingUTF8 :: CFStringEncoding
-kCFStringEncodingUTF8 = 0x08000100
-
--- | Converts an @NSString@ into a 'String'.
+-- | Converts an @NSString@ into a lazy 'Text' value.
 -- | Note that this /does not/ reuse the internal storage of the @NSString@, and so may not be suitable for large strings.
-fromNSString :: Id -> IO String
-fromNSString obj =
-    withUnsafeId obj $ \obj -> do
-        -- TODO: This should actually get the number of bytes required for UTF-8, not the number of characters in the string.
-        len <- getLength obj
-        ptr <- getCStringPtr obj kCFStringEncodingUTF8
+fromNSString :: Id -> IO Text
+fromNSString obj = do
+    ptr <- obj @. utf8String
+    arr <- peekArray0 0 (castPtr ptr) :: IO [Word8]
 
-        if ptr /= nullPtr
-            -- TODO: This may read in a string with an incorrect encoding (see toNSString).
-            then peekCStringLen (ptr, fromIntegral len)
-            else copyNSString obj $ fromIntegral len
+    return $ decodeUtf8 $ ByteString.pack arr
 
--- | Converts an unwrapped @NSString@ into a 'String' using a temporary buffer.
--- | Note that this /does not/ reuse the internal storage of the 'String', and so may not be suitable for large strings.
-copyNSString
-    :: UnsafeId     -- ^ The @NSString@ to convert.
-    -> Int          -- ^ The length of the string.
-    -> IO String
+-- | Converts a 'Text' value into an immutable @NSString@.
+toNSString :: Text -> IO Id
+toNSString txt =
+    let arr = ByteString.unpack $ encodeUtf8 txt
+    in withArray arr $ \ptr ->
+        getClass "NSString" >>= stringWithUtf8String (castPtr ptr)
 
-copyNSString obj len =
-    allocaBytes (len + 1) $ \buf -> do
-        b <- getCString obj buf (fromIntegral len + 1) kCFStringEncodingUTF8
-
-        if b /= 0
-        -- TODO: This may read in a string with an incorrect encoding (see toNSString).
-        then peekCStringLen (buf, len)
-        -- In practice, this should never fail with UTF-8 and a big enough buffer, so just error out if it does.
-        else error $ "Could not get a UTF-8 string from NSString " ++ show obj
-
--- | Converts a String into an immutable @NSString@.
-toNSString :: String -> IO Id
-toNSString str =
-    let len = fromIntegral (length str) :: CFIndex
-    in withCString str $ \ptr -> do
-        -- TODO: This encoding is probably not correct,
-        -- as withCString uses "the current locale", which may not be UTF-8.
-        --
-        -- We can get the system encoding using CFStringGetSystemEncoding(), but even that may change on a per-application basis.
-        obj <- newCFString nullPtr (castPtr ptr) len kCFStringEncodingUTF8 0
-        retainedId obj
-
-instance Bridged [Char] where
+instance Bridged Text where
     toObjC = toNSString
     fromObjC = fromNSString
+
+instance Bridged [Char] where
+    toObjC = toNSString . Text.pack
+    fromObjC obj = do
+        txt <- fromNSString obj
+        return $ Text.unpack txt
