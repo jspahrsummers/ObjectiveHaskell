@@ -1,9 +1,12 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module CollectionsTest where
 
 import Control.Applicative
 import Data.ByteString as ByteString
 import Data.Map as Map
 import Data.Sequence as Seq
+import Data.Text.Lazy as Text
 import Foreign.C.Types
 import Foreign.Ptr
 import ObjectiveHaskell.NSArray
@@ -16,7 +19,7 @@ import ObjectiveHaskell.ObjC
 appendFoobar' :: Id -> IO Id
 appendFoobar' nsstr = do
     str <- fromNSString nsstr
-    toNSString $ str ++ "foobar"
+    toNSString $ Text.append str "foobar"
 
 addFoobarToArray' :: Id -> IO Id
 addFoobarToArray' nsarr = do
@@ -36,7 +39,7 @@ setFooToBar' nsdict = do
 appendByte' :: Id -> CUChar -> IO Id
 appendByte' nsdata b = do
     str <- fromNSData nsdata
-    toNSData $ snoc str (fromIntegral b)
+    toNSData $ ByteString.snoc str (fromIntegral b)
 
 nullNSValue' :: IO Id
 nullNSValue' = toNSValue nullPtr
