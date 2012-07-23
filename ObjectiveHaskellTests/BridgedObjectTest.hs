@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module CollectionsTest where
+module BridgedObjectTest where
 
 import Control.Applicative
 import Data.ByteString.Lazy as ByteString

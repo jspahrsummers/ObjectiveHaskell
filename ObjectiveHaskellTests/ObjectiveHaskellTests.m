@@ -7,7 +7,7 @@
 //
 
 #import "ObjectiveHaskellTests.h"
-#import "CollectionsTest_stub.h"
+#import "BridgedObjectTest_stub.h"
 #import "FibTest_stub.h"
 #import "MsgSendTest_stub.h"
 
