@@ -7,7 +7,7 @@
 //
 
 #import "ObjectiveHaskellTests.h"
-#import "CollectionsTest_stub.h"
+#import "BridgedObjectTest_stub.h"
 #import "FibTest_stub.h"
 #import "MsgSendTest_stub.h"
 
@@ -37,6 +37,16 @@
     NSDictionary *dict = setFooToBar(@{ @"fuzz": @5, @"foo": @"buzz" });
     NSDictionary *expectedDict = @{ @"fuzz": @5, @"foo": @"bar" };
     STAssertEqualObjects(dict, expectedDict, @"");
+}
+
+- (void)testNSNumberBridging {
+	NSNumber *inum = @5;
+	STAssertEqualObjects(@6, plusInt(inum, 1), @"");
+	STAssertEqualsWithAccuracy(6.5, [plusDouble(inum, 1.5) doubleValue], 0.001, @"");
+
+	NSNumber *dnum = @5.25;
+	STAssertEqualsWithAccuracy(6.25, [plusInt(dnum, 1) doubleValue], 0.001, @"");
+	STAssertEqualsWithAccuracy(6.75, [plusDouble(dnum, 1.5) doubleValue], 0.001, @"");
 }
 
 - (void)testNSValueBridging {
