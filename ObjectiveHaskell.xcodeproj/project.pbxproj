@@ -26,6 +26,7 @@
 		D090624A15B0E4C0001CAC43 /* FibTest.hs in Sources */ = {isa = PBXBuildFile; fileRef = D090624815B0E450001CAC43 /* FibTest.hs */; };
 		D090625015B0E613001CAC43 /* NSObject+OHInitializationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D090624E15B0E613001CAC43 /* NSObject+OHInitializationExtensions.m */; };
 		D0B232EE15B295380045568B /* libffi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B232EA15B2952B0045568B /* libffi.a */; };
+		D0C0168915BDF11300AED543 /* NSNumber.hs in Sources */ = {isa = PBXBuildFile; fileRef = D0C0168815BDF10A00AED543 /* NSNumber.hs */; };
 		D0E61A7C15B4FFF300667D8A /* NSValue.hs in Sources */ = {isa = PBXBuildFile; fileRef = D0E61A6915B4FEDE00667D8A /* NSValue.hs */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,7 @@
 		D090624815B0E450001CAC43 /* FibTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FibTest.hs; sourceTree = "<group>"; };
 		D090624E15B0E613001CAC43 /* NSObject+OHInitializationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+OHInitializationExtensions.m"; sourceTree = "<group>"; };
 		D0B232DF15B2952B0045568B /* libffi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libffi.xcodeproj; path = libffi/libffi.xcodeproj; sourceTree = "<group>"; };
+		D0C0168815BDF10A00AED543 /* NSNumber.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSNumber.hs; sourceTree = "<group>"; };
 		D0E525ED15B1122500C13802 /* MsgSend.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MsgSend.hs; sourceTree = "<group>"; };
 		D0E61A6915B4FEDE00667D8A /* NSValue.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSValue.hs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -350,6 +352,7 @@
 				D045A10A15B2793D00DE48BF /* NSArray.hs */,
 				D062D78D15B38B80003871F7 /* NSData.hs */,
 				D045A10B15B2794400DE48BF /* NSDictionary.hs */,
+				D0C0168815BDF10A00AED543 /* NSNumber.hs */,
 				D045A10F15B27B4900DE48BF /* NSString.hs */,
 				D0E61A6915B4FEDE00667D8A /* NSValue.hs */,
 				D03E2D2D15B1599200679DB0 /* ObjC.hs */,
@@ -500,6 +503,7 @@
 				D045A11015B2807A00DE48BF /* NSString.hs in Sources */,
 				D062D78E15B38B90003871F7 /* NSData.hs in Sources */,
 				D0E61A7C15B4FFF300667D8A /* NSValue.hs in Sources */,
+				D0C0168915BDF11300AED543 /* NSNumber.hs in Sources */,
 				D04FC25A15B2B26F00C58F14 /* THUtils.hs in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
