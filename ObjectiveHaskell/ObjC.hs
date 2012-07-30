@@ -71,6 +71,14 @@ instance Bridged Id where
     fromObjC = return
     toObjC = return
 
+instance Bridged a => Bridged (Maybe a) where
+    toObjC mv = maybe nil toObjC mv
+    fromObjC obj =
+        withUnsafeId obj $ \ptr ->
+            if ptr == nullPtr
+                then return Nothing
+                else Just <$> fromObjC obj
+
 -- | An 'Id' value representing Objective-C @nil@.
 nil :: IO Id
 nil = unretainedId nullPtr
