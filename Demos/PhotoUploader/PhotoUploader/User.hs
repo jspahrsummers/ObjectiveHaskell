@@ -15,6 +15,7 @@ import ObjectiveHaskell.ObjC
 
 type MaybePtr a = StablePtr (Maybe a)
 
+-- | An Instagram user.
 data User = User {
     userId :: Integer,
     username :: Text,
@@ -38,19 +39,30 @@ instance Aeson.FromJSON User where
     parseJSON j = do
         mzero
 
-maybeAccessor :: Bridged o => (a -> o) -> MaybePtr a -> IO Id
+-- | Dereferences a 'MaybePtr', applies the given accessor to its value,
+-- | and then converts the result into an Objective-C object.
+maybeAccessor
+    :: Bridged o
+    => (a -> o)     -- ^ An accessor function to lift into the 'Maybe'.
+    -> MaybePtr a   -- ^ A pointer to dereference.
+    -> IO Id        -- ^ The object result. If the pointer contained 'Nothing', this will be 'nil'.
+
 maybeAccessor f ptr =
     deRefStablePtr ptr >>= maybe nil (toObjC . f)
 
+-- | Returns the full name of a 'User', or 'nil'.
 maybeFullName :: MaybePtr User -> IO Id
 maybeFullName = maybeAccessor fullName
 
+-- | Returns the username of a 'User', or 'nil'.
 maybeUsername :: MaybePtr User -> IO Id
 maybeUsername = maybeAccessor username
 
+-- | Returns the profile picture URL of a 'User' (as an @NSString@), or 'nil'.
 maybePhotoURL :: MaybePtr User -> IO Id
 maybePhotoURL = maybeAccessor photoURL
 
+-- | Decodes an @NSData@ into a 'User'.
 decodeUser :: Id -> IO (MaybePtr User)
 decodeUser d = do
     json <- fromNSData d
