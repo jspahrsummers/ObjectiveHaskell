@@ -636,6 +636,56 @@
 			};
 			name = Release;
 		};
+		D0A6670715C648ED004D7661 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D053F04B15B641E5005CBF00 /* ObjectiveHaskell-Profile.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				HEADER_SEARCH_PATHS = (
+					../../ObjectiveHaskell,
+					$HEADER_SEARCH_PATHS,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					$OTHER_LDFLAGS,
+					"-lHSaeson-0.6.0.2",
+					"-lHSattoparsec-0.10.2.0",
+					"-lHSblaze-builder-0.3.1.0",
+					"-lHShashable-1.1.2.3",
+					"-lHSunordered-containers-0.2.1.0",
+					"-lHSvector-0.9.1",
+				);
+				SDKROOT = macosx;
+			};
+			name = Profile;
+		};
+		D0A6670815C648ED004D7661 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "PhotoUploader/PhotoUploader-Prefix.pch";
+				INFOPLIST_FILE = "PhotoUploader/PhotoUploader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Profile;
+		};
+		D0A6670915C648ED004D7661 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoUploader.app/Contents/MacOS/PhotoUploader";
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PREFIX_HEADER = "PhotoUploader/PhotoUploader-Prefix.pch";
+				INFOPLIST_FILE = "PhotoUploaderTests/PhotoUploaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Profile;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -644,6 +694,7 @@
 			buildConfigurations = (
 				D053F01F15B641A0005CBF00 /* Debug */,
 				D053F02015B641A0005CBF00 /* Release */,
+				D0A6670715C648ED004D7661 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -653,6 +704,7 @@
 			buildConfigurations = (
 				D053F02215B641A0005CBF00 /* Debug */,
 				D053F02315B641A0005CBF00 /* Release */,
+				D0A6670815C648ED004D7661 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -662,6 +714,7 @@
 			buildConfigurations = (
 				D053F02515B641A0005CBF00 /* Debug */,
 				D053F02615B641A0005CBF00 /* Release */,
+				D0A6670915C648ED004D7661 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
