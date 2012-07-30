@@ -11,7 +11,7 @@
 #import <WebKit/WebKit.h>
 
 @interface LoginWindowController () {
-	RACSubject *_loginSubscribable;
+	RACAsyncSubject *_loginSubscribable;
 }
 
 @property (nonatomic, weak) IBOutlet WebView *webView;
