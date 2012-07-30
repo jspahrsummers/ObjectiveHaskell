@@ -1,2 +1,2 @@
-#include "xcconfigs/Base/Configurations/Release.xcconfig"
+#include "../libextobjc/Configuration/Base/Configurations/Release.xcconfig"
 #include "ObjectiveHaskell.xcconfig"
