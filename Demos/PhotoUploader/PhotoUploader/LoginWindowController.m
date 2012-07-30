@@ -10,15 +10,32 @@
 #import "Users_stub.h"
 #import <WebKit/WebKit.h>
 
-@interface LoginWindowController ()
+@interface LoginWindowController () {
+	RACSubject *_loginSubscribable;
+}
+
 @property (nonatomic, weak) IBOutlet WebView *webView;
 @property (nonatomic, weak) IBOutlet NSProgressIndicator *progressIndicator;
 @end
 
 @implementation LoginWindowController
 
+#pragma mark Properties
+
+@synthesize loginSubscribable = _loginSubscribable;
+
+#pragma mark Lifecycle
+
 - (id)init {
     return [self initWithWindowNibName:NSStringFromClass(self.class)];
+}
+
+- (id)initWithWindow:(NSWindow *)window {
+	self = [super initWithWindow:window];
+	if (self == nil) return nil;
+
+	_loginSubscribable = [RACSubject subject];
+	return self;
 }
 
 - (void)windowDidLoad {
@@ -50,11 +67,7 @@
 	NSString *accessToken = [request.URL.fragment substringFromIndex:13];
 	NSLog(@"access token: %@", accessToken);
 
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-		HsStablePtr user = user_fetchCurrent(accessToken);
-		NSLog(@"Hello, %@!", user_fullName(user));
-	});
-
+	[_loginSubscribable sendCompleted];
 	return request;
 }
 
