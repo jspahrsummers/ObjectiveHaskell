@@ -547,6 +547,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D0341CD015C649470064ABEC /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D090623A15B0E2DA001CAC43 /* ObjectiveHaskell-Profile.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Profile;
+		};
+		D0341CD115C649470064ABEC /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D090622B15B0DE72001CAC43 /* Mac-StaticLibrary.xcconfig */;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
+				OTHER_LDFLAGS = (
+					"-lHSrts",
+					"-lHSghc-7.4.2",
+					"-lHSbase-4.5.1.0",
+					"-lHSghc-prim-0.2.0.0",
+					"-lHSinteger-gmp-0.4.0.0",
+					"-lHScontainers-0.4.2.1",
+					"-lHStemplate-haskell-2.7.0.0",
+					"-lHSbytestring-0.9.2.1",
+					"-lHStext-0.11.2.0",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Profile;
+		};
+		D0341CD215C649470064ABEC /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D090622715B0DE72001CAC43 /* Mac-Application.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
+				INFOPLIST_FILE = "ObjectiveHaskellTests/ObjectiveHaskellTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Profile;
+		};
 		D090620F15B0DD38001CAC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D090623915B0E2DA001CAC43 /* ObjectiveHaskell-Debug.xcconfig */;
@@ -643,6 +687,7 @@
 			buildConfigurations = (
 				D090620F15B0DD38001CAC43 /* Debug */,
 				D090621015B0DD38001CAC43 /* Release */,
+				D0341CD015C649470064ABEC /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -652,6 +697,7 @@
 			buildConfigurations = (
 				D090621215B0DD38001CAC43 /* Debug */,
 				D090621315B0DD38001CAC43 /* Release */,
+				D0341CD115C649470064ABEC /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -661,6 +707,7 @@
 			buildConfigurations = (
 				D090621515B0DD38001CAC43 /* Debug */,
 				D090621615B0DD38001CAC43 /* Release */,
+				D0341CD215C649470064ABEC /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
