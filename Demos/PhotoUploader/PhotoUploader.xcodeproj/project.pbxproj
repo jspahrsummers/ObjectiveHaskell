@@ -97,24 +97,23 @@
 		D053F04B15B641E5005CBF00 /* ObjectiveHaskell-Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Profile.xcconfig"; sourceTree = "<group>"; };
 		D053F04C15B641E5005CBF00 /* ObjectiveHaskell-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Release.xcconfig"; sourceTree = "<group>"; };
 		D053F04D15B641E5005CBF00 /* ObjectiveHaskell.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ObjectiveHaskell.xcconfig; sourceTree = "<group>"; };
-		D053F05015B641E5005CBF00 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
-		D053F05215B641E5005CBF00 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		D053F05315B641E5005CBF00 /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
-		D053F05415B641E5005CBF00 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		D053F05615B641E5005CBF00 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
-		D053F05715B641E5005CBF00 /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
-		D053F05915B641E5005CBF00 /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
-		D053F05A15B641E5005CBF00 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
-		D053F05B15B641E5005CBF00 /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
-		D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
-		D053F05E15B641E5005CBF00 /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
-		D053F05F15B641E5005CBF00 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
-		D053F06015B641E5005CBF00 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
-		D053F06115B641E5005CBF00 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
-		D053F06215B641E5005CBF00 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		D06ABCE115C66157009679C1 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTScope.h; path = ../../libextobjc/extobjc/EXTScope.h; sourceTree = "<group>"; };
 		D06ABCE215C66157009679C1 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXTScope.m; path = ../../libextobjc/extobjc/EXTScope.m; sourceTree = "<group>"; };
 		D06ABCE315C66157009679C1 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = metamacros.h; path = ../../libextobjc/extobjc/metamacros.h; sourceTree = "<group>"; };
+		D06ABD1015C661C1009679C1 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		D06ABD1215C661C1009679C1 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		D06ABD1315C661C1009679C1 /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		D06ABD1415C661C1009679C1 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D06ABD1615C661C1009679C1 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		D06ABD1715C661C1009679C1 /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		D06ABD1915C661C1009679C1 /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		D06ABD1A15C661C1009679C1 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		D06ABD1B15C661C1009679C1 /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		D06ABD1E15C661C1009679C1 /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		D06ABD1F15C661C1009679C1 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		D06ABD2015C661C1009679C1 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		D06ABD2115C661C1009679C1 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
 		D0F86B2D15B8CCC200D36357 /* LoginWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWindowController.h; sourceTree = "<group>"; };
 		D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWindowController.m; sourceTree = "<group>"; };
 		D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
@@ -247,72 +246,12 @@
 				D053F04B15B641E5005CBF00 /* ObjectiveHaskell-Profile.xcconfig */,
 				D053F04C15B641E5005CBF00 /* ObjectiveHaskell-Release.xcconfig */,
 				D053F04D15B641E5005CBF00 /* ObjectiveHaskell.xcconfig */,
-				D053F04E15B641E5005CBF00 /* xcconfigs */,
+				D06ABD0F15C661C1009679C1 /* Base */,
+				D06ABD1815C661C1009679C1 /* iOS */,
+				D06ABD1C15C661C1009679C1 /* Mac OS X */,
 			);
 			name = Configuration;
 			path = ../../Configuration;
-			sourceTree = "<group>";
-		};
-		D053F04E15B641E5005CBF00 /* xcconfigs */ = {
-			isa = PBXGroup;
-			children = (
-				D053F04F15B641E5005CBF00 /* Base */,
-				D053F05815B641E5005CBF00 /* iOS */,
-				D053F05C15B641E5005CBF00 /* Mac OS X */,
-				D053F06215B641E5005CBF00 /* README.md */,
-			);
-			path = xcconfigs;
-			sourceTree = "<group>";
-		};
-		D053F04F15B641E5005CBF00 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				D053F05015B641E5005CBF00 /* Common.xcconfig */,
-				D053F05115B641E5005CBF00 /* Configurations */,
-				D053F05515B641E5005CBF00 /* Targets */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		D053F05115B641E5005CBF00 /* Configurations */ = {
-			isa = PBXGroup;
-			children = (
-				D053F05215B641E5005CBF00 /* Debug.xcconfig */,
-				D053F05315B641E5005CBF00 /* Profile.xcconfig */,
-				D053F05415B641E5005CBF00 /* Release.xcconfig */,
-			);
-			path = Configurations;
-			sourceTree = "<group>";
-		};
-		D053F05515B641E5005CBF00 /* Targets */ = {
-			isa = PBXGroup;
-			children = (
-				D053F05615B641E5005CBF00 /* Application.xcconfig */,
-				D053F05715B641E5005CBF00 /* StaticLibrary.xcconfig */,
-			);
-			path = Targets;
-			sourceTree = "<group>";
-		};
-		D053F05815B641E5005CBF00 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D053F05915B641E5005CBF00 /* iOS-Application.xcconfig */,
-				D053F05A15B641E5005CBF00 /* iOS-Base.xcconfig */,
-				D053F05B15B641E5005CBF00 /* iOS-StaticLibrary.xcconfig */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		D053F05C15B641E5005CBF00 /* Mac OS X */ = {
-			isa = PBXGroup;
-			children = (
-				D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */,
-				D053F05E15B641E5005CBF00 /* Mac-Base.xcconfig */,
-				D053F05F15B641E5005CBF00 /* Mac-DynamicLibrary.xcconfig */,
-				D053F06015B641E5005CBF00 /* Mac-Framework.xcconfig */,
-				D053F06115B641E5005CBF00 /* Mac-StaticLibrary.xcconfig */,
-			);
-			path = "Mac OS X";
 			sourceTree = "<group>";
 		};
 		D06ABCE015C66140009679C1 /* libextobjc */ = {
@@ -323,6 +262,60 @@
 				D06ABCE315C66157009679C1 /* metamacros.h */,
 			);
 			name = libextobjc;
+			sourceTree = "<group>";
+		};
+		D06ABD0F15C661C1009679C1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D06ABD1015C661C1009679C1 /* Common.xcconfig */,
+				D06ABD1115C661C1009679C1 /* Configurations */,
+				D06ABD1515C661C1009679C1 /* Targets */,
+			);
+			name = Base;
+			path = ../libextobjc/Configuration/Base;
+			sourceTree = "<group>";
+		};
+		D06ABD1115C661C1009679C1 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				D06ABD1215C661C1009679C1 /* Debug.xcconfig */,
+				D06ABD1315C661C1009679C1 /* Profile.xcconfig */,
+				D06ABD1415C661C1009679C1 /* Release.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		D06ABD1515C661C1009679C1 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				D06ABD1615C661C1009679C1 /* Application.xcconfig */,
+				D06ABD1715C661C1009679C1 /* StaticLibrary.xcconfig */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		D06ABD1815C661C1009679C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D06ABD1915C661C1009679C1 /* iOS-Application.xcconfig */,
+				D06ABD1A15C661C1009679C1 /* iOS-Base.xcconfig */,
+				D06ABD1B15C661C1009679C1 /* iOS-StaticLibrary.xcconfig */,
+			);
+			name = iOS;
+			path = ../libextobjc/Configuration/iOS;
+			sourceTree = "<group>";
+		};
+		D06ABD1C15C661C1009679C1 /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */,
+				D06ABD1E15C661C1009679C1 /* Mac-Base.xcconfig */,
+				D06ABD1F15C661C1009679C1 /* Mac-DynamicLibrary.xcconfig */,
+				D06ABD2015C661C1009679C1 /* Mac-Framework.xcconfig */,
+				D06ABD2115C661C1009679C1 /* Mac-StaticLibrary.xcconfig */,
+			);
+			name = "Mac OS X";
+			path = "../libextobjc/Configuration/Mac OS X";
 			sourceTree = "<group>";
 		};
 		D0F86B3415B8D1CC00D36357 /* Cocoa */ = {
@@ -602,7 +595,7 @@
 		};
 		D053F02215B641A0005CBF00 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "PhotoUploader/PhotoUploader-Prefix.pch";
 				INFOPLIST_FILE = "PhotoUploader/PhotoUploader-Info.plist";
@@ -613,7 +606,7 @@
 		};
 		D053F02315B641A0005CBF00 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "PhotoUploader/PhotoUploader-Prefix.pch";
 				INFOPLIST_FILE = "PhotoUploader/PhotoUploader-Info.plist";
@@ -624,7 +617,7 @@
 		};
 		D053F02515B641A0005CBF00 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoUploader.app/Contents/MacOS/PhotoUploader";
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
@@ -639,7 +632,7 @@
 		};
 		D053F02615B641A0005CBF00 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoUploader.app/Contents/MacOS/PhotoUploader";
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
@@ -679,7 +672,7 @@
 		};
 		D0A6670815C648ED004D7661 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "PhotoUploader/PhotoUploader-Prefix.pch";
 				INFOPLIST_FILE = "PhotoUploader/PhotoUploader-Info.plist";
@@ -690,7 +683,7 @@
 		};
 		D0A6670915C648ED004D7661 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D053F05D15B641E5005CBF00 /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoUploader.app/Contents/MacOS/PhotoUploader";
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
