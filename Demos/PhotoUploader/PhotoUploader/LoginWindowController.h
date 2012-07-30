@@ -10,8 +10,8 @@
 
 @interface LoginWindowController : NSWindowController
 /*
- * A subscribable that sends completed when the user finishes logging in
- * successfully.
+ * A subscribable that sends the access token, and then sends completed, when
+ * the user finishes logging in successfully.
  */
 @property (nonatomic, strong, readonly) RACSubscribable *loginSubscribable;
 @end

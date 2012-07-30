@@ -65,8 +65,8 @@
 	
 	// skip 'access_token='
 	NSString *accessToken = [request.URL.fragment substringFromIndex:13];
-	NSLog(@"access token: %@", accessToken);
 
+	[_loginSubscribable sendNext:accessToken];
 	[_loginSubscribable sendCompleted];
 	return request;
 }
