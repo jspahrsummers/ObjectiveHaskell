@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Users where
+module User where
 
 import Control.Applicative
 import Control.Monad
@@ -41,8 +41,8 @@ instance Aeson.FromJSON User where
     parseJSON j = do
         mzero
 
-getFullName :: MaybePtr User -> IO Id
-getFullName ptr =
+maybeFullName :: MaybePtr User -> IO Id
+maybeFullName ptr =
     deRefStablePtr ptr >>= maybe nil (toNSString . fullName)
 
 fetchCurrentUser :: Id -> IO (MaybePtr User)
@@ -61,4 +61,4 @@ fetchCurrentUser tokenObj = do
         _ -> newStablePtr Nothing
 
 exportFunc "user_fetchCurrent" [t| UnsafeId -> IO (MaybePtr User) |] 'fetchCurrentUser
-exportFunc "user_fullName" [t| MaybePtr User -> IO UnsafeId |] 'getFullName
+exportFunc "user_fullName" [t| MaybePtr User -> IO UnsafeId |] 'maybeFullName

@@ -24,7 +24,7 @@
 		D0F86B3015B8CCC200D36357 /* LoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */; };
 		D0F86B3115B8CCC200D36357 /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */; };
 		D0F86B3315B8CFB900D36357 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F86B3215B8CFB900D36357 /* WebKit.framework */; };
-		D0F86B3815B8D24D00D36357 /* Users.hs in Sources */ = {isa = PBXBuildFile; fileRef = D0F86B3615B8D23F00D36357 /* Users.hs */; };
+		D0F86B3815B8D24D00D36357 /* User.hs in Sources */ = {isa = PBXBuildFile; fileRef = D0F86B3615B8D23F00D36357 /* User.hs */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -163,7 +163,7 @@
 		D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWindowController.m; sourceTree = "<group>"; };
 		D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
 		D0F86B3215B8CFB900D36357 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		D0F86B3615B8D23F00D36357 /* Users.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Users.hs; sourceTree = "<group>"; };
+		D0F86B3615B8D23F00D36357 /* User.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = User.hs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,7 +390,7 @@
 		D0F86B3515B8D1F000D36357 /* Haskell */ = {
 			isa = PBXGroup;
 			children = (
-				D0F86B3615B8D23F00D36357 /* Users.hs */,
+				D0F86B3615B8D23F00D36357 /* User.hs */,
 			);
 			name = Haskell;
 			sourceTree = "<group>";
@@ -558,7 +558,7 @@
 			files = (
 				D053F00015B641A0005CBF00 /* main.m in Sources */,
 				D053F00715B641A0005CBF00 /* AppDelegate.m in Sources */,
-				D0F86B3815B8D24D00D36357 /* Users.hs in Sources */,
+				D0F86B3815B8D24D00D36357 /* User.hs in Sources */,
 				D0F86B3015B8CCC200D36357 /* LoginWindowController.m in Sources */,
 				D06ABCE415C66157009679C1 /* EXTScope.m in Sources */,
 			);
