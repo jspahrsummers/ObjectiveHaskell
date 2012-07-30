@@ -12,6 +12,7 @@
 
 @interface LoginWindowController ()
 @property (nonatomic, weak) IBOutlet WebView *webView;
+@property (nonatomic, weak) IBOutlet NSProgressIndicator *progressIndicator;
 @end
 
 @implementation LoginWindowController
@@ -25,6 +26,18 @@
     
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://instagram.com/oauth/authorize/?client_id=4aaaec75a7e44968bd7c3d3a9ef3129b&redirect_uri=objhsexample://oauth_redirect&response_type=token"]];
 	[self.webView.mainFrame loadRequest:request];
+}
+
+#pragma mark WebFrameLoadDelegate
+
+- (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame {
+	[self.progressIndicator startAnimation:self];
+	self.progressIndicator.hidden = NO;
+}
+
+- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
+	self.progressIndicator.hidden = YES;
+	[self.progressIndicator stopAnimation:self];
 }
 
 #pragma mark WebResourceLoadDelegate
