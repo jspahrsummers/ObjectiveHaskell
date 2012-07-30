@@ -58,6 +58,11 @@
 	STAssertEquals(addr, (uintptr_t)0, @"");
 }
 
+- (void)testNSURLConversion {
+	NSURL *URL = httpsURLFromHost(@"google.com");
+	STAssertEqualObjects(URL, [NSURL URLWithString:@"https://google.com"], @"");
+}
+
 - (void)testFibonacci {
     STAssertEquals(3, fibonacci_hs(4), @"");
     STAssertEquals(5, fibonacci_hs(5), @"");

@@ -14,6 +14,7 @@ import ObjectiveHaskell.NSData
 import ObjectiveHaskell.NSDictionary
 import ObjectiveHaskell.NSNumber
 import ObjectiveHaskell.NSString
+import ObjectiveHaskell.NSURL
 import ObjectiveHaskell.NSValue
 import ObjectiveHaskell.ObjC
 
@@ -56,6 +57,11 @@ plus obj n2 = do
     let sum = n1 + (fromRational $ toRational n2)
     toNSNumber $ toRational $ sum
 
+httpsUrlFromHostString :: Id -> IO Id
+httpsUrlFromHostString str = do
+    txt <- fromNSString str
+    toNSString (Text.append "https://" txt) >>= urlFromString
+
 exportFunc "appendFoobar" [t| UnsafeId -> IO UnsafeId |] 'appendFoobar'
 exportFunc "addFoobarToArray" [t| UnsafeId -> IO UnsafeId |] 'addFoobarToArray'
 exportFunc "setFooToBar" [t| UnsafeId -> IO UnsafeId |] 'setFooToBar'
@@ -64,3 +70,4 @@ exportFunc "nullNSValue" [t| IO UnsafeId |] 'nullNSValue'
 exportFunc "ptrAddress" [t| UnsafeId -> IO CUIntPtr |] 'ptrAddress'
 exportFunc "plusInt" [t| UnsafeId -> CInt -> IO UnsafeId |] 'plus
 exportFunc "plusDouble" [t| UnsafeId -> CDouble -> IO UnsafeId |] 'plus
+exportFunc "httpsURLFromHost" [t| UnsafeId -> IO UnsafeId |] 'httpsUrlFromHostString
