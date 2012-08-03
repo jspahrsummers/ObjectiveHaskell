@@ -7,6 +7,9 @@
 //
 
 @interface User : OHModel
+
+- (id)initWithData:(NSData *)data;
+
 @property (nonatomic, copy, readonly) NSString *fullName;
 @property (nonatomic, copy, readonly) NSString *username;
 @property (nonatomic, copy, readonly) NSURL *photoURL;

@@ -20,4 +20,9 @@
 	return [NSURL URLWithString:str];
 }
 
+- (id)initWithData:(NSData *)data {
+	// TODO: Handle failure to decode.
+	return [self initWithHaskellPointer:User_initWithData(data)];
+}
+
 @end
