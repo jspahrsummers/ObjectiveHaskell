@@ -22,6 +22,8 @@
 		D08A8AE915CBBC6D0084E989 /* OHModel.h in Headers */ = {isa = PBXBuildFile; fileRef = D08A8AE715CBBC6D0084E989 /* OHModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D08A8AEA15CBBC6D0084E989 /* OHModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A8AE815CBBC6D0084E989 /* OHModel.m */; };
 		D08A8AEC15CBBF200084E989 /* OHTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = D08A8AEB15CBBF200084E989 /* OHTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D08A8AF315CBC2A50084E989 /* EXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A8AEF15CBC2A10084E989 /* EXTRuntimeExtensions.m */; };
+		D08A8AF415CBC2A90084E989 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A8AF115CBC2A10084E989 /* EXTScope.m */; };
 		D08FC9DA15C660730032E22A /* libffi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D08FC9D715C660670032E22A /* libffi.a */; };
 		D09061EF15B0DD37001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
 		D090620115B0DD38001CAC43 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D090620015B0DD38001CAC43 /* SenTestingKit.framework */; };
@@ -109,6 +111,11 @@
 		D08A8AE715CBBC6D0084E989 /* OHModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHModel.h; sourceTree = "<group>"; };
 		D08A8AE815CBBC6D0084E989 /* OHModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHModel.m; sourceTree = "<group>"; };
 		D08A8AEB15CBBF200084E989 /* OHTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHTypes.h; sourceTree = "<group>"; };
+		D08A8AEE15CBC2A10084E989 /* EXTRuntimeExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EXTRuntimeExtensions.h; path = libextobjc/extobjc/EXTRuntimeExtensions.h; sourceTree = "<group>"; };
+		D08A8AEF15CBC2A10084E989 /* EXTRuntimeExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EXTRuntimeExtensions.m; path = libextobjc/extobjc/EXTRuntimeExtensions.m; sourceTree = "<group>"; };
+		D08A8AF015CBC2A10084E989 /* EXTScope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EXTScope.h; path = libextobjc/extobjc/EXTScope.h; sourceTree = "<group>"; };
+		D08A8AF115CBC2A10084E989 /* EXTScope.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EXTScope.m; path = libextobjc/extobjc/EXTScope.m; sourceTree = "<group>"; };
+		D08A8AF215CBC2A10084E989 /* metamacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = metamacros.h; path = libextobjc/extobjc/metamacros.h; sourceTree = "<group>"; };
 		D08FC9CC15C660670032E22A /* libffi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libffi.xcodeproj; path = libextobjc/libffi/libffi.xcodeproj; sourceTree = "<group>"; };
 		D08FC9DC15C660880032E22A /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		D08FC9DE15C660880032E22A /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -180,6 +187,18 @@
 				D08A8AEB15CBBF200084E989 /* OHTypes.h */,
 			);
 			name = "Objective-C";
+			sourceTree = "<group>";
+		};
+		D08A8AED15CBC2970084E989 /* libextobjc */ = {
+			isa = PBXGroup;
+			children = (
+				D08A8AEE15CBC2A10084E989 /* EXTRuntimeExtensions.h */,
+				D08A8AEF15CBC2A10084E989 /* EXTRuntimeExtensions.m */,
+				D08A8AF015CBC2A10084E989 /* EXTScope.h */,
+				D08A8AF115CBC2A10084E989 /* EXTScope.m */,
+				D08A8AF215CBC2A10084E989 /* metamacros.h */,
+			);
+			name = libextobjc;
 			sourceTree = "<group>";
 		};
 		D08FC9CD15C660670032E22A /* Products */ = {
@@ -268,6 +287,7 @@
 		D09061ED15B0DD37001CAC43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D08A8AED15CBC2970084E989 /* libextobjc */,
 				D08FC9CC15C660670032E22A /* libffi.xcodeproj */,
 				D09061EE15B0DD37001CAC43 /* Cocoa.framework */,
 				D090620015B0DD38001CAC43 /* SenTestingKit.framework */,
@@ -526,6 +546,8 @@
 				D0240FF115C66BBB00B95C7C /* Model.hs in Sources */,
 				D04FC25A15B2B26F00C58F14 /* THUtils.hs in Sources */,
 				D08A8AEA15CBBC6D0084E989 /* OHModel.m in Sources */,
+				D08A8AF315CBC2A50084E989 /* EXTRuntimeExtensions.m in Sources */,
+				D08A8AF415CBC2A90084E989 /* EXTScope.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
