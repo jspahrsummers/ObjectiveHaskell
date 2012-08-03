@@ -19,6 +19,8 @@
 		D053F01E15B641A0005CBF00 /* PhotoUploaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D053F01D15B641A0005CBF00 /* PhotoUploaderTests.m */; };
 		D053F06515B64200005CBF00 /* libObjectiveHaskell Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D053F03415B641C1005CBF00 /* libObjectiveHaskell Mac.a */; };
 		D06ABCE415C66157009679C1 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = D06ABCE215C66157009679C1 /* EXTScope.m */; };
+		D08A8A9115CBBA470084E989 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08A8A8A15CBBA350084E989 /* ReactiveCocoa.framework */; };
+		D08A8A9315CBBA560084E989 /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D08A8A8A15CBBA350084E989 /* ReactiveCocoa.framework */; };
 		D0F86B3015B8CCC200D36357 /* LoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */; };
 		D0F86B3115B8CCC200D36357 /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */; };
 		D0F86B3315B8CFB900D36357 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F86B3215B8CFB900D36357 /* WebKit.framework */; };
@@ -69,7 +71,49 @@
 			remoteGlobalIDString = D09061EA15B0DD37001CAC43;
 			remoteInfo = "ObjectiveHaskell Mac";
 		};
+		D08A8A8915CBBA350084E989 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88037F8315056328001A5B19;
+			remoteInfo = ReactiveCocoa;
+		};
+		D08A8A8B15CBBA350084E989 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88F440AB153DAC820097B4C3;
+			remoteInfo = "ReactiveCocoa-iOS";
+		};
+		D08A8A8D15CBBA350084E989 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88CDF7DC15000FCF00163A9F;
+			remoteInfo = ReactiveCocoaTests;
+		};
+		D08A8A8F15CBBA440084E989 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 88037F8215056328001A5B19;
+			remoteInfo = ReactiveCocoa;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D08A8A9215CBBA490084E989 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D08A8A9315CBBA560084E989 /* ReactiveCocoa.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D053EFEF15B641A0005CBF00 /* PhotoUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +158,7 @@
 		D06ABD1F15C661C1009679C1 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
 		D06ABD2015C661C1009679C1 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
 		D06ABD2115C661C1009679C1 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 		D0F86B2D15B8CCC200D36357 /* LoginWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWindowController.h; sourceTree = "<group>"; };
 		D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWindowController.m; sourceTree = "<group>"; };
 		D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
@@ -126,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D08A8A9115CBBA470084E989 /* ReactiveCocoa.framework in Frameworks */,
 				D0F86B3315B8CFB900D36357 /* WebKit.framework in Frameworks */,
 				D053F06515B64200005CBF00 /* libObjectiveHaskell Mac.a in Frameworks */,
 				D053EFF415B641A0005CBF00 /* Cocoa.framework in Frameworks */,
@@ -169,6 +215,7 @@
 			children = (
 				D06ABCE015C66140009679C1 /* libextobjc */,
 				D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */,
+				D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */,
 				D0F86B3215B8CFB900D36357 /* WebKit.framework */,
 				D053EFF315B641A0005CBF00 /* Cocoa.framework */,
 				D053F01115B641A0005CBF00 /* SenTestingKit.framework */,
@@ -233,7 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				D053F03415B641C1005CBF00 /* libObjectiveHaskell Mac.a */,
-				D053F03615B641C1005CBF00 /* ObjectiveHaskellTests.octest */,
+				D053F03615B641C1005CBF00 /* ObjectiveHaskellTests Mac.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,6 +365,16 @@
 			path = "../libextobjc/Configuration/Mac OS X";
 			sourceTree = "<group>";
 		};
+		D08A8A7F15CBBA340084E989 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D08A8A8A15CBBA350084E989 /* ReactiveCocoa.framework */,
+				D08A8A8C15CBBA350084E989 /* libReactiveCocoa-iOS.a */,
+				D08A8A8E15CBBA350084E989 /* ReactiveCocoaTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D0F86B3415B8D1CC00D36357 /* Cocoa */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,11 +405,13 @@
 				D053EFEB15B641A0005CBF00 /* Sources */,
 				D053EFEC15B641A0005CBF00 /* Frameworks */,
 				D053EFED15B641A0005CBF00 /* Resources */,
+				D08A8A9215CBBA490084E989 /* Copy Frameworks */,
 			);
 			buildRules = (
 				D0F86B3915B8D25F00D36357 /* PBXBuildRule */,
 			);
 			dependencies = (
+				D08A8A9015CBBA440084E989 /* PBXTargetDependency */,
 				D053F06415B641FB005CBF00 /* PBXTargetDependency */,
 			);
 			name = PhotoUploader;
@@ -403,6 +462,10 @@
 					ProductGroup = D053F02815B641C1005CBF00 /* Products */;
 					ProjectRef = D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */;
 				},
+				{
+					ProductGroup = D08A8A7F15CBBA340084E989 /* Products */;
+					ProjectRef = D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -420,11 +483,32 @@
 			remoteRef = D053F03315B641C1005CBF00 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D053F03615B641C1005CBF00 /* ObjectiveHaskellTests.octest */ = {
+		D053F03615B641C1005CBF00 /* ObjectiveHaskellTests Mac.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "ObjectiveHaskellTests Mac.octest";
 			remoteRef = D053F03515B641C1005CBF00 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D08A8A8A15CBBA350084E989 /* ReactiveCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveCocoa.framework;
+			remoteRef = D08A8A8915CBBA350084E989 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D08A8A8C15CBBA350084E989 /* libReactiveCocoa-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libReactiveCocoa-iOS.a";
+			remoteRef = D08A8A8B15CBBA350084E989 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D08A8A8E15CBBA350084E989 /* ReactiveCocoaTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ReactiveCocoaTests.octest;
+			remoteRef = D08A8A8D15CBBA350084E989 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -501,6 +585,11 @@
 			name = "ObjectiveHaskell Mac";
 			targetProxy = D053F06315B641FB005CBF00 /* PBXContainerItemProxy */;
 		};
+		D08A8A9015CBBA440084E989 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ReactiveCocoa;
+			targetProxy = D08A8A8F15CBBA440084E989 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -549,8 +638,8 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				HEADER_SEARCH_PATHS = (
-					../../ObjectiveHaskell,
 					$HEADER_SEARCH_PATHS,
+					../../ObjectiveHaskell,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
@@ -576,8 +665,8 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				HEADER_SEARCH_PATHS = (
-					../../ObjectiveHaskell,
 					$HEADER_SEARCH_PATHS,
+					../../ObjectiveHaskell,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
@@ -653,8 +742,8 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				HEADER_SEARCH_PATHS = (
-					../../ObjectiveHaskell,
 					$HEADER_SEARCH_PATHS,
+					../../ObjectiveHaskell,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
