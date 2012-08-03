@@ -10,7 +10,10 @@ Tools for making it easier to integrate Haskell and Objective-C.
     $ cd ObjectiveHaskell
     $ git submodule update --init --recursive
 
-You will also need to have the latest `haskell-platform` installed via [Homebrew](https://github.com/mxcl/homebrew/), and [Data.Text](http://hackage.haskell.org/package/text-0.11.2.2) installed using `cabal install text`.
+You will also need to have the following packages installed using [Homebrew](https://github.com/mxcl/homebrew/) and `cabal` (part of the `haskell-platform`):
+
+    $ brew install `haskell-platform`
+    $ cabal install aeson
 
 **To add Objective-Haskell to a project:**
 
