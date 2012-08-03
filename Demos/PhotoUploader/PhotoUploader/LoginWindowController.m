@@ -27,7 +27,7 @@
 #pragma mark Lifecycle
 
 - (id)init {
-    return [self initWithWindowNibName:NSStringFromClass(self.class)];
+	return [self initWithWindowNibName:NSStringFromClass(self.class)];
 }
 
 - (id)initWithWindow:(NSWindow *)window {
@@ -39,7 +39,7 @@
 }
 
 - (void)windowDidLoad {
-    [super windowDidLoad];
+	[super windowDidLoad];
     
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://instagram.com/oauth/authorize/?client_id=4aaaec75a7e44968bd7c3d3a9ef3129b&redirect_uri=objhsexample://oauth_redirect&response_type=token"]];
 	[self.webView.mainFrame loadRequest:request];

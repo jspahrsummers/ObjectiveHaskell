@@ -16,7 +16,7 @@
 @implementation UserWindowController
 
 - (id)initWithUser:(UserViewModel *)user {
-    self = [self initWithWindowNibName:NSStringFromClass(self.class)];
+	self = [self initWithWindowNibName:NSStringFromClass(self.class)];
 	if (self == nil) return nil;
 
 	// Property syntax is necessary here to trigger KVO.
