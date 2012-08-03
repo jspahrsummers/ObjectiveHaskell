@@ -22,6 +22,7 @@
 		D08A8A9115CBBA470084E989 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08A8A8A15CBBA350084E989 /* ReactiveCocoa.framework */; };
 		D08A8A9315CBBA560084E989 /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D08A8A8A15CBBA350084E989 /* ReactiveCocoa.framework */; };
 		D08A8AF715CBC5FB0084E989 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A8AF615CBC5FB0084E989 /* User.m */; };
+		D08A8B5A15CBC7700084E989 /* UserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A8B5915CBC7700084E989 /* UserViewModel.m */; };
 		D0F86B3015B8CCC200D36357 /* LoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */; };
 		D0F86B3115B8CCC200D36357 /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */; };
 		D0F86B3315B8CFB900D36357 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F86B3215B8CFB900D36357 /* WebKit.framework */; };
@@ -162,6 +163,8 @@
 		D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 		D08A8AF515CBC5FB0084E989 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		D08A8AF615CBC5FB0084E989 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		D08A8B5815CBC7700084E989 /* UserViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewModel.h; sourceTree = "<group>"; };
+		D08A8B5915CBC7700084E989 /* UserViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewModel.m; sourceTree = "<group>"; };
 		D0F86B2D15B8CCC200D36357 /* LoginWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWindowController.h; sourceTree = "<group>"; };
 		D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWindowController.m; sourceTree = "<group>"; };
 		D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
@@ -240,8 +243,9 @@
 		D053EFF915B641A0005CBF00 /* PhotoUploader */ = {
 			isa = PBXGroup;
 			children = (
+				D0F86B3515B8D1F000D36357 /* Models */,
+				D08A8B5715CBC75B0084E989 /* View Models */,
 				D0F86B3415B8D1CC00D36357 /* Views and Controllers */,
-				D0F86B3515B8D1F000D36357 /* Model */,
 				D053EFFA15B641A0005CBF00 /* Supporting Files */,
 			);
 			path = PhotoUploader;
@@ -378,6 +382,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D08A8B5715CBC75B0084E989 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				D08A8B5815CBC7700084E989 /* UserViewModel.h */,
+				D08A8B5915CBC7700084E989 /* UserViewModel.m */,
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
 		D0F86B3415B8D1CC00D36357 /* Views and Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,14 +403,14 @@
 			name = "Views and Controllers";
 			sourceTree = "<group>";
 		};
-		D0F86B3515B8D1F000D36357 /* Model */ = {
+		D0F86B3515B8D1F000D36357 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				D0F86B3615B8D23F00D36357 /* User.hs */,
 				D08A8AF515CBC5FB0084E989 /* User.h */,
 				D08A8AF615CBC5FB0084E989 /* User.m */,
 			);
-			name = Model;
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -567,6 +580,7 @@
 				D0F86B3015B8CCC200D36357 /* LoginWindowController.m in Sources */,
 				D06ABCE415C66157009679C1 /* EXTScope.m in Sources */,
 				D08A8AF715CBC5FB0084E989 /* User.m in Sources */,
+				D08A8B5A15CBC7700084E989 /* UserViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
