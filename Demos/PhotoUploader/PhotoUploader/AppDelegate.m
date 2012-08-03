@@ -9,9 +9,12 @@
 #import "AppDelegate.h"
 #import "EXTScope.h"
 #import "LoginWindowController.h"
+#import "UserViewModel.h"
+#import "UserWindowController.h"
 
 @interface AppDelegate ()
 @property (nonatomic, assign) IBOutlet NSWindow *window;
+@property (nonatomic, strong) UserWindowController *userWindowController;
 @end
 
 @implementation AppDelegate
@@ -21,7 +24,12 @@
 
 	[loginWindowController.loginSubscribable
 		subscribeNext:^(NSString *accessToken){
-			NSLog(@"access token: %@", accessToken);
+			UserViewModel *user = [[UserViewModel alloc] initWithAccessToken:accessToken];
+
+			dispatch_async(dispatch_get_main_queue(), ^{
+				self.userWindowController = [[UserWindowController alloc] initWithUser:user];
+				[self.userWindowController showWindow:self];
+			});
 		}
 		completed:^{
 			[loginWindowController close];

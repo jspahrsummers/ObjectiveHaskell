@@ -23,6 +23,8 @@
 		D08A8A9315CBBA560084E989 /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D08A8A8A15CBBA350084E989 /* ReactiveCocoa.framework */; };
 		D08A8AF715CBC5FB0084E989 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A8AF615CBC5FB0084E989 /* User.m */; };
 		D08A8B5A15CBC7700084E989 /* UserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A8B5915CBC7700084E989 /* UserViewModel.m */; };
+		D08A8B7B15CBCBDD0084E989 /* UserWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A8B7915CBCBDD0084E989 /* UserWindowController.m */; };
+		D08A8B7C15CBCBDD0084E989 /* UserWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08A8B7A15CBCBDD0084E989 /* UserWindowController.xib */; };
 		D0F86B3015B8CCC200D36357 /* LoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */; };
 		D0F86B3115B8CCC200D36357 /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */; };
 		D0F86B3315B8CFB900D36357 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F86B3215B8CFB900D36357 /* WebKit.framework */; };
@@ -165,6 +167,9 @@
 		D08A8AF615CBC5FB0084E989 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		D08A8B5815CBC7700084E989 /* UserViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewModel.h; sourceTree = "<group>"; };
 		D08A8B5915CBC7700084E989 /* UserViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewModel.m; sourceTree = "<group>"; };
+		D08A8B7815CBCBDD0084E989 /* UserWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserWindowController.h; sourceTree = "<group>"; };
+		D08A8B7915CBCBDD0084E989 /* UserWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserWindowController.m; sourceTree = "<group>"; };
+		D08A8B7A15CBCBDD0084E989 /* UserWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserWindowController.xib; sourceTree = "<group>"; };
 		D0F86B2D15B8CCC200D36357 /* LoginWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWindowController.h; sourceTree = "<group>"; };
 		D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWindowController.m; sourceTree = "<group>"; };
 		D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
@@ -399,6 +404,9 @@
 				D0F86B2D15B8CCC200D36357 /* LoginWindowController.h */,
 				D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */,
 				D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */,
+				D08A8B7815CBCBDD0084E989 /* UserWindowController.h */,
+				D08A8B7915CBCBDD0084E989 /* UserWindowController.m */,
+				D08A8B7A15CBCBDD0084E989 /* UserWindowController.xib */,
 			);
 			name = "Views and Controllers";
 			sourceTree = "<group>";
@@ -540,6 +548,7 @@
 				D053F00415B641A0005CBF00 /* Credits.rtf in Resources */,
 				D053F00A15B641A0005CBF00 /* MainMenu.xib in Resources */,
 				D0F86B3115B8CCC200D36357 /* LoginWindowController.xib in Resources */,
+				D08A8B7C15CBCBDD0084E989 /* UserWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +590,7 @@
 				D06ABCE415C66157009679C1 /* EXTScope.m in Sources */,
 				D08A8AF715CBC5FB0084E989 /* User.m in Sources */,
 				D08A8B5A15CBC7700084E989 /* UserViewModel.m in Sources */,
+				D08A8B7B15CBCBDD0084E989 /* UserWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
