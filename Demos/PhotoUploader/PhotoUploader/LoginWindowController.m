@@ -7,7 +7,7 @@
 //
 
 #import "LoginWindowController.h"
-#import "Users_stub.h"
+#import "User_stub.h"
 #import <WebKit/WebKit.h>
 
 @interface LoginWindowController () {

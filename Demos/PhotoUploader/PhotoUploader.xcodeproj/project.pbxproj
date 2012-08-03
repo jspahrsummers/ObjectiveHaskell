@@ -175,6 +175,7 @@
 		D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
 		D0F86B3215B8CFB900D36357 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D0F86B3615B8D23F00D36357 /* User.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = User.hs; sourceTree = "<group>"; };
+		FCC42B8715CC3B5800988932 /* User_stub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User_stub.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +249,7 @@
 		D053EFF915B641A0005CBF00 /* PhotoUploader */ = {
 			isa = PBXGroup;
 			children = (
+				FCC42B8715CC3B5800988932 /* User_stub.h */,
 				D0F86B3515B8D1F000D36357 /* Models */,
 				D08A8B5715CBC75B0084E989 /* View Models */,
 				D0F86B3415B8D1CC00D36357 /* Views and Controllers */,
