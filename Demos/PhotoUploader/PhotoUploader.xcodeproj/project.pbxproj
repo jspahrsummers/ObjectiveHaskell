@@ -1,0 +1,853 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D053EFF415B641A0005CBF00 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D053EFF315B641A0005CBF00 /* Cocoa.framework */; };
+		D053EFFE15B641A0005CBF00 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D053EFFC15B641A0005CBF00 /* InfoPlist.strings */; };
+		D053F00015B641A0005CBF00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D053EFFF15B641A0005CBF00 /* main.m */; };
+		D053F00415B641A0005CBF00 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D053F00215B641A0005CBF00 /* Credits.rtf */; };
+		D053F00715B641A0005CBF00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D053F00615B641A0005CBF00 /* AppDelegate.m */; };
+		D053F00A15B641A0005CBF00 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D053F00815B641A0005CBF00 /* MainMenu.xib */; };
+		D053F01215B641A0005CBF00 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D053F01115B641A0005CBF00 /* SenTestingKit.framework */; };
+		D053F01315B641A0005CBF00 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D053EFF315B641A0005CBF00 /* Cocoa.framework */; };
+		D053F01B15B641A0005CBF00 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D053F01915B641A0005CBF00 /* InfoPlist.strings */; };
+		D053F01E15B641A0005CBF00 /* PhotoUploaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D053F01D15B641A0005CBF00 /* PhotoUploaderTests.m */; };
+		D053F06515B64200005CBF00 /* libObjectiveHaskell Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D053F03415B641C1005CBF00 /* libObjectiveHaskell Mac.a */; };
+		D06ABCE415C66157009679C1 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = D06ABCE215C66157009679C1 /* EXTScope.m */; };
+		D08A8A9115CBBA470084E989 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08A8A8A15CBBA350084E989 /* ReactiveCocoa.framework */; };
+		D08A8A9315CBBA560084E989 /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D08A8A8A15CBBA350084E989 /* ReactiveCocoa.framework */; };
+		D08A8AF715CBC5FB0084E989 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A8AF615CBC5FB0084E989 /* User.m */; };
+		D08A8B5A15CBC7700084E989 /* UserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A8B5915CBC7700084E989 /* UserViewModel.m */; };
+		D08A8B7B15CBCBDD0084E989 /* UserWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A8B7915CBCBDD0084E989 /* UserWindowController.m */; };
+		D08A8B7C15CBCBDD0084E989 /* UserWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08A8B7A15CBCBDD0084E989 /* UserWindowController.xib */; };
+		D0F86B3015B8CCC200D36357 /* LoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */; };
+		D0F86B3115B8CCC200D36357 /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */; };
+		D0F86B3315B8CFB900D36357 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F86B3215B8CFB900D36357 /* WebKit.framework */; };
+		D0F86B3815B8D24D00D36357 /* User.hs in Sources */ = {isa = PBXBuildFile; fileRef = D0F86B3615B8D23F00D36357 /* User.hs */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		D0F86B3915B8D25F00D36357 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.hs";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE)_stub.h",
+				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE).o",
+			);
+			script = ../../Configuration/compileHaskell.sh;
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXContainerItemProxy section */
+		D053F01415B641A0005CBF00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D053EFE615B641A0005CBF00 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D053EFEE15B641A0005CBF00;
+			remoteInfo = PhotoUploader;
+		};
+		D053F03315B641C1005CBF00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D09061EB15B0DD37001CAC43;
+			remoteInfo = "ObjectiveHaskell Mac";
+		};
+		D053F03515B641C1005CBF00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D09061FF15B0DD38001CAC43;
+			remoteInfo = "ObjectiveHaskellTests Mac";
+		};
+		D053F06315B641FB005CBF00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D09061EA15B0DD37001CAC43;
+			remoteInfo = "ObjectiveHaskell Mac";
+		};
+		D08A8A8915CBBA350084E989 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88037F8315056328001A5B19;
+			remoteInfo = ReactiveCocoa;
+		};
+		D08A8A8B15CBBA350084E989 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88F440AB153DAC820097B4C3;
+			remoteInfo = "ReactiveCocoa-iOS";
+		};
+		D08A8A8D15CBBA350084E989 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88CDF7DC15000FCF00163A9F;
+			remoteInfo = ReactiveCocoaTests;
+		};
+		D08A8A8F15CBBA440084E989 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 88037F8215056328001A5B19;
+			remoteInfo = ReactiveCocoa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D08A8A9215CBBA490084E989 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D08A8A9315CBBA560084E989 /* ReactiveCocoa.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D053EFEF15B641A0005CBF00 /* PhotoUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D053EFF315B641A0005CBF00 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D053EFF615B641A0005CBF00 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D053EFF715B641A0005CBF00 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D053EFF815B641A0005CBF00 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D053EFFB15B641A0005CBF00 /* PhotoUploader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotoUploader-Info.plist"; sourceTree = "<group>"; };
+		D053EFFD15B641A0005CBF00 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D053EFFF15B641A0005CBF00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D053F00115B641A0005CBF00 /* PhotoUploader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoUploader-Prefix.pch"; sourceTree = "<group>"; };
+		D053F00315B641A0005CBF00 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		D053F00515B641A0005CBF00 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D053F00615B641A0005CBF00 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D053F00915B641A0005CBF00 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D053F01015B641A0005CBF00 /* PhotoUploaderTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoUploaderTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D053F01115B641A0005CBF00 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D053F01815B641A0005CBF00 /* PhotoUploaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotoUploaderTests-Info.plist"; sourceTree = "<group>"; };
+		D053F01A15B641A0005CBF00 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D053F01C15B641A0005CBF00 /* PhotoUploaderTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoUploaderTests.h; sourceTree = "<group>"; };
+		D053F01D15B641A0005CBF00 /* PhotoUploaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoUploaderTests.m; sourceTree = "<group>"; };
+		D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveHaskell.xcodeproj; path = ../../ObjectiveHaskell.xcodeproj; sourceTree = "<group>"; };
+		D053F04915B641E5005CBF00 /* compileHaskell.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = compileHaskell.sh; sourceTree = "<group>"; };
+		D053F04A15B641E5005CBF00 /* ObjectiveHaskell-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Debug.xcconfig"; sourceTree = "<group>"; };
+		D053F04B15B641E5005CBF00 /* ObjectiveHaskell-Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Profile.xcconfig"; sourceTree = "<group>"; };
+		D053F04C15B641E5005CBF00 /* ObjectiveHaskell-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Release.xcconfig"; sourceTree = "<group>"; };
+		D053F04D15B641E5005CBF00 /* ObjectiveHaskell.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ObjectiveHaskell.xcconfig; sourceTree = "<group>"; };
+		D06ABCE115C66157009679C1 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTScope.h; path = ../../libextobjc/extobjc/EXTScope.h; sourceTree = "<group>"; };
+		D06ABCE215C66157009679C1 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXTScope.m; path = ../../libextobjc/extobjc/EXTScope.m; sourceTree = "<group>"; };
+		D06ABCE315C66157009679C1 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = metamacros.h; path = ../../libextobjc/extobjc/metamacros.h; sourceTree = "<group>"; };
+		D06ABD1015C661C1009679C1 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		D06ABD1215C661C1009679C1 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		D06ABD1315C661C1009679C1 /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		D06ABD1415C661C1009679C1 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D06ABD1615C661C1009679C1 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		D06ABD1715C661C1009679C1 /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		D06ABD1915C661C1009679C1 /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		D06ABD1A15C661C1009679C1 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		D06ABD1B15C661C1009679C1 /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		D06ABD1E15C661C1009679C1 /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		D06ABD1F15C661C1009679C1 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		D06ABD2015C661C1009679C1 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		D06ABD2115C661C1009679C1 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
+		D08A8AF515CBC5FB0084E989 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		D08A8AF615CBC5FB0084E989 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		D08A8B5815CBC7700084E989 /* UserViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewModel.h; sourceTree = "<group>"; };
+		D08A8B5915CBC7700084E989 /* UserViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewModel.m; sourceTree = "<group>"; };
+		D08A8B7815CBCBDD0084E989 /* UserWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserWindowController.h; sourceTree = "<group>"; };
+		D08A8B7915CBCBDD0084E989 /* UserWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserWindowController.m; sourceTree = "<group>"; };
+		D08A8B7A15CBCBDD0084E989 /* UserWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserWindowController.xib; sourceTree = "<group>"; };
+		D0F86B2D15B8CCC200D36357 /* LoginWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWindowController.h; sourceTree = "<group>"; };
+		D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWindowController.m; sourceTree = "<group>"; };
+		D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
+		D0F86B3215B8CFB900D36357 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D0F86B3615B8D23F00D36357 /* User.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = User.hs; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D053EFEC15B641A0005CBF00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D08A8A9115CBBA470084E989 /* ReactiveCocoa.framework in Frameworks */,
+				D0F86B3315B8CFB900D36357 /* WebKit.framework in Frameworks */,
+				D053F06515B64200005CBF00 /* libObjectiveHaskell Mac.a in Frameworks */,
+				D053EFF415B641A0005CBF00 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D053F00C15B641A0005CBF00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D053F01215B641A0005CBF00 /* SenTestingKit.framework in Frameworks */,
+				D053F01315B641A0005CBF00 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D053EFE415B641A0005CBF00 = {
+			isa = PBXGroup;
+			children = (
+				D053EFF915B641A0005CBF00 /* PhotoUploader */,
+				D053F01615B641A0005CBF00 /* PhotoUploaderTests */,
+				D053F04815B641E5005CBF00 /* Configuration */,
+				D053EFF215B641A0005CBF00 /* Frameworks */,
+				D053EFF015B641A0005CBF00 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D053EFF015B641A0005CBF00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D053EFEF15B641A0005CBF00 /* PhotoUploader.app */,
+				D053F01015B641A0005CBF00 /* PhotoUploaderTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D053EFF215B641A0005CBF00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D06ABCE015C66140009679C1 /* libextobjc */,
+				D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */,
+				D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */,
+				D0F86B3215B8CFB900D36357 /* WebKit.framework */,
+				D053EFF315B641A0005CBF00 /* Cocoa.framework */,
+				D053F01115B641A0005CBF00 /* SenTestingKit.framework */,
+				D053EFF515B641A0005CBF00 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D053EFF515B641A0005CBF00 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D053EFF615B641A0005CBF00 /* AppKit.framework */,
+				D053EFF715B641A0005CBF00 /* CoreData.framework */,
+				D053EFF815B641A0005CBF00 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D053EFF915B641A0005CBF00 /* PhotoUploader */ = {
+			isa = PBXGroup;
+			children = (
+				D0F86B3515B8D1F000D36357 /* Models */,
+				D08A8B5715CBC75B0084E989 /* View Models */,
+				D0F86B3415B8D1CC00D36357 /* Views and Controllers */,
+				D053EFFA15B641A0005CBF00 /* Supporting Files */,
+			);
+			path = PhotoUploader;
+			sourceTree = "<group>";
+		};
+		D053EFFA15B641A0005CBF00 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D053F00815B641A0005CBF00 /* MainMenu.xib */,
+				D053EFFB15B641A0005CBF00 /* PhotoUploader-Info.plist */,
+				D053EFFC15B641A0005CBF00 /* InfoPlist.strings */,
+				D053EFFF15B641A0005CBF00 /* main.m */,
+				D053F00115B641A0005CBF00 /* PhotoUploader-Prefix.pch */,
+				D053F00215B641A0005CBF00 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D053F01615B641A0005CBF00 /* PhotoUploaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				D053F01C15B641A0005CBF00 /* PhotoUploaderTests.h */,
+				D053F01D15B641A0005CBF00 /* PhotoUploaderTests.m */,
+				D053F01715B641A0005CBF00 /* Supporting Files */,
+			);
+			path = PhotoUploaderTests;
+			sourceTree = "<group>";
+		};
+		D053F01715B641A0005CBF00 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D053F01815B641A0005CBF00 /* PhotoUploaderTests-Info.plist */,
+				D053F01915B641A0005CBF00 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D053F02815B641C1005CBF00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D053F03415B641C1005CBF00 /* libObjectiveHaskell Mac.a */,
+				D053F03615B641C1005CBF00 /* ObjectiveHaskellTests Mac.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D053F04815B641E5005CBF00 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D053F04915B641E5005CBF00 /* compileHaskell.sh */,
+				D053F04A15B641E5005CBF00 /* ObjectiveHaskell-Debug.xcconfig */,
+				D053F04B15B641E5005CBF00 /* ObjectiveHaskell-Profile.xcconfig */,
+				D053F04C15B641E5005CBF00 /* ObjectiveHaskell-Release.xcconfig */,
+				D053F04D15B641E5005CBF00 /* ObjectiveHaskell.xcconfig */,
+				D06ABD0F15C661C1009679C1 /* Base */,
+				D06ABD1815C661C1009679C1 /* iOS */,
+				D06ABD1C15C661C1009679C1 /* Mac OS X */,
+			);
+			name = Configuration;
+			path = ../../Configuration;
+			sourceTree = "<group>";
+		};
+		D06ABCE015C66140009679C1 /* libextobjc */ = {
+			isa = PBXGroup;
+			children = (
+				D06ABCE115C66157009679C1 /* EXTScope.h */,
+				D06ABCE215C66157009679C1 /* EXTScope.m */,
+				D06ABCE315C66157009679C1 /* metamacros.h */,
+			);
+			name = libextobjc;
+			sourceTree = "<group>";
+		};
+		D06ABD0F15C661C1009679C1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D06ABD1015C661C1009679C1 /* Common.xcconfig */,
+				D06ABD1115C661C1009679C1 /* Configurations */,
+				D06ABD1515C661C1009679C1 /* Targets */,
+			);
+			name = Base;
+			path = ../libextobjc/Configuration/Base;
+			sourceTree = "<group>";
+		};
+		D06ABD1115C661C1009679C1 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				D06ABD1215C661C1009679C1 /* Debug.xcconfig */,
+				D06ABD1315C661C1009679C1 /* Profile.xcconfig */,
+				D06ABD1415C661C1009679C1 /* Release.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		D06ABD1515C661C1009679C1 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				D06ABD1615C661C1009679C1 /* Application.xcconfig */,
+				D06ABD1715C661C1009679C1 /* StaticLibrary.xcconfig */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		D06ABD1815C661C1009679C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D06ABD1915C661C1009679C1 /* iOS-Application.xcconfig */,
+				D06ABD1A15C661C1009679C1 /* iOS-Base.xcconfig */,
+				D06ABD1B15C661C1009679C1 /* iOS-StaticLibrary.xcconfig */,
+			);
+			name = iOS;
+			path = ../libextobjc/Configuration/iOS;
+			sourceTree = "<group>";
+		};
+		D06ABD1C15C661C1009679C1 /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */,
+				D06ABD1E15C661C1009679C1 /* Mac-Base.xcconfig */,
+				D06ABD1F15C661C1009679C1 /* Mac-DynamicLibrary.xcconfig */,
+				D06ABD2015C661C1009679C1 /* Mac-Framework.xcconfig */,
+				D06ABD2115C661C1009679C1 /* Mac-StaticLibrary.xcconfig */,
+			);
+			name = "Mac OS X";
+			path = "../libextobjc/Configuration/Mac OS X";
+			sourceTree = "<group>";
+		};
+		D08A8A7F15CBBA340084E989 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D08A8A8A15CBBA350084E989 /* ReactiveCocoa.framework */,
+				D08A8A8C15CBBA350084E989 /* libReactiveCocoa-iOS.a */,
+				D08A8A8E15CBBA350084E989 /* ReactiveCocoaTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D08A8B5715CBC75B0084E989 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				D08A8B5815CBC7700084E989 /* UserViewModel.h */,
+				D08A8B5915CBC7700084E989 /* UserViewModel.m */,
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
+		D0F86B3415B8D1CC00D36357 /* Views and Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D053F00515B641A0005CBF00 /* AppDelegate.h */,
+				D053F00615B641A0005CBF00 /* AppDelegate.m */,
+				D0F86B2D15B8CCC200D36357 /* LoginWindowController.h */,
+				D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */,
+				D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */,
+				D08A8B7815CBCBDD0084E989 /* UserWindowController.h */,
+				D08A8B7915CBCBDD0084E989 /* UserWindowController.m */,
+				D08A8B7A15CBCBDD0084E989 /* UserWindowController.xib */,
+			);
+			name = "Views and Controllers";
+			sourceTree = "<group>";
+		};
+		D0F86B3515B8D1F000D36357 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D0F86B3615B8D23F00D36357 /* User.hs */,
+				D08A8AF515CBC5FB0084E989 /* User.h */,
+				D08A8AF615CBC5FB0084E989 /* User.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D053EFEE15B641A0005CBF00 /* PhotoUploader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D053F02115B641A0005CBF00 /* Build configuration list for PBXNativeTarget "PhotoUploader" */;
+			buildPhases = (
+				D053EFEB15B641A0005CBF00 /* Sources */,
+				D053EFEC15B641A0005CBF00 /* Frameworks */,
+				D053EFED15B641A0005CBF00 /* Resources */,
+				D08A8A9215CBBA490084E989 /* Copy Frameworks */,
+			);
+			buildRules = (
+				D0F86B3915B8D25F00D36357 /* PBXBuildRule */,
+			);
+			dependencies = (
+				D08A8A9015CBBA440084E989 /* PBXTargetDependency */,
+				D053F06415B641FB005CBF00 /* PBXTargetDependency */,
+			);
+			name = PhotoUploader;
+			productName = PhotoUploader;
+			productReference = D053EFEF15B641A0005CBF00 /* PhotoUploader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D053F00F15B641A0005CBF00 /* PhotoUploaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D053F02415B641A0005CBF00 /* Build configuration list for PBXNativeTarget "PhotoUploaderTests" */;
+			buildPhases = (
+				D053F00B15B641A0005CBF00 /* Sources */,
+				D053F00C15B641A0005CBF00 /* Frameworks */,
+				D053F00D15B641A0005CBF00 /* Resources */,
+				D053F00E15B641A0005CBF00 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D053F01515B641A0005CBF00 /* PBXTargetDependency */,
+			);
+			name = PhotoUploaderTests;
+			productName = PhotoUploaderTests;
+			productReference = D053F01015B641A0005CBF00 /* PhotoUploaderTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D053EFE615B641A0005CBF00 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Justin Spahr-Summers";
+			};
+			buildConfigurationList = D053EFE915B641A0005CBF00 /* Build configuration list for PBXProject "PhotoUploader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D053EFE415B641A0005CBF00;
+			productRefGroup = D053EFF015B641A0005CBF00 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D053F02815B641C1005CBF00 /* Products */;
+					ProjectRef = D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */;
+				},
+				{
+					ProductGroup = D08A8A7F15CBBA340084E989 /* Products */;
+					ProjectRef = D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D053EFEE15B641A0005CBF00 /* PhotoUploader */,
+				D053F00F15B641A0005CBF00 /* PhotoUploaderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D053F03415B641C1005CBF00 /* libObjectiveHaskell Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libObjectiveHaskell Mac.a";
+			remoteRef = D053F03315B641C1005CBF00 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D053F03615B641C1005CBF00 /* ObjectiveHaskellTests Mac.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ObjectiveHaskellTests Mac.octest";
+			remoteRef = D053F03515B641C1005CBF00 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D08A8A8A15CBBA350084E989 /* ReactiveCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveCocoa.framework;
+			remoteRef = D08A8A8915CBBA350084E989 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D08A8A8C15CBBA350084E989 /* libReactiveCocoa-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libReactiveCocoa-iOS.a";
+			remoteRef = D08A8A8B15CBBA350084E989 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D08A8A8E15CBBA350084E989 /* ReactiveCocoaTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ReactiveCocoaTests.octest;
+			remoteRef = D08A8A8D15CBBA350084E989 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D053EFED15B641A0005CBF00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D053EFFE15B641A0005CBF00 /* InfoPlist.strings in Resources */,
+				D053F00415B641A0005CBF00 /* Credits.rtf in Resources */,
+				D053F00A15B641A0005CBF00 /* MainMenu.xib in Resources */,
+				D0F86B3115B8CCC200D36357 /* LoginWindowController.xib in Resources */,
+				D08A8B7C15CBCBDD0084E989 /* UserWindowController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D053F00D15B641A0005CBF00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D053F01B15B641A0005CBF00 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D053F00E15B641A0005CBF00 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D053EFEB15B641A0005CBF00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D053F00015B641A0005CBF00 /* main.m in Sources */,
+				D053F00715B641A0005CBF00 /* AppDelegate.m in Sources */,
+				D0F86B3815B8D24D00D36357 /* User.hs in Sources */,
+				D0F86B3015B8CCC200D36357 /* LoginWindowController.m in Sources */,
+				D06ABCE415C66157009679C1 /* EXTScope.m in Sources */,
+				D08A8AF715CBC5FB0084E989 /* User.m in Sources */,
+				D08A8B5A15CBC7700084E989 /* UserViewModel.m in Sources */,
+				D08A8B7B15CBCBDD0084E989 /* UserWindowController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D053F00B15B641A0005CBF00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D053F01E15B641A0005CBF00 /* PhotoUploaderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D053F01515B641A0005CBF00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D053EFEE15B641A0005CBF00 /* PhotoUploader */;
+			targetProxy = D053F01415B641A0005CBF00 /* PBXContainerItemProxy */;
+		};
+		D053F06415B641FB005CBF00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectiveHaskell Mac";
+			targetProxy = D053F06315B641FB005CBF00 /* PBXContainerItemProxy */;
+		};
+		D08A8A9015CBBA440084E989 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ReactiveCocoa;
+			targetProxy = D08A8A8F15CBBA440084E989 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D053EFFC15B641A0005CBF00 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D053EFFD15B641A0005CBF00 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D053F00215B641A0005CBF00 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D053F00315B641A0005CBF00 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		D053F00815B641A0005CBF00 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D053F00915B641A0005CBF00 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		D053F01915B641A0005CBF00 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D053F01A15B641A0005CBF00 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D053F01F15B641A0005CBF00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D053F04A15B641E5005CBF00 /* ObjectiveHaskell-Debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				HEADER_SEARCH_PATHS = (
+					$HEADER_SEARCH_PATHS,
+					../../ObjectiveHaskell,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					$OTHER_LDFLAGS,
+					"-lHSaeson-0.6.0.2",
+					"-lHSattoparsec-0.10.2.0",
+					"-lHSblaze-builder-0.3.1.0",
+					"-lHShashable-1.1.2.3",
+					"-lHSunordered-containers-0.2.1.0",
+					"-lHSvector-0.9.1",
+				);
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D053F02015B641A0005CBF00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D053F04C15B641E5005CBF00 /* ObjectiveHaskell-Release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				HEADER_SEARCH_PATHS = (
+					$HEADER_SEARCH_PATHS,
+					../../ObjectiveHaskell,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					$OTHER_LDFLAGS,
+					"-lHSaeson-0.6.0.2",
+					"-lHSattoparsec-0.10.2.0",
+					"-lHSblaze-builder-0.3.1.0",
+					"-lHShashable-1.1.2.3",
+					"-lHSunordered-containers-0.2.1.0",
+					"-lHSvector-0.9.1",
+				);
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D053F02215B641A0005CBF00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "PhotoUploader/PhotoUploader-Prefix.pch";
+				INFOPLIST_FILE = "PhotoUploader/PhotoUploader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D053F02315B641A0005CBF00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "PhotoUploader/PhotoUploader-Prefix.pch";
+				INFOPLIST_FILE = "PhotoUploader/PhotoUploader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D053F02515B641A0005CBF00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoUploader.app/Contents/MacOS/PhotoUploader";
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoUploader/PhotoUploader-Prefix.pch";
+				INFOPLIST_FILE = "PhotoUploaderTests/PhotoUploaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D053F02615B641A0005CBF00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoUploader.app/Contents/MacOS/PhotoUploader";
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoUploader/PhotoUploader-Prefix.pch";
+				INFOPLIST_FILE = "PhotoUploaderTests/PhotoUploaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		D0A6670715C648ED004D7661 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D053F04B15B641E5005CBF00 /* ObjectiveHaskell-Profile.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				HEADER_SEARCH_PATHS = (
+					$HEADER_SEARCH_PATHS,
+					../../ObjectiveHaskell,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					$OTHER_LDFLAGS,
+					"-lHSaeson-0.6.0.2",
+					"-lHSattoparsec-0.10.2.0",
+					"-lHSblaze-builder-0.3.1.0",
+					"-lHShashable-1.1.2.3",
+					"-lHSunordered-containers-0.2.1.0",
+					"-lHSvector-0.9.1",
+				);
+				SDKROOT = macosx;
+			};
+			name = Profile;
+		};
+		D0A6670815C648ED004D7661 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "PhotoUploader/PhotoUploader-Prefix.pch";
+				INFOPLIST_FILE = "PhotoUploader/PhotoUploader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Profile;
+		};
+		D0A6670915C648ED004D7661 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D06ABD1D15C661C1009679C1 /* Mac-Application.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoUploader.app/Contents/MacOS/PhotoUploader";
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PREFIX_HEADER = "PhotoUploader/PhotoUploader-Prefix.pch";
+				INFOPLIST_FILE = "PhotoUploaderTests/PhotoUploaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Profile;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D053EFE915B641A0005CBF00 /* Build configuration list for PBXProject "PhotoUploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D053F01F15B641A0005CBF00 /* Debug */,
+				D053F02015B641A0005CBF00 /* Release */,
+				D0A6670715C648ED004D7661 /* Profile */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D053F02115B641A0005CBF00 /* Build configuration list for PBXNativeTarget "PhotoUploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D053F02215B641A0005CBF00 /* Debug */,
+				D053F02315B641A0005CBF00 /* Release */,
+				D0A6670815C648ED004D7661 /* Profile */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D053F02415B641A0005CBF00 /* Build configuration list for PBXNativeTarget "PhotoUploaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D053F02515B641A0005CBF00 /* Debug */,
+				D053F02615B641A0005CBF00 /* Release */,
+				D0A6670915C648ED004D7661 /* Profile */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D053EFE615B641A0005CBF00 /* Project object */;
+}

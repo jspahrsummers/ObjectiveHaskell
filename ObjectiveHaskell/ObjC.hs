@@ -168,6 +168,9 @@ exportFunc tramp qt funcName = do
     argNames <- argumentNames $ length paramTypes
     resultName <- newName "result"
 
+    -- The name of the internal Haskell trampoline
+    tramp' <- newName $ nameBase funcName ++ "_tramp"
+
     let applyExpr = foldl AppE (VarE funcName) $ map VarE argNames
 
         -- If we're returning an IO UnsafeId, we should autorelease the result of the function
@@ -179,9 +182,9 @@ exportFunc tramp qt funcName = do
 
         -- Map all UnsafeId arguments to Ids and bind them to the same names
         bodyExpr = DoE $ foldr bindUnsafeIds bodyStmts $ zip paramTypes argNames
-        funcDef = singleClauseFunc (mkName tramp) argNames $ return bodyExpr
+        funcDef = singleClauseFunc tramp' argNames $ return bodyExpr
 
-        foreignDecl = ForeignD $ ExportF CCall tramp (mkName tramp) t
+        foreignDecl = ForeignD $ ExportF CCall tramp tramp' t
 
     sequence $ (return foreignDecl) : [funcDef]
 

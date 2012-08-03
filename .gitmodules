@@ -1,3 +1,6 @@
 [submodule "libextobjc"]
 	path = libextobjc
 	url = git://github.com/jspahrsummers/libextobjc.git
+[submodule "Demos/PhotoUploader/ReactiveCocoa"]
+	path = Demos/PhotoUploader/ReactiveCocoa
+	url = git://github.com/github/ReactiveCocoa.git
