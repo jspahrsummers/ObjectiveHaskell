@@ -18,3 +18,5 @@ typedef struct OHOpaqueHaskellType *OHOpaqueHaskellPtr;
 // but prevents implicit conversions to other pointer types (because stable
 // pointers shouldn't be inspected in any way)
 #define HsStablePtr OHOpaqueHaskellPtr
+
+#import "OHModel.h"

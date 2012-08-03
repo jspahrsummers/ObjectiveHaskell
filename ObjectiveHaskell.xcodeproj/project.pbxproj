@@ -19,6 +19,8 @@
 		D04FC25A15B2B26F00C58F14 /* THUtils.hs in Sources */ = {isa = PBXBuildFile; fileRef = D04FC25915B2B26000C58F14 /* THUtils.hs */; };
 		D06197A515BB871400EE5006 /* SafeHaskellTest.hs in Sources */ = {isa = PBXBuildFile; fileRef = D06197A315BB870700EE5006 /* SafeHaskellTest.hs */; };
 		D062D78E15B38B90003871F7 /* NSData.hs in Sources */ = {isa = PBXBuildFile; fileRef = D062D78D15B38B80003871F7 /* NSData.hs */; };
+		D08A8AE915CBBC6D0084E989 /* OHModel.h in Headers */ = {isa = PBXBuildFile; fileRef = D08A8AE715CBBC6D0084E989 /* OHModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D08A8AEA15CBBC6D0084E989 /* OHModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A8AE815CBBC6D0084E989 /* OHModel.m */; };
 		D08FC9DA15C660730032E22A /* libffi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D08FC9D715C660670032E22A /* libffi.a */; };
 		D09061EF15B0DD37001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
 		D090620115B0DD38001CAC43 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D090620015B0DD38001CAC43 /* SenTestingKit.framework */; };
@@ -103,6 +105,8 @@
 		D04FC25915B2B26000C58F14 /* THUtils.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = THUtils.hs; sourceTree = "<group>"; };
 		D06197A315BB870700EE5006 /* SafeHaskellTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SafeHaskellTest.hs; sourceTree = "<group>"; };
 		D062D78D15B38B80003871F7 /* NSData.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSData.hs; sourceTree = "<group>"; };
+		D08A8AE715CBBC6D0084E989 /* OHModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHModel.h; sourceTree = "<group>"; };
+		D08A8AE815CBBC6D0084E989 /* OHModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHModel.m; sourceTree = "<group>"; };
 		D08FC9CC15C660670032E22A /* libffi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libffi.xcodeproj; path = libextobjc/libffi/libffi.xcodeproj; sourceTree = "<group>"; };
 		D08FC9DC15C660880032E22A /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		D08FC9DE15C660880032E22A /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -165,6 +169,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D08A8AE415CBBC3B0084E989 /* Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				D090624E15B0E613001CAC43 /* NSObject+OHInitializationExtensions.m */,
+				D08A8AE715CBBC6D0084E989 /* OHModel.h */,
+				D08A8AE815CBBC6D0084E989 /* OHModel.m */,
+			);
+			name = "Objective-C";
+			sourceTree = "<group>";
+		};
 		D08FC9CD15C660670032E22A /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +288,7 @@
 			children = (
 				D09061F715B0DD37001CAC43 /* ObjectiveHaskell.h */,
 				D0E525EB15B111E500C13802 /* Haskell */,
+				D08A8AE415CBBC3B0084E989 /* Objective-C */,
 				D09061F515B0DD37001CAC43 /* Supporting Files */,
 			);
 			path = ObjectiveHaskell;
@@ -282,7 +297,6 @@
 		D09061F515B0DD37001CAC43 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D090624E15B0E613001CAC43 /* NSObject+OHInitializationExtensions.m */,
 				D09061F615B0DD37001CAC43 /* ObjectiveHaskell-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -367,6 +381,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D08A8AE915CBBC6D0084E989 /* OHModel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +521,7 @@
 				D0240FE615C6699500B95C7C /* NSURL.hs in Sources */,
 				D0240FF115C66BBB00B95C7C /* Model.hs in Sources */,
 				D04FC25A15B2B26F00C58F14 /* THUtils.hs in Sources */,
+				D08A8AEA15CBBC6D0084E989 /* OHModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
