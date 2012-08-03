@@ -49,6 +49,8 @@
 
 			if (stop) return;
 		}
+
+		cls = cls.superclass;
 	}
 }
 
