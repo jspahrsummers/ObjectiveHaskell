@@ -18,6 +18,7 @@
 		D053F01B15B641A0005CBF00 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D053F01915B641A0005CBF00 /* InfoPlist.strings */; };
 		D053F01E15B641A0005CBF00 /* PhotoUploaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D053F01D15B641A0005CBF00 /* PhotoUploaderTests.m */; };
 		D053F06515B64200005CBF00 /* libObjectiveHaskell Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D053F03415B641C1005CBF00 /* libObjectiveHaskell Mac.a */; };
+		D06ABCE415C66157009679C1 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = D06ABCE215C66157009679C1 /* EXTScope.m */; };
 		D0F86B3015B8CCC200D36357 /* LoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */; };
 		D0F86B3115B8CCC200D36357 /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */; };
 		D0F86B3315B8CFB900D36357 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F86B3215B8CFB900D36357 /* WebKit.framework */; };
@@ -111,6 +112,9 @@
 		D053F06015B641E5005CBF00 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
 		D053F06115B641E5005CBF00 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
 		D053F06215B641E5005CBF00 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		D06ABCE115C66157009679C1 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTScope.h; path = ../../libextobjc/extobjc/EXTScope.h; sourceTree = "<group>"; };
+		D06ABCE215C66157009679C1 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXTScope.m; path = ../../libextobjc/extobjc/EXTScope.m; sourceTree = "<group>"; };
+		D06ABCE315C66157009679C1 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = metamacros.h; path = ../../libextobjc/extobjc/metamacros.h; sourceTree = "<group>"; };
 		D0F86B2D15B8CCC200D36357 /* LoginWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWindowController.h; sourceTree = "<group>"; };
 		D0F86B2E15B8CCC200D36357 /* LoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWindowController.m; sourceTree = "<group>"; };
 		D0F86B2F15B8CCC200D36357 /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 		D053EFF215B641A0005CBF00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D06ABCE015C66140009679C1 /* libextobjc */,
 				D053F02715B641C1005CBF00 /* ObjectiveHaskell.xcodeproj */,
 				D0F86B3215B8CFB900D36357 /* WebKit.framework */,
 				D053EFF315B641A0005CBF00 /* Cocoa.framework */,
@@ -308,6 +313,16 @@
 				D053F06115B641E5005CBF00 /* Mac-StaticLibrary.xcconfig */,
 			);
 			path = "Mac OS X";
+			sourceTree = "<group>";
+		};
+		D06ABCE015C66140009679C1 /* libextobjc */ = {
+			isa = PBXGroup;
+			children = (
+				D06ABCE115C66157009679C1 /* EXTScope.h */,
+				D06ABCE215C66157009679C1 /* EXTScope.m */,
+				D06ABCE315C66157009679C1 /* metamacros.h */,
+			);
+			name = libextobjc;
 			sourceTree = "<group>";
 		};
 		D0F86B3415B8D1CC00D36357 /* Cocoa */ = {
@@ -468,6 +483,7 @@
 				D053F00715B641A0005CBF00 /* AppDelegate.m in Sources */,
 				D0F86B3815B8D24D00D36357 /* Users.hs in Sources */,
 				D0F86B3015B8CCC200D36357 /* LoginWindowController.m in Sources */,
+				D06ABCE415C66157009679C1 /* EXTScope.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
