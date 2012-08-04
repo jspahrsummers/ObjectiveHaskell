@@ -16,10 +16,16 @@ do
     IMPORTS="$IMPORTS -i$DIR"
 done
 
-/usr/local/bin/ghc \
-    -XForeignFunctionInterface -XTemplateHaskell \
-    -Werror -fwarn-incomplete-patterns -fwarn-dodgy-imports -fwarn-dodgy-exports -fwarn-unused-binds -fwarn-hi-shadowing -fwarn-identities -fwarn-monomorphism-restriction \
-    -framework Foundation $IMPORTS \
-    -c -O -threaded --make \
-    "$@" \
-    "$INPUT_FILE_PATH"
+lockfile -r 0 ghc.lock
+if [ $? -eq 0 ]
+then
+    /usr/local/bin/ghc \
+        -XForeignFunctionInterface -XTemplateHaskell \
+        -Werror -fwarn-incomplete-patterns -fwarn-dodgy-imports -fwarn-dodgy-exports -fwarn-unused-binds -fwarn-hi-shadowing -fwarn-identities -fwarn-monomorphism-restriction \
+        -framework Foundation $IMPORTS \
+        -c -O -threaded --make \
+        "$@" \
+        "$INPUT_FILE_PATH"
+
+    rm -f ghc.lock
+fi
