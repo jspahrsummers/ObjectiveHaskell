@@ -169,7 +169,7 @@ exportFunc tramp qt funcName = do
     resultName <- newName "result"
 
     -- The name of the internal Haskell trampoline
-    tramp' <- newName $ nameBase funcName ++ "_tramp"
+    tramp' <- newName $ "_hs_" ++ tramp
 
     let applyExpr = foldl AppE (VarE funcName) $ map VarE argNames
 

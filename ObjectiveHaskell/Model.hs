@@ -31,7 +31,7 @@ exportAccessor str valueTypeName accessorName = do
         arg = mkName "ptr"
         valCon = conT valueTypeName
 
-    name <- newName $ nameBase accessorName ++ "_tramp"
+    name <- newName $ "_hs_" ++ str
     ft <- [t| MaybePtr $valCon -> IO UnsafeId |]
 
     let externDecl = ForeignD $ ExportF CCall str name ft
