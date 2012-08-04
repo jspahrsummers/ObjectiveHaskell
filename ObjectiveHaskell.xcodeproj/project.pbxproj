@@ -616,7 +616,7 @@
 					"-lHScontainers-0.4.2.1",
 					"-lHStemplate-haskell-2.7.0.0",
 					"-lHSbytestring-0.9.2.1",
-					"-lHStext-0.11.2.2",
+					"-lHStext-0.11.2.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -672,7 +672,7 @@
 					"-lHScontainers-0.4.2.1",
 					"-lHStemplate-haskell-2.7.0.0",
 					"-lHSbytestring-0.9.2.1",
-					"-lHStext-0.11.2.2",
+					"-lHStext-0.11.2.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -692,7 +692,7 @@
 					"-lHScontainers-0.4.2.1",
 					"-lHStemplate-haskell-2.7.0.0",
 					"-lHSbytestring-0.9.2.1",
-					"-lHStext-0.11.2.2",
+					"-lHStext-0.11.2.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
