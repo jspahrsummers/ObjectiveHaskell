@@ -17,7 +17,7 @@
 		D053F01315B641A0005CBF00 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D053EFF315B641A0005CBF00 /* Cocoa.framework */; };
 		D053F01B15B641A0005CBF00 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D053F01915B641A0005CBF00 /* InfoPlist.strings */; };
 		D053F01E15B641A0005CBF00 /* PhotoUploaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D053F01D15B641A0005CBF00 /* PhotoUploaderTests.m */; };
-		D053F06515B64200005CBF00 /* libObjectiveHaskell Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D053F03415B641C1005CBF00 /* libObjectiveHaskell Mac.a */; };
+		D053F06515B64200005CBF00 /* libObjectiveHaskell.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D053F03415B641C1005CBF00 /* libObjectiveHaskell.a */; };
 		D06ABCE415C66157009679C1 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = D06ABCE215C66157009679C1 /* EXTScope.m */; };
 		D08A8A9115CBBA470084E989 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08A8A8A15CBBA350084E989 /* ReactiveCocoa.framework */; };
 		D08A8A9315CBBA560084E989 /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D08A8A8A15CBBA350084E989 /* ReactiveCocoa.framework */; };
@@ -184,7 +184,7 @@
 			files = (
 				D08A8A9115CBBA470084E989 /* ReactiveCocoa.framework in Frameworks */,
 				D0F86B3315B8CFB900D36357 /* WebKit.framework in Frameworks */,
-				D053F06515B64200005CBF00 /* libObjectiveHaskell Mac.a in Frameworks */,
+				D053F06515B64200005CBF00 /* libObjectiveHaskell.a in Frameworks */,
 				D053EFF415B641A0005CBF00 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +291,7 @@
 		D053F02815B641C1005CBF00 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D053F03415B641C1005CBF00 /* libObjectiveHaskell Mac.a */,
+				D053F03415B641C1005CBF00 /* libObjectiveHaskell.a */,
 				D053F03615B641C1005CBF00 /* ObjectiveHaskellTests Mac.octest */,
 			);
 			name = Products;
@@ -502,10 +502,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		D053F03415B641C1005CBF00 /* libObjectiveHaskell Mac.a */ = {
+		D053F03415B641C1005CBF00 /* libObjectiveHaskell.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = "libObjectiveHaskell Mac.a";
+			path = libObjectiveHaskell.a;
 			remoteRef = D053F03315B641C1005CBF00 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
