@@ -3,7 +3,7 @@
 # Script for compiling *.hs files in an Xcode project, meant to be used with
 # a build rule.
 
-IMPORTS=""
+IMPORTS="-i$PWD"
 
 # Use Objective-C header search paths to locate Haskell modules too
 for DIR in $HEADER_SEARCH_PATHS
@@ -16,7 +16,10 @@ do
     IMPORTS="$IMPORTS -i$DIR"
 done
 
-lockfile -r 0 ghc.lock
+cd "$INPUT_FILE_DIR"
+LOCKFILE=./ghc.lock
+
+lockfile -r 0 -l 60 -s 1 "$LOCKFILE"
 if [ $? -eq 0 ]
 then
     /usr/local/bin/ghc \
@@ -25,7 +28,7 @@ then
         -framework Foundation $IMPORTS \
         -c -O -threaded --make \
         "$@" \
-        "$INPUT_FILE_PATH"
+        ./*.hs
 
-    rm -f ghc.lock
+    rm -f "$LOCKFILE"
 fi
