@@ -14,12 +14,12 @@
 
 #pragma mark Lifecycle
 
-- (id)init {
+- (instancetype)init {
 	NSAssert(NO, @"The designated initializer for OHModel is -initWithHaskellPointer:");
 	return nil;
 }
 
-- (id)initWithHaskellPointer:(OHOpaqueHaskellPtr)haskellPointer {
+- (instancetype)initWithHaskellPointer:(OHOpaqueHaskellPtr)haskellPointer {
 	self = [super init];
 	if (self == nil) return nil;
 

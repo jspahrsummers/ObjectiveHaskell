@@ -32,7 +32,7 @@
  *
  * This is the designated initializer for this class.
  */
-- (id)initWithHaskellPointer:(OHOpaqueHaskellPtr)haskellPointer;
+- (instancetype)initWithHaskellPointer:(OHOpaqueHaskellPtr)haskellPointer;
 
 /*
  * The Haskell pointer to the value wrapped by the receiver.
