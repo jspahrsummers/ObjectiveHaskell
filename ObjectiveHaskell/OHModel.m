@@ -14,15 +14,16 @@
 
 #pragma mark Lifecycle
 
-- (id)init {
+- (instancetype)init {
 	NSAssert(NO, @"The designated initializer for OHModel is -initWithHaskellPointer:");
 	return nil;
 }
 
-- (id)initWithHaskellPointer:(OHOpaqueHaskellPtr)haskellPointer {
+- (instancetype)initWithHaskellPointer:(OHOpaqueHaskellPtr)haskellPointer {
 	self = [super init];
 	if (self == nil) return nil;
 
+	// TODO: This should return nil if given a Nothing.
 	_haskellPointer = haskellPointer;
 	return self;
 }
@@ -62,6 +63,46 @@
 	}];
 
 	return [self dictionaryWithValuesForKeys:propertyNames.allObjects];
+}
+
+#pragma mark Updating
+
+- (instancetype)updateValue:(id)value forKey:(NSString *)key {
+	SEL updateSelector = NSSelectorFromString([key stringByAppendingString:@"Update:"]);
+	NSMethodSignature *signature = [self methodSignatureForSelector:updateSelector];
+	if (signature == nil) {
+		NSAssert(NO, @"%@ does not implement an update method for key \"%@\"", self, key);
+		return nil;
+	}
+
+	NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+	invocation.target = self;
+	invocation.selector = updateSelector;
+	[invocation setArgument:&value atIndex:2];
+	[invocation invoke];
+
+	__unsafe_unretained id result = nil;
+	[invocation getReturnValue:&result];
+
+	return result;
+}
+
+- (instancetype)updateValuesForKeysWithDictionary:(NSDictionary *)keyValuePairs {
+	id model = self;
+
+	for (NSString *key in keyValuePairs) {
+		NSAssert([key isKindOfClass:[NSString class]], @"Non-string key %@ in dictionary %@", key, keyValuePairs);
+
+		id value = [keyValuePairs objectForKey:key];
+		if ([value isEqual:[NSNull null]]) value = nil;
+
+		// TODO: This should update all the properties at once instead of one at
+		// a time.
+		model = [model updateValue:value forKey:key];
+		if (model == nil) break;
+	}
+
+	return model;
 }
 
 #pragma mark NSCopying
