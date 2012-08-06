@@ -50,6 +50,6 @@ decodeUser d = do
 
 exportFunc "User_initWithData" [t| UnsafeId -> IO (MaybePtr User) |] 'decodeUser
 
-exportAccessor "User_fullName" ''User 'fullName
-exportAccessor "User_username" ''User 'username
-exportAccessor "User_photoURL" ''User 'photoURL
+exportAccessors ''User 'fullName
+exportAccessors ''User 'username
+exportAccessors ''User 'photoURL
