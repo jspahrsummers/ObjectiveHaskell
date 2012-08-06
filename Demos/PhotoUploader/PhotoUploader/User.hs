@@ -11,7 +11,6 @@ import ObjectiveHaskell.Model
 import ObjectiveHaskell.NSString
 import ObjectiveHaskell.ObjC
 
--- | An Instagram user.
 data User = User {
     userId :: Integer,
     username :: Text,
@@ -21,9 +20,7 @@ data User = User {
 } deriving (Eq, Ord, Show)
 
 instance Aeson.FromJSON User where
-    parseJSON (Object d) = do
-        u <- d .: "data"
-
+    parseJSON (Object u) = do
         userId <- read <$> u .: "id"
         username <- u .: "username"
         fullName <- u .: "full_name"
@@ -32,8 +29,7 @@ instance Aeson.FromJSON User where
 
         return $ User { userId = userId, username = username, fullName = fullName, bio = bio, photoURL = photoURL }
 
-    parseJSON j = do
-        mzero
+    parseJSON _ = mzero
 
 exportFunc "User_initWithData" [t| UnsafeId -> IO (MaybePtr User) |] 'decodeModel
 
