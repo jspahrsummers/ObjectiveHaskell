@@ -28,7 +28,7 @@
 		D09061EF15B0DD37001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
 		D090620115B0DD38001CAC43 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D090620015B0DD38001CAC43 /* SenTestingKit.framework */; };
 		D090620215B0DD38001CAC43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EE15B0DD37001CAC43 /* Cocoa.framework */; };
-		D090620515B0DD38001CAC43 /* libObjectiveHaskell Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EB15B0DD37001CAC43 /* libObjectiveHaskell Mac.a */; };
+		D090620515B0DD38001CAC43 /* libObjectiveHaskell.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061EB15B0DD37001CAC43 /* libObjectiveHaskell.a */; };
 		D090620B15B0DD38001CAC43 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D090620915B0DD38001CAC43 /* InfoPlist.strings */; };
 		D090620E15B0DD38001CAC43 /* ObjectiveHaskellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D090620D15B0DD38001CAC43 /* ObjectiveHaskellTests.m */; };
 		D090624A15B0E4C0001CAC43 /* FibTest.hs in Sources */ = {isa = PBXBuildFile; fileRef = D090624815B0E450001CAC43 /* FibTest.hs */; };
@@ -131,7 +131,7 @@
 		D08FC9EB15C660880032E22A /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
 		D08FC9EC15C660880032E22A /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
 		D08FC9ED15C660880032E22A /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
-		D09061EB15B0DD37001CAC43 /* libObjectiveHaskell Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libObjectiveHaskell Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D09061EB15B0DD37001CAC43 /* libObjectiveHaskell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObjectiveHaskell.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09061EE15B0DD37001CAC43 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D09061F115B0DD37001CAC43 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		D09061F215B0DD37001CAC43 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -171,7 +171,7 @@
 			files = (
 				D090620115B0DD38001CAC43 /* SenTestingKit.framework in Frameworks */,
 				D090620215B0DD38001CAC43 /* Cocoa.framework in Frameworks */,
-				D090620515B0DD38001CAC43 /* libObjectiveHaskell Mac.a in Frameworks */,
+				D090620515B0DD38001CAC43 /* libObjectiveHaskell.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +278,7 @@
 		D09061EC15B0DD37001CAC43 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D09061EB15B0DD37001CAC43 /* libObjectiveHaskell Mac.a */,
+				D09061EB15B0DD37001CAC43 /* libObjectiveHaskell.a */,
 				D09061FF15B0DD38001CAC43 /* ObjectiveHaskellTests Mac.octest */,
 			);
 			name = Products;
@@ -428,7 +428,7 @@
 			);
 			name = "ObjectiveHaskell Mac";
 			productName = ObjectiveHaskell;
-			productReference = D09061EB15B0DD37001CAC43 /* libObjectiveHaskell Mac.a */;
+			productReference = D09061EB15B0DD37001CAC43 /* libObjectiveHaskell.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		D09061FE15B0DD38001CAC43 /* ObjectiveHaskellTests Mac */ = {
@@ -618,7 +618,7 @@
 					"-lHSbytestring-0.9.2.1",
 					"-lHStext-0.11.2.0",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ObjectiveHaskell;
 			};
 			name = Profile;
 		};
@@ -674,7 +674,7 @@
 					"-lHSbytestring-0.9.2.1",
 					"-lHStext-0.11.2.0",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ObjectiveHaskell;
 			};
 			name = Debug;
 		};
@@ -694,7 +694,7 @@
 					"-lHSbytestring-0.9.2.1",
 					"-lHStext-0.11.2.0",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ObjectiveHaskell;
 			};
 			name = Release;
 		};
