@@ -5,12 +5,9 @@ module User where
 import Control.Applicative
 import Control.Monad
 import Data.Aeson as Aeson
-import Data.ByteString as ByteString
 import Data.Text.Lazy as Text
-import Foreign.StablePtr
+import JSONUtils
 import ObjectiveHaskell.Model
-import ObjectiveHaskell.MsgSend
-import ObjectiveHaskell.NSData
 import ObjectiveHaskell.NSString
 import ObjectiveHaskell.ObjC
 
@@ -38,17 +35,7 @@ instance Aeson.FromJSON User where
     parseJSON j = do
         mzero
 
--- | Decodes an @NSData@ into a 'User'.
-decodeUser :: Id -> IO (MaybePtr User)
-decodeUser d = do
-    json <- fromNSData d
-
-    let mu = Aeson.decode json :: Maybe User
-    case mu of
-        (Just u) -> newStablePtr $ Just u
-        _ -> newStablePtr Nothing
-
-exportFunc "User_initWithData" [t| UnsafeId -> IO (MaybePtr User) |] 'decodeUser
+exportFunc "User_initWithData" [t| UnsafeId -> IO (MaybePtr User) |] 'decodeModel
 
 exportAccessors ''User 'fullName
 exportAccessors ''User 'username

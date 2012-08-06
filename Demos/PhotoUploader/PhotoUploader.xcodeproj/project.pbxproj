@@ -19,6 +19,7 @@
 		D053F01E15B641A0005CBF00 /* PhotoUploaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D053F01D15B641A0005CBF00 /* PhotoUploaderTests.m */; };
 		D053F06515B64200005CBF00 /* libObjectiveHaskell.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D053F03415B641C1005CBF00 /* libObjectiveHaskell.a */; };
 		D06ABCE415C66157009679C1 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = D06ABCE215C66157009679C1 /* EXTScope.m */; };
+		D0852F2015CF9C1A0041EEF0 /* JSONUtils.hs in Sources */ = {isa = PBXBuildFile; fileRef = D0852F1E15CF9C100041EEF0 /* JSONUtils.hs */; };
 		D08A8A9115CBBA470084E989 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08A8A8A15CBBA350084E989 /* ReactiveCocoa.framework */; };
 		D08A8A9315CBBA560084E989 /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D08A8A8A15CBBA350084E989 /* ReactiveCocoa.framework */; };
 		D08A8AF715CBC5FB0084E989 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A8AF615CBC5FB0084E989 /* User.m */; };
@@ -162,6 +163,7 @@
 		D06ABD1F15C661C1009679C1 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
 		D06ABD2015C661C1009679C1 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
 		D06ABD2115C661C1009679C1 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D0852F1E15CF9C100041EEF0 /* JSONUtils.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JSONUtils.hs; sourceTree = "<group>"; };
 		D08A8A7E15CBBA340084E989 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 		D08A8AF515CBC5FB0084E989 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		D08A8AF615CBC5FB0084E989 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 		D0F86B3515B8D1F000D36357 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D0852F1E15CF9C100041EEF0 /* JSONUtils.hs */,
 				D0F86B3615B8D23F00D36357 /* User.hs */,
 				D08A8AF515CBC5FB0084E989 /* User.h */,
 				D08A8AF615CBC5FB0084E989 /* User.m */,
@@ -591,6 +594,7 @@
 				D08A8AF715CBC5FB0084E989 /* User.m in Sources */,
 				D08A8B5A15CBC7700084E989 /* UserViewModel.m in Sources */,
 				D08A8B7B15CBCBDD0084E989 /* UserWindowController.m in Sources */,
+				D0852F2015CF9C1A0041EEF0 /* JSONUtils.hs in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
