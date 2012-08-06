@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D09061EA15B0DD37001CAC43"
-               BuildableName = "libObjectiveHaskell Mac.a"
+               BuildableName = "libObjectiveHaskell.a"
                BlueprintName = "ObjectiveHaskell Mac"
                ReferencedContainer = "container:ObjectiveHaskell.xcodeproj">
             </BuildableReference>
