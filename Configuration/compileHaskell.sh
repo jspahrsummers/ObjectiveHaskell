@@ -30,5 +30,8 @@ then
         "$@" \
         ./*.hs
 
+    STATUS=$?
     rm -f "$LOCKFILE"
+
+    exit $STATUS
 fi
