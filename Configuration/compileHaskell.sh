@@ -3,35 +3,34 @@
 # Script for compiling *.hs files in an Xcode project, meant to be used with
 # a build rule.
 
-IMPORTS="-i$PWD"
+declare -a imports
 
 # Use Objective-C header search paths to locate Haskell modules too
-for DIR in $HEADER_SEARCH_PATHS
+for dir in $HEADER_SEARCH_PATHS
 do
     # Because Haskell module names should be qualified, we need to move one
     # folder up (which will usually be from the target folder to the project
     # folder)
-    DIR=`dirname "$DIR"`
+    dir=`dirname "$dir"`
 
-    IMPORTS="$IMPORTS -i$DIR"
+    imports=( "${imports[@]}" "-i$dir" )
 done
 
-cd "$INPUT_FILE_DIR"
-LOCKFILE=./ghc.lock
+lockfile="$INPUT_FILE_DIR/ghc.lock"
 
-lockfile -r 0 -l 60 -s 1 "$LOCKFILE"
+lockfile -r 0 -l 60 -s 1 "$lockfile"
 if [ $? -eq 0 ]
 then
-    /usr/local/bin/ghc \
+    find "$INPUT_FILE_DIR" -name '*.hs' -print0 | \
+    xargs -0 /usr/local/bin/ghc \
         -XForeignFunctionInterface -XTemplateHaskell \
         -Werror -fwarn-incomplete-patterns -fwarn-dodgy-imports -fwarn-dodgy-exports -fwarn-unused-binds -fwarn-hi-shadowing -fwarn-identities -fwarn-monomorphism-restriction \
-        -framework Foundation $IMPORTS \
+        -framework Foundation ${imports[@]} \
         -c -O -threaded --make \
-        "$@" \
-        ./*.hs
+        "$@"
 
-    STATUS=$?
-    rm -f "$LOCKFILE"
+    st=$?
+    rm -f "$lockfile"
 
-    exit $STATUS
+    exit $st
 fi
