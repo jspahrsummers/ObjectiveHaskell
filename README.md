@@ -12,7 +12,7 @@ Tools for making it easier to integrate Haskell and Objective-C.
 
 You will also need to have the following packages installed using [Homebrew](https://github.com/mxcl/homebrew/) and `cabal` (part of the `haskell-platform`):
 
-    $ brew install `haskell-platform`
+    $ brew install haskell-platform
     $ cabal install aeson
 
 **To add Objective-Haskell to a project:**
