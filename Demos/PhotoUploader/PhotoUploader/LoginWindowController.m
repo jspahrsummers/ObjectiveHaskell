@@ -34,7 +34,7 @@
 	self = [super initWithWindow:window];
 	if (self == nil) return nil;
 
-	_loginSubscribable = [RACSubject subject];
+	_loginSubscribable = [RACAsyncSubject subject];
 	return self;
 }
 
