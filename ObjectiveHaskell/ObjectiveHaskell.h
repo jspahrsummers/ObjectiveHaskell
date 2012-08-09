@@ -11,6 +11,7 @@
 #import "NSDictionary+OHExtensions.h"
 #import "NSNumber+OHExtensions.h"
 #import "NSString+OHExtensions.h"
+#import "NSValue+OHExtensions.h"
 #import "OHBridged.h"
 #import "OHModel.h"
 #import "OHTypes.h"

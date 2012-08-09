@@ -7,6 +7,7 @@ module ObjectiveHaskell.NSValue (
     ) where
 
 import Foreign.Ptr
+import Foreign.StablePtr
 import ObjectiveHaskell.MsgSend
 import ObjectiveHaskell.ObjC
 
@@ -25,3 +26,12 @@ toNSValue ptr = getClass "NSValue" >>= valueWithPointer ptr
 instance Bridged (Ptr ()) where
     toObjC = toNSValue
     fromObjC = fromNSValue
+
+fromNSValueObjC :: Id -> IO (StablePtr (Ptr ()))
+fromNSValueObjC obj = fromNSValue obj >>= newStablePtr
+
+toNSValueObjC :: StablePtr (Ptr ()) -> IO Id
+toNSValueObjC ptr = deRefStablePtr ptr >>= toNSValue
+
+exportFunc "OHHaskellPtrFromNSValue" [t| UnsafeId -> IO (StablePtr (Ptr ())) |] 'fromNSValueObjC
+exportFunc "OHNSValueFromHaskellPtr" [t| StablePtr (Ptr ()) -> IO UnsafeId |] 'toNSValueObjC

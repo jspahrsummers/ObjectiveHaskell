@@ -71,6 +71,9 @@
 
 	uintptr_t addr = ptrAddress(value);
 	STAssertEquals(addr, (uintptr_t)0, @"");
+
+	NSValue *passthroughValue = [NSValue objectWithHaskellPointer:value.haskellPointer];
+	STAssertEqualObjects(value, passthroughValue, @"");
 }
 
 - (void)testNSURLConversion {
