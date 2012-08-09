@@ -44,6 +44,8 @@
 		D0F3A31815D366730032B8D9 /* NSArray+OHExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F3A31615D366730032B8D9 /* NSArray+OHExtensions.m */; };
 		D0F3A31B15D36F5D0032B8D9 /* NSDictionary+OHExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F3A31915D36F5D0032B8D9 /* NSDictionary+OHExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0F3A31C15D36F5D0032B8D9 /* NSDictionary+OHExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F3A31A15D36F5D0032B8D9 /* NSDictionary+OHExtensions.m */; };
+		D0F3A31F15D3717C0032B8D9 /* NSData+OHExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F3A31D15D3717C0032B8D9 /* NSData+OHExtensions.h */; };
+		D0F3A32015D3717C0032B8D9 /* NSData+OHExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F3A31E15D3717C0032B8D9 /* NSData+OHExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -171,6 +173,8 @@
 		D0F3A31615D366730032B8D9 /* NSArray+OHExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+OHExtensions.m"; sourceTree = "<group>"; };
 		D0F3A31915D36F5D0032B8D9 /* NSDictionary+OHExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+OHExtensions.h"; sourceTree = "<group>"; };
 		D0F3A31A15D36F5D0032B8D9 /* NSDictionary+OHExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+OHExtensions.m"; sourceTree = "<group>"; };
+		D0F3A31D15D3717C0032B8D9 /* NSData+OHExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+OHExtensions.h"; sourceTree = "<group>"; };
+		D0F3A31E15D3717C0032B8D9 /* NSData+OHExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+OHExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,8 @@
 			children = (
 				D0F3A31515D366730032B8D9 /* NSArray+OHExtensions.h */,
 				D0F3A31615D366730032B8D9 /* NSArray+OHExtensions.m */,
+				D0F3A31D15D3717C0032B8D9 /* NSData+OHExtensions.h */,
+				D0F3A31E15D3717C0032B8D9 /* NSData+OHExtensions.m */,
 				D0F3A31915D36F5D0032B8D9 /* NSDictionary+OHExtensions.h */,
 				D0F3A31A15D36F5D0032B8D9 /* NSDictionary+OHExtensions.m */,
 				D0F3A2FF15D360B50032B8D9 /* NSNumber+OHExtensions.h */,
@@ -438,6 +444,7 @@
 				D0F3A30115D360B50032B8D9 /* NSNumber+OHExtensions.h in Headers */,
 				D0F3A31715D366730032B8D9 /* NSArray+OHExtensions.h in Headers */,
 				D0F3A31B15D36F5D0032B8D9 /* NSDictionary+OHExtensions.h in Headers */,
+				D0F3A31F15D3717C0032B8D9 /* NSData+OHExtensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +591,7 @@
 				D0F3A30215D360B50032B8D9 /* NSNumber+OHExtensions.m in Sources */,
 				D0F3A31815D366730032B8D9 /* NSArray+OHExtensions.m in Sources */,
 				D0F3A31C15D36F5D0032B8D9 /* NSDictionary+OHExtensions.m in Sources */,
+				D0F3A32015D3717C0032B8D9 /* NSData+OHExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

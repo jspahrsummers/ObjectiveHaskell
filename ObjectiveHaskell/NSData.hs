@@ -11,6 +11,7 @@ import Data.Word
 import Foreign.C.Types
 import Foreign.Marshal.Array
 import Foreign.Ptr
+import Foreign.StablePtr
 import ObjectiveHaskell.MsgSend
 import ObjectiveHaskell.ObjC
 
@@ -38,3 +39,12 @@ toNSData str =
 instance Bridged ByteString where
     toObjC = toNSData
     fromObjC = fromNSData
+
+fromNSDataObjC :: Id -> IO (StablePtr ByteString)
+fromNSDataObjC obj = fromNSData obj >>= newStablePtr
+
+toNSDataObjC :: StablePtr ByteString -> IO Id
+toNSDataObjC ptr = deRefStablePtr ptr >>= toNSData
+
+exportFunc "OHHaskellPtrFromNSData" [t| UnsafeId -> IO (StablePtr ByteString) |] 'fromNSDataObjC
+exportFunc "OHNSDataFromHaskellPtr" [t| StablePtr ByteString -> IO UnsafeId |] 'toNSDataObjC

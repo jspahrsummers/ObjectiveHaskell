@@ -7,6 +7,7 @@
 //
 
 #import "NSArray+OHExtensions.h"
+#import "NSData+OHExtensions.h"
 #import "NSDictionary+OHExtensions.h"
 #import "NSNumber+OHExtensions.h"
 #import "NSString+OHExtensions.h"

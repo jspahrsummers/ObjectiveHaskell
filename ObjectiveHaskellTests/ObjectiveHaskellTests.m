@@ -29,6 +29,9 @@
     unsigned char expectedBytes[] = { 1, 2, 3, 5 };
     STAssertEquals([data length], sizeof(expectedBytes), @"");
     STAssertTrue(memcmp([data bytes], expectedBytes, sizeof(expectedBytes)) == 0, @"");
+
+	NSData *passthroughData = [NSData objectWithHaskellPointer:data.haskellPointer];
+	STAssertEqualObjects(data, passthroughData, @"");
 }
 
 - (void)testNSDictionaryBridging {
