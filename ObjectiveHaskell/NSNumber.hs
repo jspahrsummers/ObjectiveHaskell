@@ -12,6 +12,7 @@ import Data.Ratio
 import Data.Text.Lazy as Text
 import Foreign.C.String
 import Foreign.C.Types
+import Foreign.StablePtr
 import ObjectiveHaskell.MsgSend
 import ObjectiveHaskell.NSString
 import ObjectiveHaskell.ObjC
@@ -49,3 +50,12 @@ toNSNumber rat
 instance Bridged Rational where
     toObjC = toNSNumber
     fromObjC = fromNSNumber
+
+fromNSNumberObjC :: Id -> IO (StablePtr Rational)
+fromNSNumberObjC obj = fromNSNumber obj >>= newStablePtr
+
+toNSNumberObjC :: StablePtr Rational -> IO Id
+toNSNumberObjC ptr = deRefStablePtr ptr >>= toNSNumber
+
+exportFunc "OHHaskellPtrFromNSNumber" [t| UnsafeId -> IO (StablePtr Rational) |] 'fromNSNumberObjC
+exportFunc "OHNSNumberFromHaskellPtr" [t| StablePtr Rational -> IO UnsafeId |] 'toNSNumberObjC

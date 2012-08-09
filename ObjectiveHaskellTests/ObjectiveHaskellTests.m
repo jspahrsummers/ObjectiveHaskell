@@ -42,6 +42,9 @@
 	NSNumber *dnum = @5.25;
 	STAssertEqualsWithAccuracy(6.25, [plusInt(dnum, 1) doubleValue], 0.001, @"");
 	STAssertEqualsWithAccuracy(6.75, [plusDouble(dnum, 1.5) doubleValue], 0.001, @"");
+
+	NSNumber *passthroughNum = [NSNumber objectWithHaskellPointer:dnum.haskellPointer];
+	STAssertEqualObjects(dnum, passthroughNum, @"");
 }
 
 - (void)testNSStringBridging {
