@@ -19,6 +19,10 @@
 	return nil;
 }
 
++ (instancetype)objectWithHaskellPointer:(OHHaskellPtr)haskellPointer {
+	return [[self alloc] initWithHaskellPointer:haskellPointer];
+}
+
 - (instancetype)initWithHaskellPointer:(OHHaskellPtr)haskellPointer {
 	self = [super init];
 	if (self == nil) return nil;

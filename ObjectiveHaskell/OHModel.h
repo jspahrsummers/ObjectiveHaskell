@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OHBridged.h"
 #import "OHTypes.h"
 
 /*
@@ -33,7 +34,7 @@
  * A base class for models that are implemented in Haskell using the
  * ObjectiveHaskell.Model module.
  */
-@interface OHModel : NSObject <NSCopying>
+@interface OHModel : NSObject <NSCopying, OHBridged>
 
 /*
  * Initializes the receiver with the value wrapped by the given Haskell pointer.
