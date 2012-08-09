@@ -17,6 +17,9 @@
     NSArray *array = addFoobarToArray(@[ @5, @{} ]);
     NSArray *expectedArray = @[ @5, @{}, @"foobar" ];
     STAssertEqualObjects(array, expectedArray, @"");
+
+	NSArray *passthroughArray = [NSArray objectWithHaskellPointer:array.haskellPointer];
+	STAssertEqualObjects(array, passthroughArray, @"");
 }
 
 - (void)testNSDataBridging {

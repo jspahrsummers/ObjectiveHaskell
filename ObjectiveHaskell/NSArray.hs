@@ -10,6 +10,7 @@ import Control.Monad
 import Data.Foldable
 import Data.Sequence as Seq
 import Foreign.C.Types
+import Foreign.StablePtr
 import ObjectiveHaskell.MsgSend
 import ObjectiveHaskell.ObjC
 
@@ -46,3 +47,12 @@ toNSArray s = do
 instance Bridged (Seq Id) where
     toObjC = toNSArray
     fromObjC = fromNSArray
+
+fromNSArrayObjC :: Id -> IO (StablePtr (Seq Id))
+fromNSArrayObjC obj = fromNSArray obj >>= newStablePtr
+
+toNSArrayObjC :: StablePtr (Seq Id) -> IO Id
+toNSArrayObjC ptr = deRefStablePtr ptr >>= toNSArray
+
+exportFunc "OHHaskellPtrFromNSArray" [t| UnsafeId -> IO (StablePtr (Seq Id)) |] 'fromNSArrayObjC
+exportFunc "OHNSArrayFromHaskellPtr" [t| StablePtr (Seq Id) -> IO UnsafeId |] 'toNSArrayObjC

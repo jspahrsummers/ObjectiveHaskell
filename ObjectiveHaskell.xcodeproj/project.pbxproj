@@ -40,6 +40,8 @@
 		D0F3A2FE15D359650032B8D9 /* NSString+OHExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F3A2FC15D359650032B8D9 /* NSString+OHExtensions.m */; };
 		D0F3A30115D360B50032B8D9 /* NSNumber+OHExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F3A2FF15D360B50032B8D9 /* NSNumber+OHExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0F3A30215D360B50032B8D9 /* NSNumber+OHExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F3A30015D360B50032B8D9 /* NSNumber+OHExtensions.m */; };
+		D0F3A31715D366730032B8D9 /* NSArray+OHExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F3A31515D366730032B8D9 /* NSArray+OHExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0F3A31815D366730032B8D9 /* NSArray+OHExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F3A31615D366730032B8D9 /* NSArray+OHExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -163,6 +165,8 @@
 		D0F3A2FC15D359650032B8D9 /* NSString+OHExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+OHExtensions.m"; sourceTree = "<group>"; };
 		D0F3A2FF15D360B50032B8D9 /* NSNumber+OHExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+OHExtensions.h"; sourceTree = "<group>"; };
 		D0F3A30015D360B50032B8D9 /* NSNumber+OHExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+OHExtensions.m"; sourceTree = "<group>"; };
+		D0F3A31515D366730032B8D9 /* NSArray+OHExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+OHExtensions.h"; sourceTree = "<group>"; };
+		D0F3A31615D366730032B8D9 /* NSArray+OHExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+OHExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,8 @@
 		D08A8AE415CBBC3B0084E989 /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				D0F3A31515D366730032B8D9 /* NSArray+OHExtensions.h */,
+				D0F3A31615D366730032B8D9 /* NSArray+OHExtensions.m */,
 				D0F3A2FF15D360B50032B8D9 /* NSNumber+OHExtensions.h */,
 				D0F3A30015D360B50032B8D9 /* NSNumber+OHExtensions.m */,
 				D090624E15B0E613001CAC43 /* NSObject+OHExtensions.m */,
@@ -424,6 +430,7 @@
 				D0F3A2F115D353CB0032B8D9 /* OHBridged.h in Headers */,
 				D0F3A2FD15D359650032B8D9 /* NSString+OHExtensions.h in Headers */,
 				D0F3A30115D360B50032B8D9 /* NSNumber+OHExtensions.h in Headers */,
+				D0F3A31715D366730032B8D9 /* NSArray+OHExtensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +575,7 @@
 				D08A8AF415CBC2A90084E989 /* EXTScope.m in Sources */,
 				D0F3A2FE15D359650032B8D9 /* NSString+OHExtensions.m in Sources */,
 				D0F3A30215D360B50032B8D9 /* NSNumber+OHExtensions.m in Sources */,
+				D0F3A31815D366730032B8D9 /* NSArray+OHExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
