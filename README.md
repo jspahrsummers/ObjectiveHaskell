@@ -21,9 +21,9 @@ You will also need to have the following packages installed using [Homebrew](htt
  2. In your project's Info pane, under Configurations:
     - Under Debug and next to the line with your project, select ObjectiveHaskell-Debug from the drop-down.
     - Under Release, select ObjectiveHaskell-Release.
- 3. In your project's Build Settings, add the ObjectiveHaskell folder to your Header Search Paths. (It does not need to be recursive.)
+ 3. In your project's Build Settings, add the ObjectiveHaskell folder within the repository to your Header Search Paths. (It does not need to be recursive.)
  4. For each target in your project that may have Haskell sources:
-    - Set up a dependency on the ObjectiveHaskell target.
+    - Set up a dependency on and link in the ObjectiveHaskell library.
     - Add a build rule for files matching `*.hs` which executes the following
       script (where `ObjectiveHaskell` is the path to the repository):
       
