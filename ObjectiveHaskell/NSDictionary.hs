@@ -12,6 +12,7 @@ import Data.Foldable as Foldable
 import Data.List
 import Data.Map as Map
 import Foreign.C.Types
+import Foreign.StablePtr
 import ObjectiveHaskell.MsgSend
 import ObjectiveHaskell.NSArray
 import ObjectiveHaskell.ObjC
@@ -42,3 +43,12 @@ toNSDictionary tbl = do
 instance Bridged (Map Id Id) where
     toObjC = toNSDictionary
     fromObjC = fromNSDictionary
+
+fromNSDictionaryObjC :: Id -> IO (StablePtr (Map Id Id))
+fromNSDictionaryObjC obj = fromNSDictionary obj >>= newStablePtr
+
+toNSDictionaryObjC :: StablePtr (Map Id Id) -> IO Id
+toNSDictionaryObjC ptr = deRefStablePtr ptr >>= toNSDictionary
+
+exportFunc "OHHaskellPtrFromNSDictionary" [t| UnsafeId -> IO (StablePtr (Map Id Id)) |] 'fromNSDictionaryObjC
+exportFunc "OHNSDictionaryFromHaskellPtr" [t| StablePtr (Map Id Id) -> IO UnsafeId |] 'toNSDictionaryObjC

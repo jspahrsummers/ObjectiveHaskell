@@ -35,6 +35,9 @@
     NSDictionary *dict = setFooToBar(@{ @"fuzz": @5, @"foo": @"buzz" });
     NSDictionary *expectedDict = @{ @"fuzz": @5, @"foo": @"bar" };
     STAssertEqualObjects(dict, expectedDict, @"");
+
+	NSDictionary *passthroughDict = [NSDictionary objectWithHaskellPointer:dict.haskellPointer];
+	STAssertEqualObjects(dict, passthroughDict, @"");
 }
 
 - (void)testNSNumberBridging {
