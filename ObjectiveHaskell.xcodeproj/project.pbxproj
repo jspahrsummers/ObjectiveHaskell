@@ -32,7 +32,7 @@
 		D090620B15B0DD38001CAC43 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D090620915B0DD38001CAC43 /* InfoPlist.strings */; };
 		D090620E15B0DD38001CAC43 /* ObjectiveHaskellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D090620D15B0DD38001CAC43 /* ObjectiveHaskellTests.m */; };
 		D090624A15B0E4C0001CAC43 /* FibTest.hs in Sources */ = {isa = PBXBuildFile; fileRef = D090624815B0E450001CAC43 /* FibTest.hs */; };
-		D090625015B0E613001CAC43 /* NSObject+OHInitializationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D090624E15B0E613001CAC43 /* NSObject+OHInitializationExtensions.m */; };
+		D090625015B0E613001CAC43 /* NSObject+OHExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D090624E15B0E613001CAC43 /* NSObject+OHExtensions.m */; };
 		D0C0168915BDF11300AED543 /* NSNumber.hs in Sources */ = {isa = PBXBuildFile; fileRef = D0C0168815BDF10A00AED543 /* NSNumber.hs */; };
 		D0E61A7C15B4FFF300667D8A /* NSValue.hs in Sources */ = {isa = PBXBuildFile; fileRef = D0E61A6915B4FEDE00667D8A /* NSValue.hs */; };
 /* End PBXBuildFile section */
@@ -149,7 +149,7 @@
 		D090623B15B0E2DA001CAC43 /* ObjectiveHaskell-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Release.xcconfig"; sourceTree = "<group>"; };
 		D090623C15B0E2DA001CAC43 /* ObjectiveHaskell.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ObjectiveHaskell.xcconfig; sourceTree = "<group>"; };
 		D090624815B0E450001CAC43 /* FibTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FibTest.hs; sourceTree = "<group>"; };
-		D090624E15B0E613001CAC43 /* NSObject+OHInitializationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+OHInitializationExtensions.m"; sourceTree = "<group>"; };
+		D090624E15B0E613001CAC43 /* NSObject+OHExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+OHExtensions.m"; sourceTree = "<group>"; };
 		D0C0168815BDF10A00AED543 /* NSNumber.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSNumber.hs; sourceTree = "<group>"; };
 		D0E525ED15B1122500C13802 /* MsgSend.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MsgSend.hs; sourceTree = "<group>"; };
 		D0E61A6915B4FEDE00667D8A /* NSValue.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSValue.hs; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 		D08A8AE415CBBC3B0084E989 /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
-				D090624E15B0E613001CAC43 /* NSObject+OHInitializationExtensions.m */,
+				D090624E15B0E613001CAC43 /* NSObject+OHExtensions.m */,
 				D08A8AE715CBBC6D0084E989 /* OHModel.h */,
 				D08A8AE815CBBC6D0084E989 /* OHModel.m */,
 				D08A8AEB15CBBF200084E989 /* OHTypes.h */,
@@ -328,8 +328,8 @@
 		D090620615B0DD38001CAC43 /* ObjectiveHaskellTests */ = {
 			isa = PBXGroup;
 			children = (
-				D090624515B0E43C001CAC43 /* Cocoa */,
 				D090624715B0E43F001CAC43 /* Haskell */,
+				D090624515B0E43C001CAC43 /* Objective-C */,
 				D090620715B0DD38001CAC43 /* Supporting Files */,
 			);
 			path = ObjectiveHaskellTests;
@@ -359,13 +359,13 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
-		D090624515B0E43C001CAC43 /* Cocoa */ = {
+		D090624515B0E43C001CAC43 /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
 				D090620C15B0DD38001CAC43 /* ObjectiveHaskellTests.h */,
 				D090620D15B0DD38001CAC43 /* ObjectiveHaskellTests.m */,
 			);
-			name = Cocoa;
+			name = "Objective-C";
 			sourceTree = "<group>";
 		};
 		D090624715B0E43F001CAC43 /* Haskell */ = {
@@ -533,7 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D090625015B0E613001CAC43 /* NSObject+OHInitializationExtensions.m in Sources */,
+				D090625015B0E613001CAC43 /* NSObject+OHExtensions.m in Sources */,
 				D03E2D2915B14C8500679DB0 /* MsgSend.hs in Sources */,
 				D03E2D2E15B1599A00679DB0 /* ObjC.hs in Sources */,
 				D045A10D15B27AD700DE48BF /* NSDictionary.hs in Sources */,
