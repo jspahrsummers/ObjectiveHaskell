@@ -6,6 +6,7 @@
 //  Released into the public domain.
 //
 
+#import "NSString+OHExtensions.h"
 #import "OHBridged.h"
 #import "OHModel.h"
 #import "OHTypes.h"

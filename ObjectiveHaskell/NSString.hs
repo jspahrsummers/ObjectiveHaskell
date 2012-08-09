@@ -13,6 +13,7 @@ import Data.Word
 import Foreign.C.Types
 import Foreign.Marshal.Array
 import Foreign.Ptr
+import Foreign.StablePtr
 import ObjectiveHaskell.MsgSend
 import ObjectiveHaskell.ObjC
 
@@ -44,3 +45,12 @@ instance Bridged [Char] where
     fromObjC obj = do
         txt <- fromNSString obj
         return $ Text.unpack txt
+
+fromNSStringObjC :: Id -> IO (StablePtr Text)
+fromNSStringObjC obj = fromNSString obj >>= newStablePtr
+
+toNSStringObjC :: StablePtr Text -> IO Id
+toNSStringObjC ptr = deRefStablePtr ptr >>= toNSString
+
+exportFunc "OHHaskellPtrFromNSString" [t| UnsafeId -> IO (StablePtr Text) |] 'fromNSStringObjC
+exportFunc "OHNSStringFromHaskellPtr" [t| StablePtr Text -> IO UnsafeId |] 'toNSStringObjC

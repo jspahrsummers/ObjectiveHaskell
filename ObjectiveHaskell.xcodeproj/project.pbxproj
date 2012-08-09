@@ -36,6 +36,8 @@
 		D0C0168915BDF11300AED543 /* NSNumber.hs in Sources */ = {isa = PBXBuildFile; fileRef = D0C0168815BDF10A00AED543 /* NSNumber.hs */; };
 		D0E61A7C15B4FFF300667D8A /* NSValue.hs in Sources */ = {isa = PBXBuildFile; fileRef = D0E61A6915B4FEDE00667D8A /* NSValue.hs */; };
 		D0F3A2F115D353CB0032B8D9 /* OHBridged.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F3A2F015D353CB0032B8D9 /* OHBridged.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0F3A2FD15D359650032B8D9 /* NSString+OHExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F3A2FB15D359650032B8D9 /* NSString+OHExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0F3A2FE15D359650032B8D9 /* NSString+OHExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F3A2FC15D359650032B8D9 /* NSString+OHExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -155,6 +157,8 @@
 		D0E525ED15B1122500C13802 /* MsgSend.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MsgSend.hs; sourceTree = "<group>"; };
 		D0E61A6915B4FEDE00667D8A /* NSValue.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSValue.hs; sourceTree = "<group>"; };
 		D0F3A2F015D353CB0032B8D9 /* OHBridged.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHBridged.h; sourceTree = "<group>"; };
+		D0F3A2FB15D359650032B8D9 /* NSString+OHExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+OHExtensions.h"; sourceTree = "<group>"; };
+		D0F3A2FC15D359650032B8D9 /* NSString+OHExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+OHExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				D090624E15B0E613001CAC43 /* NSObject+OHExtensions.m */,
+				D0F3A2FB15D359650032B8D9 /* NSString+OHExtensions.h */,
+				D0F3A2FC15D359650032B8D9 /* NSString+OHExtensions.m */,
 				D0F3A2F015D353CB0032B8D9 /* OHBridged.h */,
 				D08A8AE715CBBC6D0084E989 /* OHModel.h */,
 				D08A8AE815CBBC6D0084E989 /* OHModel.m */,
@@ -410,6 +416,7 @@
 				D08A8AE915CBBC6D0084E989 /* OHModel.h in Headers */,
 				D08A8AEC15CBBF200084E989 /* OHTypes.h in Headers */,
 				D0F3A2F115D353CB0032B8D9 /* OHBridged.h in Headers */,
+				D0F3A2FD15D359650032B8D9 /* NSString+OHExtensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +559,7 @@
 				D08A8AEA15CBBC6D0084E989 /* OHModel.m in Sources */,
 				D08A8AF315CBC2A50084E989 /* EXTRuntimeExtensions.m in Sources */,
 				D08A8AF415CBC2A90084E989 /* EXTScope.m in Sources */,
+				D0F3A2FE15D359650032B8D9 /* NSString+OHExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

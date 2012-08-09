@@ -13,11 +13,6 @@
 
 @implementation ObjectiveHaskellTests
 
-- (void)testNSStringBridging {
-    NSString *str = appendFoobar(@"fuzzbuzz");
-    STAssertEqualObjects(str, @"fuzzbuzzfoobar", @"");
-}
-
 - (void)testNSArrayBridging {
     NSArray *array = addFoobarToArray(@[ @5, @{} ]);
     NSArray *expectedArray = @[ @5, @{}, @"foobar" ];
@@ -47,6 +42,14 @@
 	NSNumber *dnum = @5.25;
 	STAssertEqualsWithAccuracy(6.25, [plusInt(dnum, 1) doubleValue], 0.001, @"");
 	STAssertEqualsWithAccuracy(6.75, [plusDouble(dnum, 1.5) doubleValue], 0.001, @"");
+}
+
+- (void)testNSStringBridging {
+    NSString *str = appendFoobar(@"fuzzbuzz");
+    STAssertEqualObjects(str, @"fuzzbuzzfoobar", @"");
+
+	NSString *passthroughStr = [NSString objectWithHaskellPointer:str.haskellPointer];
+	STAssertEqualObjects(str, passthroughStr, @"");
 }
 
 - (void)testNSValueBridging {
