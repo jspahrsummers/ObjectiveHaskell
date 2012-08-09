@@ -12,9 +12,9 @@
 // prevent ever passing "primitive" C pointers to or from Haskell
 #define HsPtr id
 
-typedef struct OHOpaqueHaskellType *OHOpaqueHaskellPtr;
+typedef struct OHOpaqueHaskellType *OHHaskellPtr;
 
 // This should be compatible with the normal typedef of HsStablePtr to void *,
 // but prevents implicit conversions to other pointer types (because stable
 // pointers shouldn't be inspected in any way)
-#define HsStablePtr OHOpaqueHaskellPtr
+#define HsStablePtr OHHaskellPtr

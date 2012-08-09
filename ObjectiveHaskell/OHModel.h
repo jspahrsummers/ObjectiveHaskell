@@ -25,7 +25,7 @@
 	} \
 	\
 	- (instancetype)PROPERTY ## Update:(id)value { \
-		OHOpaqueHaskellPtr newPtr = CLASS ## _update_ ## PROPERTY(self.haskellPointer, value); \
+		OHHaskellPtr newPtr = CLASS ## _update_ ## PROPERTY(self.haskellPointer, value); \
 		return [[self.class alloc] initWithHaskellPointer:newPtr]; \
 	}
 
@@ -40,12 +40,12 @@
  *
  * This is the designated initializer for this class.
  */
-- (instancetype)initWithHaskellPointer:(OHOpaqueHaskellPtr)haskellPointer;
+- (instancetype)initWithHaskellPointer:(OHHaskellPtr)haskellPointer;
 
 /*
  * The Haskell pointer to the value wrapped by the receiver.
  */
-@property (nonatomic, assign, readonly) OHOpaqueHaskellPtr haskellPointer; 
+@property (nonatomic, assign, readonly) OHHaskellPtr haskellPointer; 
 
 /*
  * A dictionary representing the properties of the receiver, along with their

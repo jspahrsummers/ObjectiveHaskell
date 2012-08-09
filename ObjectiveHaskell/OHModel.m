@@ -19,7 +19,7 @@
 	return nil;
 }
 
-- (instancetype)initWithHaskellPointer:(OHOpaqueHaskellPtr)haskellPointer {
+- (instancetype)initWithHaskellPointer:(OHHaskellPtr)haskellPointer {
 	self = [super init];
 	if (self == nil) return nil;
 
