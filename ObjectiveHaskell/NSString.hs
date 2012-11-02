@@ -32,7 +32,7 @@ fromNSString obj = do
 -- | Converts a 'Text' value into an immutable @NSString@.
 toNSString :: Text -> IO Id
 toNSString txt =
-    let arr = ByteString.unpack $ encodeUtf8 txt
+    let arr = (ByteString.unpack $ encodeUtf8 txt) ++ [0]
     in withArray arr $ \ptr ->
         getClass "NSString" >>= stringWithUtf8String (castPtr ptr)
 
