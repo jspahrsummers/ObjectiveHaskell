@@ -3,4 +3,4 @@
 	url = git://github.com/jspahrsummers/libextobjc.git
 [submodule "ReactiveCocoa"]
 	path = ReactiveCocoa
-	url = git://github.com/github/ReactiveCocoa.git
+	url = git://github.com/ReactiveCocoa/ReactiveCocoa.git
