@@ -13,7 +13,7 @@ import Data.Char
 import Data.List
 import Data.Version
 import Debug.Trace
-import Distribution.InstalledPackageInfo
+import Distribution.InstalledPackageInfo as InstalledPackageInfo
 import Distribution.Package
 import Distribution.Simple.Compiler
 import Distribution.Simple.GHC
@@ -54,6 +54,12 @@ lookupPackage index str =
         (info : _) -> return info
         [] -> ioError $ userError $ "Could not find package \"" ++ str ++ "\""
 
+lookupInstalledPackageIdIO :: PackageIndex -> InstalledPackageId -> IO InstalledPackageInfo
+lookupInstalledPackageIdIO index pid@(InstalledPackageId str) =
+    case lookupInstalledPackageId index pid of
+        (Just info) -> return info
+        Nothing -> ioError $ userError $ "Could not find dependency page \"" ++ str ++ "\""
+
 compilerFlags :: InstalledPackageInfo -> [String]
 compilerFlags info =
     let idirs = map ((++) "-I") $ includeDirs info
@@ -72,7 +78,9 @@ runInMode m pkgs = do
     requireProgram normal ghcPkgProgram conf
 
     index <- getInstalledPackages normal [GlobalPackageDB, UserPackageDB] conf
+
     infos <- mapM (lookupPackage index) pkgs
+    deps <- mapM (lookupInstalledPackageIdIO index) $ concatMap InstalledPackageInfo.depends infos
 
     let flags :: InstalledPackageInfo -> [String]
         flags info = 
@@ -81,7 +89,7 @@ runInMode m pkgs = do
                 LinkerMode -> linkerFlags info
                 BothMode -> compilerFlags info ++ linkerFlags info
 
-        allFlags = nub $ concatMap flags infos
+        allFlags = nub $ concatMap flags $ infos ++ deps
 
     putStrLn $ intercalate " " allFlags
 
