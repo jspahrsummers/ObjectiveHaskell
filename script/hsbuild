@@ -27,7 +27,7 @@ GHC_FLAGS="-Werror -fwarn-incomplete-patterns -fwarn-dodgy-imports -fwarn-dodgy-
 ##
 
 # Compile Haskell sources to object files.
-"$GHC" "$WARNING_FLAGS" "$BUILD_FLAGS" -c --make -odir "$OBJECTS_FOLDER" *.hs
+"$GHC" "$WARNING_FLAGS" "$BUILD_FLAGS" -c -no-hs-main --make -odir "$OBJECTS_FOLDER" *.hs
 
 # Determine flags for linking the static library.
 PACKAGE_LIST='["rts","ghc","base","ghc-prim"'
