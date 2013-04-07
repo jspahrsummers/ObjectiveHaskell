@@ -69,7 +69,7 @@ linkerFlags :: InstalledPackageInfo -> [String]
 linkerFlags info =
     let link = map ((++) "-l")
         ldirs = map ((++) "-L") $ libraryDirs info
-    in ldOptions info ++ ldirs ++ link (hsLibraries info) ++ link (extraLibraries info)
+    in ldirs ++ link (hsLibraries info)
 
 runInMode :: Mode -> [String] -> IO ()
 runInMode m pkgs = do
@@ -89,7 +89,7 @@ runInMode m pkgs = do
                 LinkerMode -> linkerFlags info
                 BothMode -> compilerFlags info ++ linkerFlags info
 
-        allFlags = nub $ concatMap flags $ infos ++ deps
+        allFlags = concatMap flags $ infos ++ deps
 
     putStrLn $ intercalate " " allFlags
 
