@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# Adds a couple directories to the default Xcode $PATH, then verifies that ghc
+# and ghc-pkg exist.
+
+PATH="/opt/boxen/homebrew/bin:/usr/local/bin:$PATH"
+
+if [ -z "$GHC" ]
+then
+    GHC="ghc"
+fi
+
+if [ -z "$GHC_PKG" ]
+then
+    GHC_PKG="$GHC-pkg"
+fi
+
+which -s "$GHC"
+STATUS=$?
+
+if [ "$STATUS" -ne "0" ]
+then
+    echo "Could not find ghc in $PATH"
+    exit $STATUS
+fi
+
+which -s "$GHC_PKG"
+STATUS=$?
+
+if [ "$STATUS" -ne "0" ]
+then
+    echo "Could not find ghc-pkg in $PATH"
+    exit $STATUS
+fi
