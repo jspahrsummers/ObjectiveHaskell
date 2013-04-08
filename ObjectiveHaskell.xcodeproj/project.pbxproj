@@ -16,6 +16,7 @@
 		D045A10D15B27AD700DE48BF /* NSDictionary.hs in Sources */ = {isa = PBXBuildFile; fileRef = D045A10B15B2794400DE48BF /* NSDictionary.hs */; };
 		D045A11015B2807A00DE48BF /* NSString.hs in Sources */ = {isa = PBXBuildFile; fileRef = D045A10F15B27B4900DE48BF /* NSString.hs */; };
 		D045A11515B2843000DE48BF /* BridgedObjectTest.hs in Sources */ = {isa = PBXBuildFile; fileRef = D045A11415B2843000DE48BF /* BridgedObjectTest.hs */; };
+		D04F63451712892C00A00AFA /* ObjectiveHaskell.h in Headers */ = {isa = PBXBuildFile; fileRef = D09061F715B0DD37001CAC43 /* ObjectiveHaskell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D04FC25A15B2B26F00C58F14 /* THUtils.hs in Sources */ = {isa = PBXBuildFile; fileRef = D04FC25915B2B26000C58F14 /* THUtils.hs */; };
 		D06197A515BB871400EE5006 /* SafeHaskellTest.hs in Sources */ = {isa = PBXBuildFile; fileRef = D06197A315BB870700EE5006 /* SafeHaskellTest.hs */; };
 		D062D78E15B38B90003871F7 /* NSData.hs in Sources */ = {isa = PBXBuildFile; fileRef = D062D78D15B38B80003871F7 /* NSData.hs */; };
@@ -44,7 +45,7 @@
 		D0F3A31815D366730032B8D9 /* NSArray+OHExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F3A31615D366730032B8D9 /* NSArray+OHExtensions.m */; };
 		D0F3A31B15D36F5D0032B8D9 /* NSDictionary+OHExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F3A31915D36F5D0032B8D9 /* NSDictionary+OHExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0F3A31C15D36F5D0032B8D9 /* NSDictionary+OHExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F3A31A15D36F5D0032B8D9 /* NSDictionary+OHExtensions.m */; };
-		D0F3A31F15D3717C0032B8D9 /* NSData+OHExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F3A31D15D3717C0032B8D9 /* NSData+OHExtensions.h */; };
+		D0F3A31F15D3717C0032B8D9 /* NSData+OHExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F3A31D15D3717C0032B8D9 /* NSData+OHExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0F3A32015D3717C0032B8D9 /* NSData+OHExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F3A31E15D3717C0032B8D9 /* NSData+OHExtensions.m */; };
 		D0F3A33015D3736B0032B8D9 /* NSValue+OHExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F3A32E15D3736B0032B8D9 /* NSValue+OHExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0F3A33115D3736B0032B8D9 /* NSValue+OHExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F3A32F15D3736B0032B8D9 /* NSValue+OHExtensions.m */; };
@@ -442,6 +443,7 @@
 				D0F3A31B15D36F5D0032B8D9 /* NSDictionary+OHExtensions.h in Headers */,
 				D0F3A31F15D3717C0032B8D9 /* NSData+OHExtensions.h in Headers */,
 				D0F3A33015D3736B0032B8D9 /* NSValue+OHExtensions.h in Headers */,
+				D04F63451712892C00A00AFA /* ObjectiveHaskell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
