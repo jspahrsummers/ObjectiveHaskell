@@ -14,10 +14,10 @@ SCRIPT_DIR=$(dirname "$0")
 ##
 
 # The library to build.
-OUTPUT_FILE=libhsbuild.a
+OUTPUT_FILE="$BUILT_PRODUCTS_DIR/libhsbuild.a"
 
-# A folder to put Haskell object files in while building.
-OBJECTS_FOLDER=build
+# A folder to put final Haskell object files in.
+OBJECTS_FOLDER="$OBJECT_FILE_DIR/hs"
 
 # Additional flags to pass to GHC when building.
 GHC_FLAGS="-Werror -fwarn-incomplete-patterns -fwarn-dodgy-imports -fwarn-dodgy-exports -fwarn-unused-binds -fwarn-hi-shadowing -fwarn-identities -fwarn-monomorphism-restriction -O -threaded"
@@ -25,6 +25,9 @@ GHC_FLAGS="-Werror -fwarn-incomplete-patterns -fwarn-dodgy-imports -fwarn-dodgy-
 ##
 ## Build Process
 ##
+
+# Clean any previous object files to avoid linking incorrect ones.
+rm -rf "$OBJECTS_FOLDER"
 
 # Compile Haskell sources to object files.
 "$GHC" "$WARNING_FLAGS" "$BUILD_FLAGS" -c -no-hs-main --make -odir "$OBJECTS_FOLDER" *.hs
