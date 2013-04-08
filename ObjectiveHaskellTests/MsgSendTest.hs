@@ -1,3 +1,5 @@
+{-# LANGUAGE TemplateHaskell #-}
+
 module MsgSendTest where
 
 import Control.Monad

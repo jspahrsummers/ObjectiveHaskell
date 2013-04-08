@@ -1,3 +1,4 @@
+{-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE Trustworthy #-}
 
 -- | Objective-C bridging primitives

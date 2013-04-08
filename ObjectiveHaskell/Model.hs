@@ -1,3 +1,4 @@
+{-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE Trustworthy #-}
 
 -- | Tools for building a model layer in Haskell that can interoperate with Objective-C

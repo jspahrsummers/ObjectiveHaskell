@@ -1,3 +1,4 @@
+{-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE Trustworthy #-}
 
 -- | Bridging to and from @NSData@

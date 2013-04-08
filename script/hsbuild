@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# Runs `ghc --make` on all Haskell source files in the current directory,
-# building a static library from the result. Any arguments to the script will be
+# Runs `ghc --make` on all Haskell source files in the directory $1, building
+# a static library from the result. Any other arguments to the script will be
 # considered Cabal packages to link.
 
 set -o errexit
@@ -16,24 +16,26 @@ SCRIPT_DIR=$(dirname "$0")
 # The library to build.
 OUTPUT_FILE="$BUILT_PRODUCTS_DIR/libhsbuild.a"
 
-# A folder to put final Haskell object files in.
-OBJECTS_FOLDER="$OBJECT_FILE_DIR/hs"
+# The folder to build this target to.
+TARGET_OBJECTS_FOLDER="$DERIVED_FILE_DIR/hs"
 
 # Additional flags to pass to GHC when building.
-GHC_FLAGS="-Werror -fwarn-incomplete-patterns -fwarn-dodgy-imports -fwarn-dodgy-exports -fwarn-unused-binds -fwarn-hi-shadowing -fwarn-identities -fwarn-monomorphism-restriction -O -threaded"
+GHC_FLAGS="-Werror -fwarn-incomplete-patterns -fwarn-dodgy-imports -fwarn-dodgy-exports -fwarn-unused-binds -fwarn-hi-shadowing -fwarn-identities -fwarn-monomorphism-restriction -O -threaded -framework Foundation"
 
 ##
 ## Build Process
 ##
 
 # Clean any previous object files to avoid linking incorrect ones.
-rm -rf "$OBJECTS_FOLDER"
+rm -rf "$TARGET_OBJECTS_FOLDER"
 
 # Compile Haskell sources to object files.
-"$GHC" "$WARNING_FLAGS" "$BUILD_FLAGS" -c -no-hs-main --make -odir "$OBJECTS_FOLDER" *.hs
+find "$1" -name "*.hs" -depth 1 -print0 | xargs -0 "$GHC" $GHC_FLAGS -c -no-hs-main --make -odir "$TARGET_OBJECTS_FOLDER"
 
 # Determine flags for linking the static library.
-PACKAGE_LIST='["rts","ghc","base","ghc-prim"'
+PACKAGE_LIST='["rts","ghc","base","ghc-prim","containers","bytestring","text"'
+
+shift 1
 for package in "$@"
 do
 	PACKAGE_LIST="$PACKAGE_LIST,\"$package\""
@@ -43,4 +45,4 @@ PACKAGE_LIST="$PACKAGE_LIST]"
 PACKAGE_FLAGS=`"$GHC" -e "runInMode LinkerMode $ $PACKAGE_LIST" "$SCRIPT_DIR/flagsForPackage.hs"`
 
 # Link object files with any packages and build a static library.
-libtool $PACKAGE_FLAGS -static -o "$OUTPUT_FILE" $(find "$OBJECTS_FOLDER" -name "*.o")
+find "$TARGET_OBJECTS_FOLDER" -name "*.o" -print0 | xargs -0 libtool $PACKAGE_FLAGS -static -o "$OUTPUT_FILE"

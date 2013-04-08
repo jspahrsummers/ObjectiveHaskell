@@ -24,4 +24,5 @@ fi
 GHC_LIBDIR=`"$GHC" --print-libdir`
 
 echo -e "HEADER_SEARCH_PATHS = $GHC_LIBDIR/include/" >> "$OUTPUT_FILE"
-echo -e "LIBRARY_SEARCH_PATHS = $GHC_LIBDIR/**" >> "$OUTPUT_FILE"
+echo -e "LIBRARY_SEARCH_PATHS = \$DERIVED_FILE_DIR $GHC_LIBDIR/**" >> "$OUTPUT_FILE"
+echo -e "OTHER_LDFLAGS = -ObjC -lhsbuild" >> "$OUTPUT_FILE"

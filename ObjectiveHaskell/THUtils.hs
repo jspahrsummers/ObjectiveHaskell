@@ -1,3 +1,4 @@
+{-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE Unsafe #-}
 
 -- | Convenience functions and utilities for Template Haskell
