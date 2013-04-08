@@ -25,4 +25,4 @@ GHC_LIBDIR=`"$GHC" --print-libdir`
 
 echo -e "HEADER_SEARCH_PATHS = $GHC_LIBDIR/include/" >> "$OUTPUT_FILE"
 echo -e "LIBRARY_SEARCH_PATHS = $GHC_LIBDIR/**" >> "$OUTPUT_FILE"
-echo -e "OTHER_LDFLAGS = -lhsbuild" >> "$OUTPUT_FILE"
+echo -e 'OTHER_LDFLAGS = "-l$(TARGET_NAME)-hsbuild"' >> "$OUTPUT_FILE"

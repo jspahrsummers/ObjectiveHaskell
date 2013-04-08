@@ -451,7 +451,7 @@
 			);
 			name = "Run hsbuild";
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/libhsbuild.a",
+				"$(BUILT_PRODUCTS_DIR)/lib$(TARGET_NAME)-hsbuild.a",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -466,7 +466,7 @@
 			);
 			name = "Run hsbuild";
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/libhsbuild.a",
+				"$(BUILT_PRODUCTS_DIR)/lib$(TARGET_NAME)-hsbuild.a",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

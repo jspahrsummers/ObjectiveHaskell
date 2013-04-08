@@ -14,9 +14,9 @@ SCRIPT_DIR=$(dirname "$0")
 ##
 
 # The library to build.
-OUTPUT_FILE="$BUILT_PRODUCTS_DIR/libhsbuild.a"
+OUTPUT_FILE="$BUILT_PRODUCTS_DIR/lib$TARGET_NAME-hsbuild.a"
 
-# The folder to build this target to.
+# The folder to save this target's Haskell object files to.
 TARGET_OBJECTS_FOLDER="$DERIVED_FILE_DIR/hs"
 
 # Additional flags to pass to GHC when building.
