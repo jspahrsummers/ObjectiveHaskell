@@ -455,7 +455,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "script/hsbuild ObjectiveHaskell";
+			shellScript = "script/hsbuild ObjectiveHaskell rts ghc base ghc-prim containers bytestring text";
 		};
 		D04F63581712908F00A00AFA /* Run hsbuild */ = {
 			isa = PBXShellScriptBuildPhase;

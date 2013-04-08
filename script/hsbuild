@@ -33,16 +33,21 @@ rm -rf "$TARGET_OBJECTS_FOLDER"
 find "$1" -name "*.hs" -depth 1 -print0 | xargs -0 "$GHC" $GHC_FLAGS -c -no-hs-main --make -odir "$TARGET_OBJECTS_FOLDER"
 
 # Determine flags for linking the static library.
-PACKAGE_LIST='["rts","ghc","base","ghc-prim","containers","bytestring","text"'
+if [ -z "$*" ]
+then
+    PACKAGE_FLAGS=
+else
+    PACKAGE_LIST='drop 1 $ [[]'
 
-shift 1
-for package in "$@"
-do
-	PACKAGE_LIST="$PACKAGE_LIST,\"$package\""
-done
+    shift 1
+    for package in "$@"
+    do
+        PACKAGE_LIST="$PACKAGE_LIST,\"$package\""
+    done
 
-PACKAGE_LIST="$PACKAGE_LIST]"
-PACKAGE_FLAGS=`"$GHC" -e "runInMode LinkerMode $ $PACKAGE_LIST" "$SCRIPT_DIR/flagsForPackage.hs"`
+    PACKAGE_LIST="$PACKAGE_LIST]"
+    PACKAGE_FLAGS=`"$GHC" -e "runInMode LinkerMode $ $PACKAGE_LIST" "$SCRIPT_DIR/flagsForPackage.hs"`
+fi
 
 # Link object files with any packages and build a static library.
-find "$TARGET_OBJECTS_FOLDER" -name "*.o" -print0 | xargs -0 libtool $PACKAGE_FLAGS -static -o "$OUTPUT_FILE"
+find "$TARGET_OBJECTS_FOLDER" -name "*.o" -print0 | xargs -0 libtool $PACKAGE_FLAGS -static -o "$OUTPUT_FILE" 2>/dev/null
