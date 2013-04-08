@@ -8,8 +8,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OHBridged.h"
-#import "OHTypes.h"
+#import <ObjectiveHaskell/OHBridged.h>
+#import <ObjectiveHaskell/OHTypes.h>
 
 /*
  * @haskellDynamic(Class, foobar) implements a property "foobar", corresponding

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OHBridged.h"
+#import <ObjectiveHaskell/OHBridged.h>
 
 /*
  * Bridges between pointer NSValues and Haskell Ptr values.

@@ -8,7 +8,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OHTypes.h"
+#import <ObjectiveHaskell/OHTypes.h>
 
 /*
  * Represents any class that can be bridged to and from Haskell.

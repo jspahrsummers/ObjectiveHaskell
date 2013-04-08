@@ -8,7 +8,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OHBridged.h"
+#import <ObjectiveHaskell/OHBridged.h>
 
 @interface NSNumber (OHExtensions) <OHBridged>
 @end

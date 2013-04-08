@@ -7,12 +7,12 @@
 //  Released under the MIT license.
 //
 
-#import "NSArray+OHExtensions.h"
-#import "NSData+OHExtensions.h"
-#import "NSDictionary+OHExtensions.h"
-#import "NSNumber+OHExtensions.h"
-#import "NSString+OHExtensions.h"
-#import "NSValue+OHExtensions.h"
-#import "OHBridged.h"
-#import "OHModel.h"
-#import "OHTypes.h"
+#import <ObjectiveHaskell/NSArray+OHExtensions.h>
+#import <ObjectiveHaskell/NSData+OHExtensions.h>
+#import <ObjectiveHaskell/NSDictionary+OHExtensions.h>
+#import <ObjectiveHaskell/NSNumber+OHExtensions.h>
+#import <ObjectiveHaskell/NSString+OHExtensions.h>
+#import <ObjectiveHaskell/NSValue+OHExtensions.h>
+#import <ObjectiveHaskell/OHBridged.h>
+#import <ObjectiveHaskell/OHModel.h>
+#import <ObjectiveHaskell/OHTypes.h>
