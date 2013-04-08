@@ -3,3 +3,5 @@
 *_stub.h
 *.lock
 xcuserdata
+ObjectiveHaskell/ObjectiveHaskell.xcconfig
+ObjectiveHaskellTests/ObjectiveHaskellTests.xcconfig
