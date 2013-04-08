@@ -1,2 +1,0 @@
-#include "../libextobjc/Configuration/Base/Configurations/Debug.xcconfig"
-#include "ObjectiveHaskell.xcconfig"

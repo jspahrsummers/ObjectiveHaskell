@@ -117,7 +117,21 @@
 		D045A10B15B2794400DE48BF /* NSDictionary.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSDictionary.hs; sourceTree = "<group>"; };
 		D045A10F15B27B4900DE48BF /* NSString.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSString.hs; sourceTree = "<group>"; };
 		D045A11415B2843000DE48BF /* BridgedObjectTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BridgedObjectTest.hs; sourceTree = "<group>"; };
-		D04FC23D15B2AAC300C58F14 /* compileHaskell.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = compileHaskell.sh; sourceTree = "<group>"; };
+		D04F6332171288D200A00AFA /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		D04F6334171288D200A00AFA /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		D04F6335171288D200A00AFA /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		D04F6336171288D200A00AFA /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D04F6338171288D200A00AFA /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		D04F6339171288D200A00AFA /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		D04F633B171288D200A00AFA /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		D04F633C171288D200A00AFA /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		D04F633D171288D200A00AFA /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D04F633F171288D200A00AFA /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		D04F6340171288D200A00AFA /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		D04F6341171288D200A00AFA /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		D04F6342171288D200A00AFA /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		D04F6343171288D200A00AFA /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D04F6344171288D200A00AFA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		D04FC25915B2B26000C58F14 /* THUtils.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = THUtils.hs; sourceTree = "<group>"; };
 		D06197A315BB870700EE5006 /* SafeHaskellTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SafeHaskellTest.hs; sourceTree = "<group>"; };
 		D062D78D15B38B80003871F7 /* NSData.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSData.hs; sourceTree = "<group>"; };
@@ -130,20 +144,6 @@
 		D08A8AF115CBC2A10084E989 /* EXTScope.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EXTScope.m; path = libextobjc/extobjc/EXTScope.m; sourceTree = "<group>"; };
 		D08A8AF215CBC2A10084E989 /* metamacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = metamacros.h; path = libextobjc/extobjc/metamacros.h; sourceTree = "<group>"; };
 		D08FC9CC15C660670032E22A /* libffi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libffi.xcodeproj; path = libextobjc/libffi/libffi.xcodeproj; sourceTree = "<group>"; };
-		D08FC9DC15C660880032E22A /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
-		D08FC9DE15C660880032E22A /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		D08FC9DF15C660880032E22A /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
-		D08FC9E015C660880032E22A /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		D08FC9E215C660880032E22A /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
-		D08FC9E315C660880032E22A /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
-		D08FC9E515C660880032E22A /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
-		D08FC9E615C660880032E22A /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
-		D08FC9E715C660880032E22A /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
-		D08FC9E915C660880032E22A /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
-		D08FC9EA15C660880032E22A /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
-		D08FC9EB15C660880032E22A /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
-		D08FC9EC15C660880032E22A /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
-		D08FC9ED15C660880032E22A /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
 		D09061EB15B0DD37001CAC43 /* libObjectiveHaskell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObjectiveHaskell.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09061EE15B0DD37001CAC43 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D09061F115B0DD37001CAC43 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -157,10 +157,6 @@
 		D090620A15B0DD38001CAC43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D090620C15B0DD38001CAC43 /* ObjectiveHaskellTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectiveHaskellTests.h; sourceTree = "<group>"; };
 		D090620D15B0DD38001CAC43 /* ObjectiveHaskellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectiveHaskellTests.m; sourceTree = "<group>"; };
-		D090623915B0E2DA001CAC43 /* ObjectiveHaskell-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Debug.xcconfig"; sourceTree = "<group>"; };
-		D090623A15B0E2DA001CAC43 /* ObjectiveHaskell-Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Profile.xcconfig"; sourceTree = "<group>"; };
-		D090623B15B0E2DA001CAC43 /* ObjectiveHaskell-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ObjectiveHaskell-Release.xcconfig"; sourceTree = "<group>"; };
-		D090623C15B0E2DA001CAC43 /* ObjectiveHaskell.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ObjectiveHaskell.xcconfig; sourceTree = "<group>"; };
 		D090624815B0E450001CAC43 /* FibTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FibTest.hs; sourceTree = "<group>"; };
 		D090624E15B0E613001CAC43 /* NSObject+OHExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+OHExtensions.m"; sourceTree = "<group>"; };
 		D0C0168815BDF10A00AED543 /* NSNumber.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSNumber.hs; sourceTree = "<group>"; };
@@ -204,6 +200,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D04F6330171288D200A00AFA /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D04F6331171288D200A00AFA /* Base */,
+				D04F633A171288D200A00AFA /* iOS */,
+				D04F633E171288D200A00AFA /* Mac OS X */,
+				D04F6344171288D200A00AFA /* README.md */,
+			);
+			name = Configuration;
+			path = External/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa/libextobjc/Configuration;
+			sourceTree = "<group>";
+		};
+		D04F6331171288D200A00AFA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D04F6332171288D200A00AFA /* Common.xcconfig */,
+				D04F6333171288D200A00AFA /* Configurations */,
+				D04F6337171288D200A00AFA /* Targets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D04F6333171288D200A00AFA /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				D04F6334171288D200A00AFA /* Debug.xcconfig */,
+				D04F6335171288D200A00AFA /* Profile.xcconfig */,
+				D04F6336171288D200A00AFA /* Release.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		D04F6337171288D200A00AFA /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				D04F6338171288D200A00AFA /* Application.xcconfig */,
+				D04F6339171288D200A00AFA /* StaticLibrary.xcconfig */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		D04F633A171288D200A00AFA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D04F633B171288D200A00AFA /* iOS-Application.xcconfig */,
+				D04F633C171288D200A00AFA /* iOS-Base.xcconfig */,
+				D04F633D171288D200A00AFA /* iOS-StaticLibrary.xcconfig */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D04F633E171288D200A00AFA /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				D04F633F171288D200A00AFA /* Mac-Application.xcconfig */,
+				D04F6340171288D200A00AFA /* Mac-Base.xcconfig */,
+				D04F6341171288D200A00AFA /* Mac-DynamicLibrary.xcconfig */,
+				D04F6342171288D200A00AFA /* Mac-Framework.xcconfig */,
+				D04F6343171288D200A00AFA /* Mac-StaticLibrary.xcconfig */,
+			);
+			path = "Mac OS X";
+			sourceTree = "<group>";
+		};
 		D08A8AE415CBBC3B0084E989 /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,66 +308,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D08FC9DB15C660880032E22A /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				D08FC9DC15C660880032E22A /* Common.xcconfig */,
-				D08FC9DD15C660880032E22A /* Configurations */,
-				D08FC9E115C660880032E22A /* Targets */,
-			);
-			name = Base;
-			path = libextobjc/Configuration/Base;
-			sourceTree = SOURCE_ROOT;
-		};
-		D08FC9DD15C660880032E22A /* Configurations */ = {
-			isa = PBXGroup;
-			children = (
-				D08FC9DE15C660880032E22A /* Debug.xcconfig */,
-				D08FC9DF15C660880032E22A /* Profile.xcconfig */,
-				D08FC9E015C660880032E22A /* Release.xcconfig */,
-			);
-			path = Configurations;
-			sourceTree = "<group>";
-		};
-		D08FC9E115C660880032E22A /* Targets */ = {
-			isa = PBXGroup;
-			children = (
-				D08FC9E215C660880032E22A /* Application.xcconfig */,
-				D08FC9E315C660880032E22A /* StaticLibrary.xcconfig */,
-			);
-			path = Targets;
-			sourceTree = "<group>";
-		};
-		D08FC9E415C660880032E22A /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D08FC9E515C660880032E22A /* iOS-Application.xcconfig */,
-				D08FC9E615C660880032E22A /* iOS-Base.xcconfig */,
-				D08FC9E715C660880032E22A /* iOS-StaticLibrary.xcconfig */,
-			);
-			name = iOS;
-			path = libextobjc/Configuration/iOS;
-			sourceTree = SOURCE_ROOT;
-		};
-		D08FC9E815C660880032E22A /* Mac OS X */ = {
-			isa = PBXGroup;
-			children = (
-				D08FC9E915C660880032E22A /* Mac-Application.xcconfig */,
-				D08FC9EA15C660880032E22A /* Mac-Base.xcconfig */,
-				D08FC9EB15C660880032E22A /* Mac-DynamicLibrary.xcconfig */,
-				D08FC9EC15C660880032E22A /* Mac-Framework.xcconfig */,
-				D08FC9ED15C660880032E22A /* Mac-StaticLibrary.xcconfig */,
-			);
-			name = "Mac OS X";
-			path = "libextobjc/Configuration/Mac OS X";
-			sourceTree = SOURCE_ROOT;
-		};
 		D09061E015B0DD37001CAC43 = {
 			isa = PBXGroup;
 			children = (
 				D09061F415B0DD37001CAC43 /* ObjectiveHaskell */,
 				D090620615B0DD38001CAC43 /* ObjectiveHaskellTests */,
-				D090621715B0DE72001CAC43 /* Configuration */,
+				D04F6330171288D200A00AFA /* Configuration */,
 				D09061ED15B0DD37001CAC43 /* Frameworks */,
 				D09061EC15B0DD37001CAC43 /* Products */,
 			);
@@ -381,21 +386,6 @@
 				D090620915B0DD38001CAC43 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D090621715B0DE72001CAC43 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				D04FC23D15B2AAC300C58F14 /* compileHaskell.sh */,
-				D090623915B0E2DA001CAC43 /* ObjectiveHaskell-Debug.xcconfig */,
-				D090623A15B0E2DA001CAC43 /* ObjectiveHaskell-Profile.xcconfig */,
-				D090623B15B0E2DA001CAC43 /* ObjectiveHaskell-Release.xcconfig */,
-				D090623C15B0E2DA001CAC43 /* ObjectiveHaskell.xcconfig */,
-				D08FC9DB15C660880032E22A /* Base */,
-				D08FC9E415C660880032E22A /* iOS */,
-				D08FC9E815C660880032E22A /* Mac OS X */,
-			);
-			path = Configuration;
 			sourceTree = "<group>";
 		};
 		D090624515B0E43C001CAC43 /* Objective-C */ = {
@@ -644,7 +634,7 @@
 /* Begin XCBuildConfiguration section */
 		D0341CD015C649470064ABEC /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D090623A15B0E2DA001CAC43 /* ObjectiveHaskell-Profile.xcconfig */;
+			baseConfigurationReference = D04F6335171288D200A00AFA /* Profile.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -656,7 +646,7 @@
 		};
 		D0341CD115C649470064ABEC /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D08FC9ED15C660880032E22A /* Mac-StaticLibrary.xcconfig */;
+			baseConfigurationReference = D04F6343171288D200A00AFA /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
 				OTHER_LDFLAGS = (
@@ -676,7 +666,7 @@
 		};
 		D0341CD215C649470064ABEC /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D08FC9E915C660880032E22A /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D04F633F171288D200A00AFA /* Mac-Application.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
@@ -688,7 +678,7 @@
 		};
 		D090620F15B0DD38001CAC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D090623915B0E2DA001CAC43 /* ObjectiveHaskell-Debug.xcconfig */;
+			baseConfigurationReference = D04F6334171288D200A00AFA /* Debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -700,7 +690,7 @@
 		};
 		D090621015B0DD38001CAC43 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D090623B15B0E2DA001CAC43 /* ObjectiveHaskell-Release.xcconfig */;
+			baseConfigurationReference = D04F6336171288D200A00AFA /* Release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -712,7 +702,7 @@
 		};
 		D090621215B0DD38001CAC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D08FC9ED15C660880032E22A /* Mac-StaticLibrary.xcconfig */;
+			baseConfigurationReference = D04F6343171288D200A00AFA /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
 				OTHER_LDFLAGS = (
@@ -732,7 +722,7 @@
 		};
 		D090621315B0DD38001CAC43 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D08FC9ED15C660880032E22A /* Mac-StaticLibrary.xcconfig */;
+			baseConfigurationReference = D04F6343171288D200A00AFA /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
 				OTHER_LDFLAGS = (
@@ -752,7 +742,7 @@
 		};
 		D090621515B0DD38001CAC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D08FC9E915C660880032E22A /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D04F633F171288D200A00AFA /* Mac-Application.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
@@ -764,7 +754,7 @@
 		};
 		D090621615B0DD38001CAC43 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D08FC9E915C660880032E22A /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D04F633F171288D200A00AFA /* Mac-Application.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PREFIX_HEADER = "ObjectiveHaskell/ObjectiveHaskell-Prefix.pch";
