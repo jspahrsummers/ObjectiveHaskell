@@ -1,7 +1,8 @@
+{-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE Trustworthy #-}
 
 -- | Typed message sending, using Template Haskell
-module ObjectiveHaskell.MsgSend (
+module ObjectiveHaskell.TH.MsgSend (
         declMessage, (@.)
     ) where
 
@@ -9,8 +10,8 @@ import Control.Monad
 import Data.List
 import Foreign.Ptr
 import Language.Haskell.TH
-import ObjectiveHaskell.ObjC
-import ObjectiveHaskell.THUtils
+import ObjectiveHaskell.TH.ObjC
+import ObjectiveHaskell.TH.Utils
 
 -- | Represents an Objective-C method signature, with a return type and any number of parameter types.
 data MethodSig = MethodSig Type [Type]

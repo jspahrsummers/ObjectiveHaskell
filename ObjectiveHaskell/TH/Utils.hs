@@ -1,7 +1,8 @@
+{-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE Unsafe #-}
 
 -- | Convenience functions and utilities for Template Haskell
-module ObjectiveHaskell.THUtils (
+module ObjectiveHaskell.TH.Utils (
         decomposeFunctionType,
         argumentNames, singleClauseFunc
     ) where

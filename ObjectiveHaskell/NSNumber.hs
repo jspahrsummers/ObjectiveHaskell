@@ -1,4 +1,5 @@
 {-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE Trustworthy #-}
 
 -- | Bridging to and from @NSNumber@
@@ -9,13 +10,12 @@ module ObjectiveHaskell.NSNumber (
 import Control.Applicative
 import Data.Char
 import Data.Ratio
-import Data.Text.Lazy as Text
 import Foreign.C.String
 import Foreign.C.Types
 import Foreign.StablePtr
-import ObjectiveHaskell.MsgSend
+import ObjectiveHaskell.TH.MsgSend
 import ObjectiveHaskell.NSString
-import ObjectiveHaskell.ObjC
+import ObjectiveHaskell.TH.ObjC
 
 -- NSNumber methods
 declMessage "numberWithLongLong" [t| CLLong -> Class -> IO Id |] "numberWithLongLong:"

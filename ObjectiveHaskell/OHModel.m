@@ -3,8 +3,7 @@
 //  ObjectiveHaskell
 //
 //  Created by Justin Spahr-Summers on 2012-08-03.
-//  Copyright (C) 2012 Justin Spahr-Summers.
-//  Released under the MIT license.
+//  Copyright (C) 2013 Justin Spahr-Summers.
 //
 
 #import "OHModel.h"

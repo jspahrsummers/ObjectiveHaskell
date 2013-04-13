@@ -1,0 +1,53 @@
+#!/bin/bash
+#
+# Runs `ghc --make` on all Haskell source files in the directory $1, building
+# a static library from the result. Any other arguments to the script will be
+# considered Cabal packages to link.
+
+set -o errexit
+
+SCRIPT_DIR=$(dirname "$0")
+. "$SCRIPT_DIR/ghcdef"
+
+##
+## Configuration Variables
+##
+
+# The library to build.
+OUTPUT_FILE="$BUILT_PRODUCTS_DIR/lib$TARGET_NAME-hsbuild.a"
+
+# The folder to save this target's Haskell object files to.
+TARGET_OBJECTS_FOLDER="$DERIVED_FILE_DIR/hs"
+
+# Additional flags to pass to GHC when building.
+GHC_FLAGS="-Werror -fwarn-incomplete-patterns -fwarn-dodgy-imports -fwarn-dodgy-exports -fwarn-unused-binds -fwarn-hi-shadowing -fwarn-identities -fwarn-monomorphism-restriction -O -threaded -framework Foundation"
+
+##
+## Build Process
+##
+
+# Clean any previous object files to avoid linking incorrect ones.
+rm -rf "$TARGET_OBJECTS_FOLDER"
+
+# Compile Haskell sources to object files.
+find "$1" -name "*.hs" -depth 1 -print0 | xargs -0 "$GHC" $GHC_FLAGS -c -no-hs-main --make -odir "$TARGET_OBJECTS_FOLDER"
+
+# Determine flags for linking the static library.
+if [ -z "$*" ]
+then
+    PACKAGE_FLAGS=
+else
+    PACKAGE_LIST='drop 1 $ [[]'
+
+    shift 1
+    for package in "$@"
+    do
+        PACKAGE_LIST="$PACKAGE_LIST,\"$package\""
+    done
+
+    PACKAGE_LIST="$PACKAGE_LIST]"
+    PACKAGE_FLAGS=`"$GHC" -e "runInMode LinkerMode $ $PACKAGE_LIST" "$SCRIPT_DIR/flagsForPackage.hs"`
+fi
+
+# Link object files with any packages and build a static library.
+find "$TARGET_OBJECTS_FOLDER" -name "*.o" -print0 | xargs -0 libtool $PACKAGE_FLAGS -static -o "$OUTPUT_FILE" 2>/dev/null

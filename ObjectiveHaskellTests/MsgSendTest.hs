@@ -1,8 +1,10 @@
+{-# LANGUAGE TemplateHaskell #-}
+
 module MsgSendTest where
 
 import Control.Monad
-import ObjectiveHaskell.MsgSend
-import ObjectiveHaskell.ObjC
+import ObjectiveHaskell.TH.MsgSend
+import ObjectiveHaskell.TH.ObjC
 
 declMessage "stringWithString" [t| Id -> Id -> IO Id |] "stringWithString:"
 

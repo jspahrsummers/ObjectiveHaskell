@@ -3,16 +3,15 @@
 //  ObjectiveHaskell
 //
 //  Created by Justin Spahr-Summers on 2012-07-13.
-//  Copyright (C) 2012 Justin Spahr-Summers.
-//  Released under the MIT license.
+//  Copyright (C) 2013 Justin Spahr-Summers.
 //
 
-#import "NSArray+OHExtensions.h"
-#import "NSData+OHExtensions.h"
-#import "NSDictionary+OHExtensions.h"
-#import "NSNumber+OHExtensions.h"
-#import "NSString+OHExtensions.h"
-#import "NSValue+OHExtensions.h"
-#import "OHBridged.h"
-#import "OHModel.h"
-#import "OHTypes.h"
+#import <ObjectiveHaskell/NSArray+OHExtensions.h>
+#import <ObjectiveHaskell/NSData+OHExtensions.h>
+#import <ObjectiveHaskell/NSDictionary+OHExtensions.h>
+#import <ObjectiveHaskell/NSNumber+OHExtensions.h>
+#import <ObjectiveHaskell/NSString+OHExtensions.h>
+#import <ObjectiveHaskell/NSValue+OHExtensions.h>
+#import <ObjectiveHaskell/OHBridged.h>
+#import <ObjectiveHaskell/OHModel.h>
+#import <ObjectiveHaskell/OHTypes.h>

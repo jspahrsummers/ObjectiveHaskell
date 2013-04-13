@@ -1,4 +1,5 @@
 {-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE Trustworthy #-}
 
 -- | Bridging to and from @NSValue@
@@ -8,8 +9,8 @@ module ObjectiveHaskell.NSValue (
 
 import Foreign.Ptr
 import Foreign.StablePtr
-import ObjectiveHaskell.MsgSend
-import ObjectiveHaskell.ObjC
+import ObjectiveHaskell.TH.MsgSend
+import ObjectiveHaskell.TH.ObjC
 
 -- NSValue methods
 declMessage "valueWithPointer" [t| Ptr () -> Id -> IO Id |] "valueWithPointer:"

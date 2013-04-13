@@ -3,8 +3,7 @@
 //  ObjectiveHaskellTests
 //
 //  Created by Justin Spahr-Summers on 2012-07-13.
-//  Copyright (C) 2012 Justin Spahr-Summers.
-//  Released under the MIT license.
+//  Copyright (C) 2013 Justin Spahr-Summers.
 //
 
 #import "ObjectiveHaskellTests.h"
@@ -15,30 +14,30 @@
 @implementation ObjectiveHaskellTests
 
 - (void)testNSArrayBridging {
-    NSArray *array = addFoobarToArray(@[ @5, @{} ]);
-    NSArray *expectedArray = @[ @5, @{}, @"foobar" ];
-    STAssertEqualObjects(array, expectedArray, @"");
+	NSArray *array = addFoobarToArray(@[ @5, @{} ]);
+	NSArray *expectedArray = @[ @5, @{}, @"foobar" ];
+	STAssertEqualObjects(array, expectedArray, @"");
 
 	NSArray *passthroughArray = [NSArray objectWithHaskellPointer:array.haskellPointer];
 	STAssertEqualObjects(array, passthroughArray, @"");
 }
 
 - (void)testNSDataBridging {
-    unsigned char bytes[] = { 1, 2, 3 };
-    NSData *data = appendByte([NSData dataWithBytes:bytes length:sizeof(bytes)], 5);
-    
-    unsigned char expectedBytes[] = { 1, 2, 3, 5 };
-    STAssertEquals([data length], sizeof(expectedBytes), @"");
-    STAssertTrue(memcmp([data bytes], expectedBytes, sizeof(expectedBytes)) == 0, @"");
+	unsigned char bytes[] = { 1, 2, 3 };
+	NSData *data = appendByte([NSData dataWithBytes:bytes length:sizeof(bytes)], 5);
+	
+	unsigned char expectedBytes[] = { 1, 2, 3, 5 };
+	STAssertEquals([data length], sizeof(expectedBytes), @"");
+	STAssertTrue(memcmp([data bytes], expectedBytes, sizeof(expectedBytes)) == 0, @"");
 
 	NSData *passthroughData = [NSData objectWithHaskellPointer:data.haskellPointer];
 	STAssertEqualObjects(data, passthroughData, @"");
 }
 
 - (void)testNSDictionaryBridging {
-    NSDictionary *dict = setFooToBar(@{ @"fuzz": @5, @"foo": @"buzz" });
-    NSDictionary *expectedDict = @{ @"fuzz": @5, @"foo": @"bar" };
-    STAssertEqualObjects(dict, expectedDict, @"");
+	NSDictionary *dict = setFooToBar(@{ @"fuzz": @5, @"foo": @"buzz" });
+	NSDictionary *expectedDict = @{ @"fuzz": @5, @"foo": @"bar" };
+	STAssertEqualObjects(dict, expectedDict, @"");
 
 	NSDictionary *passthroughDict = [NSDictionary objectWithHaskellPointer:dict.haskellPointer];
 	STAssertEqualObjects(dict, passthroughDict, @"");
@@ -58,8 +57,8 @@
 }
 
 - (void)testNSStringBridging {
-    NSString *str = appendFoobar(@"fuzzbuzz");
-    STAssertEqualObjects(str, @"fuzzbuzzfoobar", @"");
+	NSString *str = appendFoobar(@"fuzzbuzz");
+	STAssertEqualObjects(str, @"fuzzbuzzfoobar", @"");
 
 	NSString *passthroughStr = [NSString objectWithHaskellPointer:str.haskellPointer];
 	STAssertEqualObjects(str, passthroughStr, @"");
@@ -83,40 +82,40 @@
 }
 
 - (void)testFibonacci {
-    STAssertEquals(3, fibonacci_hs(4), @"");
-    STAssertEquals(5, fibonacci_hs(5), @"");
+	STAssertEquals(3, fibonacci_hs(4), @"");
+	STAssertEquals(5, fibonacci_hs(5), @"");
 }
 
 - (void)testMsgSend {
-    NSString *str = @"foo";
-    NSMutableString *mutableStr = msgSendTest(str);
+	NSString *str = @"foo";
+	NSMutableString *mutableStr = msgSendTest(str);
 
-    STAssertEqualObjects(str, mutableStr, @"");
-    STAssertFalse(str == mutableStr, @"");
+	STAssertEqualObjects(str, mutableStr, @"");
+	STAssertFalse(str == mutableStr, @"");
 }
 
 - (void)testMsgSendMemoryManagement {
-    // used to test the memory management of the string returned from Haskell
-    __weak id weakStr = nil;
+	// used to test the memory management of the string returned from Haskell
+	__weak id weakStr = nil;
 
-    @autoreleasepool {
-        {
-            __attribute__((objc_precise_lifetime)) NSMutableString *str = msgSendTest(@"foo");
+	@autoreleasepool {
+		{
+			__attribute__((objc_precise_lifetime)) NSMutableString *str = msgSendTest(@"foo");
 
-            // not necessary for normal code -- just for memory management testing
-            hs_perform_gc();
+			// not necessary for normal code -- just for memory management testing
+			hs_perform_gc();
 
-            weakStr = str;
-            STAssertNotNil(weakStr, @"");
+			weakStr = str;
+			STAssertNotNil(weakStr, @"");
 
-            STAssertEqualObjects(str, @"foo", @"");
-        }
+			STAssertEqualObjects(str, @"foo", @"");
+		}
 
-        // the string shouldn't be released until the autorelease pool is popped
-        STAssertNotNil(weakStr, @"");
-    }
+		// the string shouldn't be released until the autorelease pool is popped
+		STAssertNotNil(weakStr, @"");
+	}
 
-    STAssertNil(weakStr, @"");
+	STAssertNil(weakStr, @"");
 }
 
 @end

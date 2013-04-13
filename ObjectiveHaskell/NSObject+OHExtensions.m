@@ -3,8 +3,7 @@
 //  ObjectiveHaskell
 //
 //  Created by Justin Spahr-Summers on 2012-07-13.
-//  Copyright (C) 2012 Justin Spahr-Summers.
-//  Released under the MIT license.
+//  Copyright (C) 2013 Justin Spahr-Summers.
 //
 
 #import <crt_externs.h>
@@ -19,10 +18,10 @@
 @implementation NSObject (OHExtensions)
 
 + (void)load {
-    hs_init(_NSGetArgc(), _NSGetArgv());
+	hs_init(_NSGetArgc(), _NSGetArgv());
 
-    // Shut down the Haskell runtime upon exit
-    atexit(&hs_exit);
+	// Shut down the Haskell runtime upon exit
+	atexit(&hs_exit);
 }
 
 @end

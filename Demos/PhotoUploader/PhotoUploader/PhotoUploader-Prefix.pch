@@ -1,9 +1,0 @@
-//
-// Prefix header for all source files of the 'PhotoUploader' target in the 'PhotoUploader' project
-//
-
-#ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
-    #import <ReactiveCocoa/ReactiveCocoa.h>
-    #import "ObjectiveHaskell.h"
-#endif
