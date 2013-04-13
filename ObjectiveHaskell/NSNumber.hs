@@ -10,7 +10,6 @@ module ObjectiveHaskell.NSNumber (
 import Control.Applicative
 import Data.Char
 import Data.Ratio
-import Data.Text.Lazy as Text
 import Foreign.C.String
 import Foreign.C.Types
 import Foreign.StablePtr

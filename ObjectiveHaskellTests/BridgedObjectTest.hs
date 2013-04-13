@@ -7,7 +7,6 @@ import Control.Applicative
 import Data.ByteString.Lazy as ByteString
 import Data.Map as Map
 import Data.Sequence as Seq
-import Data.Text.Lazy as Text
 import Foreign.C.Types
 import Foreign.Ptr
 import ObjectiveHaskell.NSArray
@@ -22,7 +21,7 @@ import ObjectiveHaskell.ObjC
 appendFoobar' :: Id -> IO Id
 appendFoobar' nsstr = do
     str <- fromNSString nsstr
-    toNSString $ Text.append str "foobar"
+    toNSString $ str ++ "foobar"
 
 addFoobarToArray' :: Id -> IO Id
 addFoobarToArray' nsarr = do
@@ -61,7 +60,7 @@ plus obj n2 = do
 httpsUrlFromHostString :: Id -> IO Id
 httpsUrlFromHostString str = do
     txt <- fromNSString str
-    toNSString (Text.append "https://" txt) >>= urlFromString
+    toNSString ("https://" ++ txt) >>= urlFromString
 
 exportFunc "appendFoobar" [t| UnsafeId -> IO UnsafeId |] 'appendFoobar'
 exportFunc "addFoobarToArray" [t| UnsafeId -> IO UnsafeId |] 'addFoobarToArray'
