@@ -2,7 +2,7 @@
 {-# LANGUAGE Trustworthy #-}
 
 -- | Tools for building a model layer in Haskell that can interoperate with Objective-C
-module ObjectiveHaskell.Model (
+module ObjectiveHaskell.TH.Model (
         MaybePtr, exportAccessors
     ) where
 
@@ -10,9 +10,9 @@ import Control.Monad
 import Data.Char
 import Foreign.StablePtr
 import Language.Haskell.TH
-import ObjectiveHaskell.MsgSend
-import ObjectiveHaskell.ObjC
-import ObjectiveHaskell.THUtils
+import ObjectiveHaskell.TH.MsgSend
+import ObjectiveHaskell.TH.ObjC
+import ObjectiveHaskell.TH.Utils
 
 -- | A pointer to a 'Maybe' value that can be passed to and from Objective-C safely.
 -- | This can be used to represent model data that may or may not exist.

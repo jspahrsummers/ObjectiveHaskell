@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		D0D7EB8E1719214A0002EBF6 /* ObjectiveHaskell.TH */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D0D7EB8F1719214A0002EBF6 /* Build configuration list for PBXAggregateTarget "ObjectiveHaskell.TH" */;
+			buildPhases = (
+				D0D7EB93171921530002EBF6 /* Run hsbuild */,
+			);
+			dependencies = (
+			);
+			name = ObjectiveHaskell.TH;
+			productName = ObjectiveHaskell.TH;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		D04F63451712892C00A00AFA /* ObjectiveHaskell.h in Headers */ = {isa = PBXBuildFile; fileRef = D09061F715B0DD37001CAC43 /* ObjectiveHaskell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D04F634A17128FA100A00AFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09061F315B0DD37001CAC43 /* Foundation.framework */; };
@@ -43,13 +57,18 @@
 			remoteGlobalIDString = D09061EA15B0DD37001CAC43;
 			remoteInfo = ObjectiveHaskell;
 		};
+		D0D7EB94171921A40002EBF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D09061E215B0DD37001CAC43 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0D7EB8E1719214A0002EBF6;
+			remoteInfo = ObjectiveHaskell.TH;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D0240FE515C6697D00B95C7C /* NSURL.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSURL.hs; sourceTree = "<group>"; };
-		D0240FF015C66BAE00B95C7C /* Model.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Model.hs; sourceTree = "<group>"; };
 		D03E2D2B15B150CA00679DB0 /* MsgSendTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MsgSendTest.hs; sourceTree = "<group>"; };
-		D03E2D2D15B1599200679DB0 /* ObjC.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjC.hs; sourceTree = "<group>"; };
 		D045A10A15B2793D00DE48BF /* NSArray.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSArray.hs; sourceTree = "<group>"; };
 		D045A10B15B2794400DE48BF /* NSDictionary.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSDictionary.hs; sourceTree = "<group>"; };
 		D045A10F15B27B4900DE48BF /* NSString.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSString.hs; sourceTree = "<group>"; };
@@ -76,7 +95,6 @@
 		D04F634F17128FC100A00AFA /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTScope.h; path = extobjc/EXTScope.h; sourceTree = "<group>"; };
 		D04F635017128FC100A00AFA /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXTScope.m; path = extobjc/EXTScope.m; sourceTree = "<group>"; };
 		D04F635117128FC100A00AFA /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = metamacros.h; path = extobjc/metamacros.h; sourceTree = "<group>"; };
-		D04FC25915B2B26000C58F14 /* THUtils.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = THUtils.hs; sourceTree = "<group>"; };
 		D06197A315BB870700EE5006 /* SafeHaskellTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SafeHaskellTest.hs; sourceTree = "<group>"; };
 		D062D78D15B38B80003871F7 /* NSData.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSData.hs; sourceTree = "<group>"; };
 		D08A8AE715CBBC6D0084E989 /* OHModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHModel.h; sourceTree = "<group>"; };
@@ -95,7 +113,10 @@
 		D090624815B0E450001CAC43 /* FibTest.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FibTest.hs; sourceTree = "<group>"; };
 		D090624E15B0E613001CAC43 /* NSObject+OHExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+OHExtensions.m"; sourceTree = "<group>"; };
 		D0C0168815BDF10A00AED543 /* NSNumber.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSNumber.hs; sourceTree = "<group>"; };
-		D0E525ED15B1122500C13802 /* MsgSend.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MsgSend.hs; sourceTree = "<group>"; };
+		D0D7EB80171920D20002EBF6 /* Model.hs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Model.hs; sourceTree = "<group>"; };
+		D0D7EB81171920D20002EBF6 /* MsgSend.hs */ = {isa = PBXFileReference; lastKnownFileType = text; path = MsgSend.hs; sourceTree = "<group>"; };
+		D0D7EB82171920D20002EBF6 /* ObjC.hs */ = {isa = PBXFileReference; lastKnownFileType = text; path = ObjC.hs; sourceTree = "<group>"; };
+		D0D7EB83171920D20002EBF6 /* Utils.hs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Utils.hs; sourceTree = "<group>"; };
 		D0E61A6915B4FEDE00667D8A /* NSValue.hs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSValue.hs; sourceTree = "<group>"; };
 		D0F3A2F015D353CB0032B8D9 /* OHBridged.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHBridged.h; sourceTree = "<group>"; };
 		D0F3A2FB15D359650032B8D9 /* NSString+OHExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+OHExtensions.h"; sourceTree = "<group>"; };
@@ -324,11 +345,22 @@
 			name = Haskell;
 			sourceTree = "<group>";
 		};
+		D0D7EB7F171920BA0002EBF6 /* Template Haskell */ = {
+			isa = PBXGroup;
+			children = (
+				D0D7EB80171920D20002EBF6 /* Model.hs */,
+				D0D7EB81171920D20002EBF6 /* MsgSend.hs */,
+				D0D7EB82171920D20002EBF6 /* ObjC.hs */,
+				D0D7EB83171920D20002EBF6 /* Utils.hs */,
+			);
+			name = "Template Haskell";
+			path = TH;
+			sourceTree = "<group>";
+		};
 		D0E525EB15B111E500C13802 /* Haskell */ = {
 			isa = PBXGroup;
 			children = (
-				D0240FF015C66BAE00B95C7C /* Model.hs */,
-				D0E525ED15B1122500C13802 /* MsgSend.hs */,
+				D0D7EB7F171920BA0002EBF6 /* Template Haskell */,
 				D045A10A15B2793D00DE48BF /* NSArray.hs */,
 				D062D78D15B38B80003871F7 /* NSData.hs */,
 				D045A10B15B2794400DE48BF /* NSDictionary.hs */,
@@ -336,8 +368,6 @@
 				D045A10F15B27B4900DE48BF /* NSString.hs */,
 				D0240FE515C6697D00B95C7C /* NSURL.hs */,
 				D0E61A6915B4FEDE00667D8A /* NSValue.hs */,
-				D03E2D2D15B1599200679DB0 /* ObjC.hs */,
-				D04FC25915B2B26000C58F14 /* THUtils.hs */,
 			);
 			name = Haskell;
 			sourceTree = "<group>";
@@ -377,6 +407,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D0D7EB95171921A40002EBF6 /* PBXTargetDependency */,
 			);
 			name = "ObjectiveHaskell Mac";
 			productName = ObjectiveHaskell;
@@ -424,6 +455,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				D0D7EB8E1719214A0002EBF6 /* ObjectiveHaskell.TH */,
 				D09061EA15B0DD37001CAC43 /* ObjectiveHaskell Mac */,
 				D09061FE15B0DD38001CAC43 /* ObjectiveHaskellTests Mac */,
 			);
@@ -455,7 +487,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "script/hsbuild ObjectiveHaskell base containers bytestring utf8-string template-haskell";
+			shellScript = "script/hsbuild ObjectiveHaskell base bytestring utf8-string";
 		};
 		D04F63581712908F00A00AFA /* Run hsbuild */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -484,6 +516,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		D0D7EB93171921530002EBF6 /* Run hsbuild */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run hsbuild";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/lib$(TARGET_NAME)-hsbuild.a",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Works around a bug in ld64 where more than 2^16 object files in one archive cause a crash.\nscript/hsbuild ObjectiveHaskell/TH template-haskell";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -520,6 +567,11 @@
 			isa = PBXTargetDependency;
 			target = D09061EA15B0DD37001CAC43 /* ObjectiveHaskell Mac */;
 			targetProxy = D090620315B0DD38001CAC43 /* PBXContainerItemProxy */;
+		};
+		D0D7EB95171921A40002EBF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0D7EB8E1719214A0002EBF6 /* ObjectiveHaskell.TH */;
+			targetProxy = D0D7EB94171921A40002EBF6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -566,6 +618,7 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-liconv",
+					"-lObjectiveHaskell.TH-hsbuild",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
@@ -624,6 +677,7 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-liconv",
+					"-lObjectiveHaskell.TH-hsbuild",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
@@ -640,11 +694,33 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-liconv",
+					"-lObjectiveHaskell.TH-hsbuild",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
+		};
+		D0D7EB901719214A0002EBF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D0D7EB911719214A0002EBF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D0D7EB921719214A0002EBF6 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Profile;
 		};
 /* End XCBuildConfiguration section */
 
@@ -678,6 +754,15 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D0D7EB8F1719214A0002EBF6 /* Build configuration list for PBXAggregateTarget "ObjectiveHaskell.TH" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0D7EB901719214A0002EBF6 /* Debug */,
+				D0D7EB911719214A0002EBF6 /* Release */,
+				D0D7EB921719214A0002EBF6 /* Profile */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

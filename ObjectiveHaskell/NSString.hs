@@ -14,8 +14,8 @@ import Foreign.C.Types
 import Foreign.Marshal.Array
 import Foreign.Ptr
 import Foreign.StablePtr
-import ObjectiveHaskell.MsgSend
-import ObjectiveHaskell.ObjC
+import ObjectiveHaskell.TH.MsgSend
+import ObjectiveHaskell.TH.ObjC
 
 declMessage "utf8String" [t| Id -> IO (Ptr CChar) |] "UTF8String"
 declMessage "stringWithUtf8String" [t| Ptr CChar -> Class -> IO Id |] "stringWithUTF8String:"

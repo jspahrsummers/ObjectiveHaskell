@@ -16,7 +16,7 @@ import ObjectiveHaskell.NSNumber
 import ObjectiveHaskell.NSString
 import ObjectiveHaskell.NSURL
 import ObjectiveHaskell.NSValue
-import ObjectiveHaskell.ObjC
+import ObjectiveHaskell.TH.ObjC
 
 appendFoobar' :: Id -> IO Id
 appendFoobar' nsstr = do

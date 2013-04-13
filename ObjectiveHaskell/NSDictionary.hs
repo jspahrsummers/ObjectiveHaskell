@@ -14,9 +14,9 @@ import Data.List
 import Data.Map as Map
 import Foreign.C.Types
 import Foreign.StablePtr
-import ObjectiveHaskell.MsgSend
+import ObjectiveHaskell.TH.MsgSend
 import ObjectiveHaskell.NSArray
-import ObjectiveHaskell.ObjC
+import ObjectiveHaskell.TH.ObjC
 
 -- NSDictionary methods
 declMessage "allKeys" [t| Id -> IO Id |] "allKeys"

@@ -13,8 +13,8 @@ import Foreign.C.Types
 import Foreign.Marshal.Array
 import Foreign.Ptr
 import Foreign.StablePtr
-import ObjectiveHaskell.MsgSend
-import ObjectiveHaskell.ObjC
+import ObjectiveHaskell.TH.MsgSend
+import ObjectiveHaskell.TH.ObjC
 
 -- NSData methods
 declMessage "dataWithBytes" [t| Ptr () -> NSUInteger -> Class -> IO Id |] "dataWithBytes:length:"

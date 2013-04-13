@@ -6,8 +6,8 @@ module ObjectiveHaskell.NSURL (
         stringFromUrl, urlFromString
     ) where
 
-import ObjectiveHaskell.MsgSend
-import ObjectiveHaskell.ObjC
+import ObjectiveHaskell.TH.MsgSend
+import ObjectiveHaskell.TH.ObjC
 
 -- NSURL methods
 declMessage "urlWithString" [t| Id -> Class -> IO Id |] "URLWithString:"

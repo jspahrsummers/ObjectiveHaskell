@@ -12,8 +12,8 @@ import Data.Foldable
 import Data.Sequence as Seq
 import Foreign.C.Types
 import Foreign.StablePtr
-import ObjectiveHaskell.MsgSend
-import ObjectiveHaskell.ObjC
+import ObjectiveHaskell.TH.MsgSend
+import ObjectiveHaskell.TH.ObjC
 
 -- NSArray methods
 declMessage "array" [t| Class -> IO Id |] "array"

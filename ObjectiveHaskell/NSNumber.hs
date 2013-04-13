@@ -13,9 +13,9 @@ import Data.Ratio
 import Foreign.C.String
 import Foreign.C.Types
 import Foreign.StablePtr
-import ObjectiveHaskell.MsgSend
+import ObjectiveHaskell.TH.MsgSend
 import ObjectiveHaskell.NSString
-import ObjectiveHaskell.ObjC
+import ObjectiveHaskell.TH.ObjC
 
 -- NSNumber methods
 declMessage "numberWithLongLong" [t| CLLong -> Class -> IO Id |] "numberWithLongLong:"

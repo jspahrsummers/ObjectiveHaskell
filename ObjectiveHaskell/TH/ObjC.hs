@@ -2,7 +2,7 @@
 {-# LANGUAGE Trustworthy #-}
 
 -- | Objective-C bridging primitives
-module ObjectiveHaskell.ObjC (
+module ObjectiveHaskell.TH.ObjC (
         Sel, Class, Id, UnsafeId,
         ObjCBool, NSUInteger,
         Bridged, toObjC, fromObjC,
@@ -21,7 +21,7 @@ import Foreign.ForeignPtr.Unsafe
 import Foreign.Marshal.Unsafe
 import Foreign.Ptr
 import Language.Haskell.TH
-import ObjectiveHaskell.THUtils
+import ObjectiveHaskell.TH.Utils
 
 -- | An Objective-C @BOOL@.
 type ObjCBool = CSChar
