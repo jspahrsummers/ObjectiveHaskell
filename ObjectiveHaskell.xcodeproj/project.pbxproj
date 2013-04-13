@@ -455,7 +455,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "script/hsbuild ObjectiveHaskell";
+			shellScript = "script/hsbuild ObjectiveHaskell base containers bytestring text";
 		};
 		D04F63581712908F00A00AFA /* Run hsbuild */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -470,7 +470,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "script/hsbuild ObjectiveHaskellTests base containers bytestring text";
+			shellScript = "script/hsbuild ObjectiveHaskellTests";
 		};
 		D09061FD15B0DD38001CAC43 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
